@@ -343,7 +343,7 @@ div.markdown-preview-view {
 a.tag {
   background-color: var(--background-tag);
   color: var(--text-nav-selected);
-  padding-bottom: 2px;
+  padding-bottom: 3px;
   padding-top: 2px;
 	text-decoration: none;
   font-family: var(--font-family-editor);
@@ -354,14 +354,14 @@ a.tag {
 .cm-s-obsidian span.cm-hashtag-begin {
 	border-top-left-radius: 25px;
 	border-bottom-left-radius: 25px;
-	padding-left: 10px;
+	padding-left: 8px;
 }
 
 /* Tag editor right side pillbox */
 .cm-s-obsidian span.cm-hashtag-end {
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 /* Tag preview pillbox */
