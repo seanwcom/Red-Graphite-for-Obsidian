@@ -381,3 +381,10 @@ a.tag {
   padding: 2px;
   border-radius: 4px;
 }
+
+
+/* Add button hovers to the the Update internal links modal (and possibly others) */
+.modal-button-container button:not(.mod-cta):not(.mod-warning):hover {
+  background-color: var(--bear-red);
+  color: var(--text-nav-selected);
+}
