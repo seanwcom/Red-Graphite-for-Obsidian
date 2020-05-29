@@ -343,7 +343,7 @@ div.markdown-preview-view {
 a.tag {
   background-color: var(--background-tag);
   color: var(--text-nav-selected);
-  padding-bottom: 3px;
+  padding-bottom: 2px;
   padding-top: 2px;
 	text-decoration: none;
   font-family: var(--font-family-editor);
