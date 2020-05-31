@@ -2,6 +2,7 @@
 {
   --background-inline-code: rgb(255, 255, 255);
   --background-nav-alt: rgb(58, 62, 63);
+  --background-nav-file-tag: rgb(203, 77, 73);
   --background-nav-selected: rgb(203, 77, 73);
   --background-nav: rgb(41, 44, 46);
   --background-primary: rgb(250, 250, 250);
@@ -11,7 +12,7 @@
   --code-block-border: #92a1a17a;
   --font-family-editor: Avenir, "Avenir Next";
   --font-family-preview: Avenir, "Avenir Next";
-  --interactive-accent: rgba(203, 77, 73);
+  --interactive-accent: rgb(203, 77, 73);
   --text-accent: rgb(203, 77, 73);
   --text-faint: rgb(150, 150, 150);
   --text-header: rgb(44, 44, 44);
@@ -25,6 +26,7 @@
 .theme-dark {
   --background-inline-code: rgb(32, 32, 32);
   --background-nav-alt: rgb(58, 62, 63);
+  --background-nav-file-tag: rgb(116, 190, 247);
   --background-nav-selected: rgb(73, 73, 73);
   --background-nav: rgb(41, 44, 46);
   --background-primary: rgb(28, 30, 32);
@@ -505,5 +507,20 @@ a.tag {
 /* Add button hovers to the the Update internal links modal (and possibly others) */
 .modal-button-container button:not(.mod-cta):not(.mod-warning):hover {
   background-color: var(--text-accent);
+  color: var(--text-nav-selected);
+}
+
+/* Background color of rename inputs */
+.nav-file-title-content.is-being-renamed,
+.nav-folder-title-content.is-being-renamed {
+  cursor: text;
+  border-color: var(--interactive-accent);
+  background-color: var(--background-nav);
+  padding-left: 15px;
+}
+
+/* Background color of file tags, like "png" */
+.nav-file-tag {
+  background-color: var(--background-nav-file-tag);
   color: var(--text-nav-selected);
 }
