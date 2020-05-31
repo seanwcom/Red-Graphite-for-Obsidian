@@ -1,24 +1,59 @@
 .theme-light
 {
-  --background-nav-alt: rgba(58, 62, 63, 255);
-  --background-nav: rgba(41, 44, 46, 255);
-  --background-primary: rgba(250, 250, 250);
-  --bear-accent: rgba(203, 77, 73, 255);
+  --background-inline-code: rgb(255, 255, 255);
+  --background-nav-alt: rgb(58, 62, 63);
+  --background-nav-selected: rgb(203, 77, 73);
+  --background-nav: rgb(41, 44, 46);
+  --background-primary: rgb(250, 250, 250);
+  --background-tag: #b5b5b5;
+  --border-inline-code: rgb(215, 215, 215);
   --code-block-background: #ffffff;
   --code-block-border: #92a1a17a;
   --font-family-editor: Avenir, "Avenir Next";
   --font-family-preview: Avenir, "Avenir Next";
-  --text-accent: rgba(196, 84, 86, 255);
-  --text-faint: rgba(150, 150, 150, 255);
+  --interactive-accent: rgba(203, 77, 73);
+  --text-accent: rgb(203, 77, 73);
+  --text-faint: rgb(150, 150, 150);
+  --text-header: rgb(44, 44, 44);
   --text-highlight-bg: #b4ff0066;
-  --text-nav-selected: rgba(255, 255, 255, 255);
-  --text-nav: rgba(190, 190, 190, 255);
-  --text-normal: rgba(44, 44, 44, 255);
-  --background-tag: #b5b5b5;
+  --text-inline-code: rgb(78, 78, 78);
+  --text-nav-selected: rgb(255, 255, 255);
+  --text-nav: rgb(190, 190, 190);
+  --text-normal: rgb(44, 44, 44);
+}
 
-  /* unsure if needed */
-  --interactive-accent: rgba(203, 77, 73, 255);
-  --list-color: #db4d52;
+.theme-dark {
+  --background-inline-code: rgb(32, 32, 32);
+  --background-nav-alt: rgb(58, 62, 63);
+  --background-nav-selected: rgb(73, 73, 73);
+  --background-nav: rgb(41, 44, 46);
+  --background-primary: rgb(28, 30, 32);
+  --background-tag: rgb(111, 112, 116);
+  --border-inline-code: rgb(76, 76, 76);
+  --code-block-background: rgb(32, 32, 32);
+  --code-block-border: rgb(77, 77, 77);
+  --font-family-editor: Avenir, "Avenir Next";
+  --font-family-preview: Avenir, "Avenir Next";
+  --interactive-accent: rgb(116, 190, 247);
+  --text-accent: rgb(116, 190, 247);
+  --text-faint: rgb(150, 150, 150);
+  --text-header: rgb(198, 213, 224);
+  --text-highlight-bg: rgb(64, 73, 181);
+  --text-inline-code: rgb(255, 255, 255);
+  --text-nav-selected: rgb(255, 255, 255);
+  --text-nav: rgb(190, 190, 190);
+  --text-normal: rgb(216, 216, 216);
+}
+
+/* header colors */
+.cm-header, 
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  color: var(--text-header);
 }
 
 /* Changing size/color of the header hashtags ## */
@@ -51,6 +86,15 @@
 .cm-formatting-header-5:after { bottom: -1px; content: "H5"; }
 .cm-formatting-header-6:after { bottom: -1px; content: "H6"; }
 .cm-formatting-header-7:after { bottom: -1px; content: "H7"; } */
+
+.cm-s-obsidian span.cm-url {
+  color: var(--text-accent);
+}
+
+.markdown-preview-view mark {
+  color: var(--text-normal);
+  padding: 0px 4px;
+}
 
 .cm-formatting-em.cm-em {
   color: var(--text-faint);
@@ -116,6 +160,10 @@
   border-bottom-right-radius: 10px;
 }
 
+.side-dock.mod-right {
+  border-left: 0px;
+}
+
 /* Left nav ribbon background color */
 .side-dock-ribbon {
   background-color: var(--background-nav-alt);
@@ -144,13 +192,13 @@
 
 /* Left nav ribbon active hover text color (icon color) */
 .side-dock-ribbon-tab.is-active:hover {
-  color: var(--bear-accent);
+  color: var(--text-accent);
 }
 
 /* Left nav ribbon inactive hover text color (icon color) */
 .side-dock-ribbon-tab:hover,
 .side-dock-ribbon-action:hover {
-  color: var(--bear-accent);
+  color: var(--text-accent);
 }
 
 /* Background and text color of selected item in left nav tree */
@@ -160,7 +208,7 @@
 .nav-folder.is-active > .nav-file-title, 
 .nav-folder.is-active > .nav-folder-title, 
 .nav-folder.is-active > .nav-folder-collapse-indicator {
-  background-color: var(--bear-accent);
+  background-color: var(--background-nav-selected);
   color: var(--text-nav-selected);
 }
 
@@ -171,7 +219,7 @@
 .nav-folder.is-active > .nav-file-title:hover, 
 .nav-folder.is-active > .nav-folder-title:hover, 
 .nav-folder.is-active > .nav-folder-collapse-indicator:hover {
-  background-color: var(--bear-accent);
+  background-color: var(--text-accent);
   color: var(--text-nav-selected);
 }
 
@@ -234,7 +282,7 @@ body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
 /* Context menu hover item */
 .menu-item:hover {
   background-color: var(--background-secondary-alt);
-  color: var(--bear-accent);
+  color: var(--text-accent);
 }
 
 
@@ -248,18 +296,9 @@ div.markdown-preview-view {
 	font-family: var(--font-family-preview);
 }
 
-/* Enable wrapping of code blocks in the preview panel */
-.theme-light code[class*="language-"], 
-.theme-light pre[class*="language-"] {
-  white-space: pre-wrap;
-  background-color: var(--code-block-background);
-}
-
-
-
 /* Coloring the list bullets/numbers */
 .cm-s-obsidian span.cm-formatting-list {
-	color: var(--bear-accent);
+	color: var(--text-accent);
   font-size: 0.85em;
   font-weight: 500;
   font-family: var(--font-monospace);
@@ -267,7 +306,7 @@ div.markdown-preview-view {
 
 /* Editor view - task list, color and veritcal align */
 .cm-s-obsidian span.cm-formatting-task {
-  color: var(--bear-accent);
+  color: var(--text-accent);
   font-size: 0.85em;
   font-weight: 500;
   position: relative;
@@ -282,6 +321,39 @@ div.markdown-preview-view {
   /* top: 3px; */
 }
 
+.CodeMirror .cm-math {
+  color: var(--text-inline-code);
+}
+
+/* color of inline code ticks */
+.cm-s-obsidian span.cm-inline-code.cm-formatting-code {
+  color: var(--text-faint);
+}
+
+/* color of inline code */
+.cm-s-obsidian span.cm-inline-code {
+  color: var(--text-inline-code);
+}
+
+/* color and border of inline code (between the ticks) */
+.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code) {
+  background-color: var(--background-inline-code);
+  border: 1px solid var(--border-inline-code);
+  padding: 1px 2px;
+}
+
+.markdown-preview-section code {
+  background-color: var(--background-inline-code);
+  border: 1px solid var(--border-inline-code);
+  padding: 1px 4px;
+}
+
+/* Set background of code panes to transparent since main background is controlled above */
+.markdown-preview-view code {
+  background-color: transparent;
+  bottom: 0px;
+  color: var(--text-inline-code);
+}
 
 /* Preview code block background */
 .markdown-preview-view pre {
@@ -313,7 +385,8 @@ div.markdown-preview-view {
 
 /* Code block left and right padding */
 .cm-s-obsidian pre.HyperMD-codeblock {
-	padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0px 10px;
+  color: var(--text-inline-code);
 }
 
 /* Code block top padding */
@@ -330,6 +403,13 @@ div.markdown-preview-view {
 .cm-s-obsidian div.HyperMD-codeblock-bg {
 	border-left: 1px solid var(--code-block-border);
 	border-right: 1px solid var(--code-block-border);
+}
+
+/* Enable wrapping of code blocks in the preview panel */
+.theme-light code[class*="language-"], .theme-light pre[class*="language-"],
+.theme-dark code[class*="language-"], .theme-dark pre[class*="language-"] {
+  white-space: pre-wrap;
+  background-color: var(--code-block-background);
 }
 
 /* Add some spacing when a #hashtag is used */
@@ -381,12 +461,6 @@ a.tag {
   /* font-weight: 500; */
 }
 
-/* Set background of code panes to pure white since main background is off-white */
-.markdown-preview-view code {
-  background-color: rgba(0, 0, 0, 0);
-  bottom: 0px
-}
-
 /* Additional left/right padding for tag pane so hover background has some room */
 .tag-pane-tags {
   padding-left: 10px;
@@ -401,7 +475,7 @@ a.tag {
 
 /* Style the tag pane tag count with the bear red coloring used in selected item from left nav */
 .tag-pane-tag-count {
-  background-color: var(--bear-accent);
+  background-color: var(--text-accent);
   color: var(--text-nav-selected);
 }
 
@@ -423,13 +497,13 @@ a.tag {
 /* Backlink highlighted [[links]] */
 .search-result-file-matched-text {
   color: var(--text-nav-selected);
-  background-color: var(--bear-accent);
+  background-color: var(--text-accent);
   padding: 2px;
   border-radius: 4px;
 }
 
 /* Add button hovers to the the Update internal links modal (and possibly others) */
 .modal-button-container button:not(.mod-cta):not(.mod-warning):hover {
-  background-color: var(--bear-accent);
+  background-color: var(--text-accent);
   color: var(--text-nav-selected);
 }
