@@ -524,3 +524,15 @@ a.tag {
   background-color: var(--background-nav-file-tag);
   color: var(--text-nav-selected);
 }
+
+/* Remove the border, padding, and margin for the transcludes/embeds */
+.markdown-preview-view .markdown-embed, .markdown-preview-view .file-embed {
+  border: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hide the title of the embeds */
+.markdown-embed-title {
+  display: none;
+}
