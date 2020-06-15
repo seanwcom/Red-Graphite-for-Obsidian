@@ -10,8 +10,8 @@
   --border-inline-code: rgb(215, 215, 215);
   --code-block-background: #ffffff;
   --code-block-border: #92a1a17a;
-  --font-family-editor: Avenir, "Avenir Next";
-  --font-family-preview: Avenir, "Avenir Next";
+  --font-family-editor: Avenir, "Avenir Next", 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+  --font-family-preview: Avenir, "Avenir Next", 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
   --interactive-accent: rgb(203, 77, 73);
   --text-accent: rgb(203, 77, 73);
   --text-faint: rgb(150, 150, 150);
