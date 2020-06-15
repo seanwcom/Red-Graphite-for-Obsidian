@@ -109,10 +109,11 @@
   font-size: 0.6em;
 }
 
-/* Top left "File explorer" text */
-.side-dock-title {
-  color: var(--text-nav);
-}
+
+
+
+
+
 
 /* Wrap long nav text */
 .nav-file-title, .nav-folder-title {
@@ -130,14 +131,9 @@
   border-bottom: 1px solid var(--background-nav-alt);
 }
 
-/* Just above the folder tree, the name of the vault */
+/* The name of the vault */
 .nav-folder.mod-root > .nav-file-title, .nav-folder.mod-root > .nav-folder-title {
   color: var(--text-nav);
-}
-
-/* Padding on left side of nav items so that hover doesn't butt up against ribbon */
-.nav-folder.mod-root > .nav-folder-children {
-  padding-left: 5px;
 }
 
 /* Color of left nav tree text */
@@ -145,19 +141,46 @@
   color: var(--text-nav);
 }
 
+
+/* New top tabs */
+.workspace-tab-header-container {
+  background-color: var(--background-nav-alt);
+}
+
+/* Color of the curve of the top tabs */
+.workspace-tab-container-before.is-before-active,
+.workspace-tab-container-after.is-after-active,
+.workspace-tab-header.is-before-active,
+.workspace-tab-header.is-after-active {
+  background-color: var(--background-nav);
+}
+
+/* Background color of unselected tabs */
+.workspace-tab-container-before.is-before-active .workspace-tab-header-inner, 
+.workspace-tab-container-after.is-after-active .workspace-tab-header-inner, 
+.workspace-tab-header.is-before-active .workspace-tab-header-inner, 
+.workspace-tab-header.is-after-active .workspace-tab-header-inner {
+  background-color: var(--background-nav-alt);
+}
+
+/* Background color of selected tab */
+.workspace-tab-header.is-active {
+  background-color: var(--background-nav);
+}
+
 /* Set the left nav background to same color as ribbon so we can make a curved corner that matches */
-.side-dock-panels-container {
+.workspace-tabs .workspace-leaf {
   background-color: var(--background-nav-alt);
 }
 
 /* Set the left nav background to different color from ribbon, and give a curved corner with statusbar */
-.side-dock.mod-left .side-dock-plugin-panel {
+.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content {
   background-color: var(--background-nav);
   border-bottom-left-radius: 10px;
 }
 
 /* Set the right nav background to different color from ribbon, and give a curved corner with statusbar */
-.side-dock.mod-right .side-dock-plugin-panel {
+.mod-right-split .workspace-tabs .workspace-leaf .workspace-leaf-content {
   background-color: var(--background-nav);
   border-bottom-right-radius: 10px;
 }
