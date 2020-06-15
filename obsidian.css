@@ -143,6 +143,10 @@
 
 
 /* New top tabs */
+.workspace-tabs {
+  background-color: var(--background-nav-alt);
+}
+
 .workspace-tab-header-container {
   background-color: var(--background-nav-alt);
 }
@@ -177,12 +181,14 @@
 .mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content {
   background-color: var(--background-nav);
   border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 /* Set the right nav background to different color from ribbon, and give a curved corner with statusbar */
 .mod-right-split .workspace-tabs .workspace-leaf .workspace-leaf-content {
   background-color: var(--background-nav);
   border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .side-dock.mod-right {
