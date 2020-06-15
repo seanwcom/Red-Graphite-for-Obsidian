@@ -570,3 +570,13 @@ a.tag {
 .markdown-embed-title {
   display: none;
 }
+
+
+/* 
+Try to support content in the navs... this is difficult because this theme is a 
+split of dark and light. So content in the main pane should be light mode, while content
+in the left pane should be dark mode
+*/
+/* .workspace-tabs .view-content {
+  color: var(--text-nav);
+} */
