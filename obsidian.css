@@ -172,6 +172,11 @@
   background-color: var(--background-nav);
 }
 
+/* resize handle coloring */
+.workspace-leaf-resize-handle {;
+  background-color: transparent;
+}
+
 /* Set the left nav background to same color as ribbon so we can make a curved corner that matches */
 .workspace-tabs .workspace-leaf {
   background-color: var(--background-nav-alt);
