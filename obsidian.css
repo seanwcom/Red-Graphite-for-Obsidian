@@ -571,6 +571,12 @@ a.tag {
   display: none;
 }
 
+.markdown-preview-view .markdown-embed-content {
+  max-height: unset;
+  overflow-y: unset;
+  padding-right: unset;
+}
+
 
 /* 
 Try to support content in the navs... this is difficult because this theme is a 
