@@ -388,6 +388,13 @@ div.markdown-preview-view {
   border-radius: 4px;
   border: 1px solid var(--code-block-border);
   white-space: pre-wrap;
+  line-height: 1.0em;
+}
+
+/* Unset the background and font weight from where we set it for inline code */
+.markdown-preview-view pre code {
+  background-color: transparent;
+  font-weight: normal;
 }
 
 /* Code block border color */
