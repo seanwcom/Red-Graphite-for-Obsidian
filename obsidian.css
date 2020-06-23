@@ -1,6 +1,6 @@
 .theme-light
 {
-  --background-inline-code: rgb(255, 255, 255);
+  --background-inline-code: rgb(240, 240, 240);
   --background-nav-alt: rgb(58, 62, 63);
   --background-nav-file-tag: rgb(203, 77, 73);
   --background-nav-selected: rgb(203, 77, 73);
@@ -17,14 +17,14 @@
   --text-faint: rgb(150, 150, 150);
   --text-header: rgb(44, 44, 44);
   --text-highlight-bg: #b4ff0066;
-  --text-inline-code: rgb(78, 78, 78);
+  --text-inline-code: rgb(45, 45, 45);
   --text-nav-selected: rgb(255, 255, 255);
   --text-nav: rgb(190, 190, 190);
   --text-normal: rgb(44, 44, 44);
 }
 
 .theme-dark {
-  --background-inline-code: rgb(32, 32, 32);
+  --background-inline-code: rgb(41, 44, 46);
   --background-nav-alt: rgb(58, 62, 63);
   --background-nav-file-tag: rgb(116, 190, 247);
   --background-nav-selected: rgb(73, 73, 73);
@@ -41,7 +41,7 @@
   --text-faint: rgb(150, 150, 150);
   --text-header: rgb(198, 213, 224);
   --text-highlight-bg: rgb(64, 73, 181);
-  --text-inline-code: rgb(255, 255, 255);
+  --text-inline-code: rgb(230, 230, 230);
   --text-nav-selected: rgb(255, 255, 255);
   --text-nav: rgb(190, 190, 190);
   --text-normal: rgb(216, 216, 216);
@@ -372,22 +372,12 @@ div.markdown-preview-view {
 }
 
 /* color and border of inline code (between the ticks) */
-.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code) {
-  background-color: var(--background-inline-code);
-  border: 1px solid var(--border-inline-code);
-  padding: 1px 2px;
-}
-
+.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code),
 .markdown-preview-section code {
   background-color: var(--background-inline-code);
-  border: 1px solid var(--border-inline-code);
-  padding: 1px 4px;
-}
-
-/* Set background of code panes to transparent since main background is controlled above */
-.markdown-preview-view code {
-  background-color: transparent;
-  bottom: 0px;
+  border: 0px solid var(--border-inline-code);
+  padding: 4px 4px;
+  font-weight: 600;
   color: var(--text-inline-code);
 }
 
