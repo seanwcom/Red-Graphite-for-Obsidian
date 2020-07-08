@@ -353,8 +353,8 @@ div.markdown-preview-view {
 .markdown-preview-view .task-list-item-checkbox {
   width: 15px;
   height: 15px;
-  /* position: relative; */
-  /* top: 3px; */
+  position: relative;
+  top: 0;
 }
 
 .CodeMirror .cm-math {
