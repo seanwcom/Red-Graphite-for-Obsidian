@@ -614,8 +614,8 @@ input[type=checkbox]:checked {
 /* ======================================================== */
 /* Checkbox stuff,  */
 /* ======================================================== */
-.markdown-preview-view .task-list-item-checkbox { height: 19px; }
-.task-list-item input { visibility: hidden; }
+/* .markdown-preview-view .task-list-item-checkbox { height: 19px; } */
+/* .task-list-item input { visibility: hidden; } */
 
 /*
   Potential emoji:
@@ -623,13 +623,13 @@ input[type=checkbox]:checked {
 */
 
 /* Unchecked, set the emoji icon to light grayscale */
-.task-list-item input:not([checked=true])::after {
+/* .task-list-item input:not([checked=true])::after {
   content: "✅";
   opacity: 0.25;
   visibility: visible;
   cursor: pointer;
   filter: grayscale(1);
-}
+} */
 
 /* 
   Checked, set emoji icon to red to match red graphite accent
@@ -637,9 +637,9 @@ input[type=checkbox]:checked {
     hue-rotate makes ✅ a red checkbox, but depends on source color,
     so you can't just swap in another emojie icon and have it be red
 */
-.task-list-item input[checked=true]::after {
+/* .task-list-item input[checked=true]::after {
   content: "✅";
   visibility: visible;
   cursor: pointer;
   filter: hue-rotate(250deg);
-}
+} */
