@@ -64,6 +64,11 @@
   font-size: 0.6em;
 }
 
+/* Backlinks header colors - thanks @a-star-wave! */
+.side-dock-collapsible-section-header {
+  color: var(--text-nav);
+}
+
 /* Headers in editor - hide the #'s */
 /* .cm-formatting-header-1, .cm-formatting-header-2, .cm-formatting-header-3, .cm-formatting-header-4, .cm-formatting-header-5, .cm-formatting-header-6, .cm-formatting-header-7 {
   visibility: hidden; 
