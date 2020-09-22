@@ -362,6 +362,12 @@ div.markdown-preview-view {
   /* top: 3px; */
 }
 
+/* Resetting the default hue-rotate(42deg) */
+.markdown-preview-view .task-list-item-checkbox {
+  /* filter: hue-rotate(42deg); -- DEFAULT */
+  filter: none;
+}
+
 .CodeMirror .cm-math {
   color: var(--text-inline-code);
 }
