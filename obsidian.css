@@ -585,6 +585,24 @@ a.tag {
   padding-right: unset;
 }
 
+/* Add support for [Calendar plugin](https://github.com/liamcain/obsidian-calendar-plugin) */
+#calendar-container {
+  --color-background-heading: transparent;
+
+  --color-background-day: transparent;
+  --color-background-day-empty: transparent;
+  --color-background-day-active: var(--background-nav-selected);
+  --color-background-day-hover: var(--background-nav-alt);
+
+  --color-dot: var(--text-nav);
+  --color-arrow: var(--text-nav);
+
+  --color-text-title: var(--text-faint);
+  --color-text-heading: var(--text-faint);
+  --color-text-day: var(--text-nav);
+  --color-text-today: var(--text-nav-selected);
+}
+
 
 /* 
 Try to support content in the navs... this is difficult because this theme is a 
