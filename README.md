@@ -1,5 +1,5 @@
 # Red Graphite for Obsidian.md
-A light theme for Obsidian.md, based on Bear.app's Red Graphite theme. Here's a screenshot. There are more below the instructions.
+A light and dark theme for Obsidian.md, based on Bear.app's Red Graphite theme. Here's a screenshot:
 
 ![Screenshot](./screenshot05.png)
 
@@ -22,6 +22,8 @@ Somehow the easy install has more steps than the manual install...
 This theme is copied from Bear.app's Red Graphite theme, so it would be silly to pretend to have a license. Do as you please, all credit to the Bear designers for putting good colors together.
 
 ## More Screenshots
+
+Note that these screenshots are from a much earlier build of Obsidian, so the UI has changed some compared to the screenshot above.
 
 ![Screenshot](./screenshot01.png)
 
