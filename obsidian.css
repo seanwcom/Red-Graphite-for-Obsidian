@@ -579,10 +579,14 @@ a.tag {
   display: none;
 }
 
+/* Allow a full embed, not a partial, scrolling embed */
 .markdown-preview-view .markdown-embed-content {
   max-height: unset;
   overflow-y: unset;
   padding-right: unset;
+}
+.markdown-preview-view .markdown-embed-content > .markdown-preview-view {
+  max-height: unset;
 }
 
 
