@@ -607,6 +607,19 @@ a.tag {
   --color-text-today: var(--text-nav-selected);
 }
 
+/* fix graph controls */
+.graph-controls,
+.graph-control-section-header {
+  color: rgb(190, 190, 190) !important;
+  background-color: rgb(44, 44, 44) !important;
+  --background-secondary-alt: #000000 !important;
+  --background-modifier-border: #333 !important;
+}
+
+/* fix graph text */
+.graph-view {
+  --text-normal: rgb(240, 240, 240) !important;
+}
 
 /* 
 Try to support content in the navs... this is difficult because this theme is a 
