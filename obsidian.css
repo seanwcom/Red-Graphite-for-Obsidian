@@ -21,6 +21,7 @@
   --text-nav-selected: rgb(255, 255, 255);
   --text-nav: rgb(190, 190, 190);
   --text-normal: rgb(44, 44, 44);
+  --text-normal-opposite: rgb(216, 216, 216);
 }
 
 .theme-dark {
@@ -45,6 +46,7 @@
   --text-nav-selected: rgb(255, 255, 255);
   --text-nav: rgb(190, 190, 190);
   --text-normal: rgb(216, 216, 216);
+  --text-normal-oppsite: rgb(44, 44, 44);
 }
 
 /* header colors */
@@ -605,6 +607,23 @@ a.tag {
   --color-text-heading: var(--text-faint);
   --color-text-day: var(--text-nav);
   --color-text-today: var(--text-nav-selected);
+}
+
+/* fix graph controls */
+.workspace-split.mod-right-split .graph-controls,
+.workspace-split.mod-right-split .graph-control-section-header {
+  color: var(--text-normal-oppsite);
+  background-color: var(--background-nav);
+  --background-secondary-alt: var(--background-nav-alt);
+  --background-modifier-border: var(--background-nav-alt);
+}
+
+/* fix graph text */
+.theme-light .graph-view {
+  --text-normal:  rgb(127, 127, 127);
+}
+.theme-dark .graph-view {
+  --text-normal: rgb(127, 127, 127);
 }
 
 
