@@ -389,7 +389,6 @@ div.markdown-preview-view {
 .markdown-preview-section code {
   background-color: var(--background-inline-code);
   border: 0px solid var(--border-inline-code);
-  padding: 4px 4px;
   font-weight: 600;
   color: var(--text-inline-code);
 }
