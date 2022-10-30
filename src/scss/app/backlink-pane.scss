@@ -1,0 +1,53 @@
+.theme-light {
+  // search result header, expanded, not hovered
+  .search-result:not(.is-collapsed) .search-result-file-title {
+    color: var(--color-base-40);
+  }
+
+  // collapsed, not hovered
+  .backlink-pane > .tree-item-self.is-collapsed,
+  .outgoing-link-pane > .tree-item-self.is-collapsed {
+    color: var(--color-base-40);
+  }
+
+  // expanded, not hovered
+  .backlink-pane > .tree-item-self,
+  .outgoing-link-pane > .tree-item-self {
+    color: var(--color-base-40);
+  }
+
+  // expanded, hovered
+  @media (hover: hover) {
+    .backlink-pane > .tree-item-self.is-clickable:hover,
+    .outgoing-link-pane > .tree-item-self.is-clickable:hover {
+      color: var(--color-base-00);
+    }
+  }
+}
+
+.theme-dark {
+  // search result header, expanded, not hovered
+  .search-result:not(.is-collapsed) .search-result-file-title {
+    color: var(--color-base-160);
+  }
+
+  // collapsed, not hovered
+  .backlink-pane > .tree-item-self.is-collapsed,
+  .outgoing-link-pane > .tree-item-self.is-collapsed {
+    color: var(--color-base-160);
+  }
+
+  // expanded, not hovered
+  .backlink-pane > .tree-item-self,
+  .outgoing-link-pane > .tree-item-self {
+    color: var(--color-base-160);
+  }
+
+  // expanded, hovered
+  @media (hover: hover) {
+    .backlink-pane > .tree-item-self.is-clickable:hover,
+    .outgoing-link-pane > .tree-item-self.is-clickable:hover {
+      color: var(--color-base-100);
+    }
+  }
+}

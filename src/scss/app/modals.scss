@@ -1,0 +1,50 @@
+body {
+  /* Modals - e.g. settings, community themes, community plugins */
+  --modal-border-width: 0;
+
+
+  .horizontal-tab-nav-item.is-active,
+  .vertical-tab-nav-item.is-active {
+    background-color: var(--interactive-accent);
+    color: var(--color-base-00);
+  }
+  @media (hover: hover) {
+    .horizontal-tab-nav-item:hover,
+    .vertical-tab-nav-item:hover {
+      color: var(--color-base-00);
+      background-color: var(--interactive-accent);
+    }
+  }
+  
+  // Test this setting by viewing community themes or plugins
+  // This changes the bg color of the entire modal
+  .community-modal-sidebar {
+    background-color: var(--background-primary);
+  }
+}
+
+.theme-light {
+  .horizontal-tab-nav-item,
+  .vertical-tab-nav-item {
+    color: var(--color-base-40);
+  }
+
+  // Test this setting by viewing community themes or plugins
+  // This is the border color between the top pane and search results
+  .community-modal-search-results-wrapper {
+    border-top: var(--border-width) solid var(--color-base-30);
+  }
+}
+
+.theme-dark {
+  .horizontal-tab-nav-item,
+  .vertical-tab-nav-item {
+    color: var(--color-base-160);
+  }
+  
+  // Test this setting by viewing community themes or plugins
+  // This is the border color between the top pane and search results
+  .community-modal-search-results-wrapper {
+    border-top: var(--border-width) solid var(--color-base-100);
+  }
+}

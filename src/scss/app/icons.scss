@@ -1,0 +1,18 @@
+.theme-light {
+  /* Icons */
+  --icon-color: var(--color-base-60);
+  --icon-color-hover: var(--color-accent);
+  --icon-color-active: var(--color-accent);
+  --icon-color-focused: var(--color-accent);
+}
+.theme-dark {
+  /* Icons */
+  --icon-color: var(--color-base-140);
+  --icon-color-hover: var(--color-accent);
+  --icon-color-active: var(--color-accent);
+  --icon-color-focused: var(--color-accent);
+}
+
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: var(--color-accent);
+}

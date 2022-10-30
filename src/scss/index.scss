@@ -1,0 +1,38 @@
+// Variables
+@use 'themes/theme-light';
+@use 'themes/theme-dark';
+
+// Overrides for default obsidian styles
+@use 'app/backgrounds';
+@use 'app/backlink-pane';
+@use 'app/blocks';
+@use 'app/code';
+@use 'app/dividers-between-panes';
+@use 'app/file-navigator';
+@use 'app/font';
+@use 'app/headers';
+@use 'app/icons';
+@use 'app/menu';
+@use 'app/misc';
+@use 'app/modals';
+@use 'app/ribbon';
+@use 'app/stacked-tabs';
+@use 'app/status-bar';
+@use 'app/tables';
+@use 'app/tabs';
+@use 'app/text'; 
+@use 'app/ui-font-sizes';
+@use 'app/window-frame';
+
+
+// TODO: Look into other themes' features and see what looks fun to implement
+// @import 'features/neat-thing-one';
+// @import 'features/neat-thing-two';
+
+// TODO: Test on mobile
+// @import 'mobile/mobile';
+
+// TODO: implement more plugins, especially alternate checkboxes
+// Plugins
+// @use 'plugins/alternate-checkboxes';
+@use 'plugins/style-settings';

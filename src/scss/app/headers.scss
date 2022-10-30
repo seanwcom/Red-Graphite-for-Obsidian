@@ -1,0 +1,53 @@
+// Inspired by https://github.com/deathau/obsidian-snippets/blob/main/clutter-free-headings.css
+
+// Commented out for now, I don't like the transition from view to editing when you click
+// on a header line. It's kind of janky.
+
+// .theme-light {
+//   div:not(.cm-active).cm-line span:not(.cm-formatting-header):not(.cm-hashtag):not(.cm-inline-code):not(.cm-highlight).cm-header::before {
+//     font-size: 0.7rem;
+//     width: auto;
+//     margin-right: 1px;
+//     border-radius: var(--radius-xs);
+//     color: var(--color-base-50);
+//     overflow: visible;
+//     font-family: var(--font-default);
+//     font-weight: normal !important;
+//   }
+// }
+// .theme-dark {
+//   div:not(.cm-active).cm-line span:not(.cm-formatting-header):not(.cm-hashtag):not(.cm-inline-code):not(.cm-highlight).cm-header::before {
+//     font-size: 0.7rem;
+//     width: auto;
+//     margin-right: 1px;
+//     border-radius: var(--radius-xs);
+//     color: var(--color-base-140);
+//     overflow: visible;
+//     font-family: var(--font-default);
+//     font-weight: normal !important;
+//   }
+// }
+// div:not(.cm-active).cm-line span:not(.cm-formatting-header).cm-header-1::before {
+//   content: 'H1';
+//   margin-top: calc(var(--h1-size) - 0.1em);
+// }
+// div:not(.cm-active).cm-line span:not(.cm-formatting-header).cm-header-2::before {
+//   content: 'H2';
+//   margin-top: calc(var(--h2-size) - 0.1em);
+// }
+// div:not(.cm-active).cm-line span:not(.cm-formatting-header).cm-header-3::before {
+//   content: 'H3';
+//   margin-top: calc(var(--h3-size) - 0.1em);
+// }
+// div:not(.cm-active).cm-line span:not(.cm-formatting-header).cm-header-4::before {
+//   content: 'H4';
+//   margin-top: calc(var(--h4-size) - 0.1em);
+// }
+// div:not(.cm-active).cm-line span:not(.cm-formatting-header).cm-header-5::before {
+//   content: 'H5';
+//   margin-top: calc(var(--h5-size) - 0.1em);
+// }
+// div:not(.cm-active).cm-line span:not(.cm-formatting-header).cm-header-6::before {
+//   content: 'H6';
+//   margin-top: calc(var(--h6-size) - 0.1em);
+// }

@@ -1,0 +1,11 @@
+body {
+  // set the variable that we are using in style settings first
+  --red-graphite-interface-font: 'Avenir Next';
+  --red-graphite-text-font: 'Avenir Next';
+  --red-graphite-monospace-font: '';
+
+  // then set the obsidian variable with my variable
+  --font-interface-override: var(--red-graphite-interface-font);
+  --font-text-override: var(--red-graphite-text-font);
+  --font-monospace-override: var(--red-graphite-monospace-font);
+}

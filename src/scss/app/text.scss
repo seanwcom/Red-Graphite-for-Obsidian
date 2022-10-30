@@ -1,0 +1,28 @@
+.theme-light {
+  /* Text */
+  --text-normal: var(--color-base-100);
+  --text-muted: var(--color-base-70);
+  --text-faint: var(--color-base-60);
+  --text-on-accent: var(--color-base-00);
+  --text-error: var(--color-red);
+  --text-success: var(--color-green);
+  --text-selection: hsla(var(--color-accent-hsl), 0.2);
+  --text-accent: var(--color-accent);
+  --text-accent-hover: var(--color-accent-2);
+  --interactive-normal: var(--color-base-00); // background color of select and dropdowns
+  --interactive-hover: var(--color-base-00); // background (hover) color of select and dropdowns
+}
+.theme-dark {
+  /* Text */
+  --text-normal: var(--color-base-180);
+  --text-muted: var(--color-base-170);
+  --text-faint: var(--color-base-160);
+  --text-on-accent: var(--color-base-100);
+  --text-error: var(--color-red);
+  --text-success: var(--color-green);
+  --text-selection: hsla(var(--color-accent-hsl), 0.2);
+  --text-accent: var(--color-accent);
+  --text-accent-hover: var(--color-accent-2);
+  --interactive-normal: var(--color-base-95); // background color of select and dropdowns
+  --interactive-hover: var(--color-base-90); // background (hover) color of select and dropdowns
+}
