@@ -1,0 +1,21 @@
+body {
+  /* Tabs */
+  --tab-background-active: var(--background-primary);
+  
+  // inactive tab, window not focused
+  --tab-text-color: var(--text-faint);
+  
+  // inactive tab, window focused
+  --tab-text-color-focused: var(--text-faint);
+  
+  --tab-divider-color: var(--color-base-100);
+  
+  --tab-outline-width: 0px;
+}
+
+.theme-light {
+  --tab-outline-color: var(--color-base-60); // tab border both horizontal and vertical
+}
+.theme-dark {
+  --tab-outline-color: var(--color-base-95); // tab border both horizontal and vertical
+}

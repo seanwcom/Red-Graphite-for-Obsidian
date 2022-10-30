@@ -1,0 +1,18 @@
+.theme-light {
+  --background-primary: var(--color-base-20); // content page background
+  --background-primary-alt: var(--color-base-00); // content - code bg
+  --background-secondary: var(--color-base-100); // bg of non-content areas (nav, title bar, etc)
+  --background-secondary-alt: var(--color-base-05);
+  --background-modifier-border: var(--color-base-30);
+  --background-modifier-border-hover: var(--color-base-35);
+  --background-modifier-border-focus: var(--color-base-25);
+}
+.theme-dark {
+  --background-primary: var(--color-base-105); // content page background
+  --background-primary-alt: var(--color-base-100); // content - code bg
+  --background-secondary: var(--color-base-100); // bg of non-content areas (nav, title bar, etc)
+  --background-secondary-alt: var(--color-base-05);
+  --background-modifier-border: var(--color-base-100);
+  --background-modifier-border-hover: var(--color-base-35);
+  --background-modifier-border-focus: var(--color-base-110);
+}

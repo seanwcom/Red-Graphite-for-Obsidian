@@ -1,0 +1,5 @@
+// tag view tree in the right side bar, this is the 
+// hover color for the count of tags on the right
+.tree-item-self:hover .tree-item-flair {
+  color: var(--color-base-20);
+}

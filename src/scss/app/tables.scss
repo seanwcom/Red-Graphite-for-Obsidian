@@ -1,0 +1,15 @@
+.theme-light {
+  --table-border-color: var(--color-base-50);
+  --table-header-border-color: var(--color-base-50);
+  --table-header-background: var(--color-base-30);
+  --table-header-background-hover: var(--color-base-30);
+  --table-header-color: var(--color-base-100);
+}
+
+.theme-dark {
+  --table-border-color: var(--color-base-125);
+  --table-header-border-color: var(--color-base-125);
+  --table-header-background: var(--color-base-120);
+  --table-header-background-hover: var(--color-base-120);
+  --table-header-color: var(--color-base-200);
+}

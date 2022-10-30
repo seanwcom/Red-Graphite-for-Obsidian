@@ -1,0 +1,68 @@
+.theme-light { 
+  // Set the values for the variable that gets set from the Style Settings plugin
+  // so that when you reset the color in the plugin, it will go back to this:
+  --red-graphite-accent-color-h: 2;
+  --red-graphite-accent-color-s: 56%;
+  --red-graphite-accent-color-l: 54%;
+
+  // Now we can set the variables built into obsidian using our values above or
+  // the values defined by a user in the Style Settings plugin
+  --accent-h: var(--red-graphite-accent-color-h);
+  --accent-s: var(--red-graphite-accent-color-s);
+  --accent-l: var(--red-graphite-accent-color-l);
+
+  // Start with our base color: #292C2E
+  // hsl(204, 6%, 17%)
+  // Then calculate LIGHTER versions of that in 5% increments all the way to white
+  --red-graphite-base-color-h: 204;
+  --red-graphite-base-color-s: 6%;
+  --red-graphite-base-color-l: 17%;
+
+  --theme-base-color-h: var(--red-graphite-base-color-h);
+  --theme-base-color-s: var(--red-graphite-base-color-s);
+  --theme-base-color-l: var(--red-graphite-base-color-l);
+
+  --color-base-200: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 100%));
+  --color-base-195: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 95%));
+  --color-base-190: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 90%));
+  --color-base-185: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 85%));
+  --color-base-180: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 80%));
+  --color-base-175: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 75%));
+  --color-base-170: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 70%));
+  --color-base-165: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 65%));
+  --color-base-160: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 60%));
+  --color-base-155: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 55%));
+  --color-base-150: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 50%));
+  --color-base-145: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 45%));
+  --color-base-140: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 40%));
+  --color-base-135: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 35%));
+  --color-base-130: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 30%));
+  --color-base-125: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 25%));
+  --color-base-120: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 20%));
+  --color-base-115: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 15%));
+  --color-base-110: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 10%));
+  --color-base-105: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) - 5%));
+
+  --color-base-100: hsl(var(--theme-base-color-h), var(--theme-base-color-s), var(--theme-base-color-l));
+
+  --color-base-95: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 5%));
+  --color-base-90: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 10%));
+  --color-base-85: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 15%));
+  --color-base-80: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 20%));
+  --color-base-75: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 25%));
+  --color-base-70: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 30%));
+  --color-base-65: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 35%));
+  --color-base-60: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 40%));
+  --color-base-55: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 45%));
+  --color-base-50: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 50%));
+  --color-base-45: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 55%));
+  --color-base-40: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 60%));
+  --color-base-35: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 65%));
+  --color-base-30: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 70%));
+  --color-base-25: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 75%));
+  --color-base-20: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 80%));
+  --color-base-15: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 85%));
+  --color-base-10: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 90%));
+  --color-base-05: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 95%));
+  --color-base-00: hsl(var(--theme-base-color-h), var(--theme-base-color-s), calc(var(--theme-base-color-l) + 100%));
+}

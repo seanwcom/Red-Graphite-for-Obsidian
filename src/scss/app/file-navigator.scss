@@ -1,0 +1,23 @@
+.theme-light {
+  /* File navigator */
+  --nav-item-size: var(--font-small);
+  --nav-item-color: var(--color-base-40);
+  --nav-item-color-hover: var(--color-base-00);
+  --nav-item-color-active: var(--color-base-00);
+  --nav-item-color-selected: var(--color-base-00);
+  --nav-item-background-hover: var(--interactive-accent);
+  --nav-item-background-active: var(--interactive-accent);
+  --nav-indentation-guide-color: var(--color-base-90);
+}
+
+.theme-dark {
+  /* File navigator */
+  --nav-item-size: var(--font-ui-medium);
+  --nav-item-color: var(--color-base-160);
+  --nav-item-color-hover: var(--color-base-00);
+  --nav-item-color-active: var(--color-base-00);
+  --nav-item-color-selected: var(--color-base-00);
+  --nav-item-background-hover: var(--interactive-accent);
+  --nav-item-background-active: var(--interactive-accent);
+  --nav-indentation-guide-color: var(--color-base-110);
+}

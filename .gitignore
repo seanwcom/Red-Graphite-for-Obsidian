@@ -1,1 +1,8 @@
+.DS_Store
+.env
 .gitconfig
+.sass-cache
+.vscode
+*.map
+dist
+node_modules
