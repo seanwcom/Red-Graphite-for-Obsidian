@@ -1,5 +1,5 @@
-# Red Graphite for Obsidian.md
-A minimal theme for Obsidian.md with both light and dark variants. This theme is based on Bear.app's Red Graphite theme.
+# Red Graphite for Obsidian
+A minimal theme for [Obsidian](https://obsidian.md/) with both light and dark variants. This theme is based on Bear.app's Red Graphite theme.
 
 Here are a couple screenshots (with more further down the page):
 
@@ -14,7 +14,7 @@ Here are a couple screenshots (with more further down the page):
 
 ## A note about development and updates
 
-The original Red Graphite theme has been largely untouched for over a year. Between work and family, keeping up with it wasn't a priority. I even personally switched to various other themes (mostly just the amazing Minimal theme). Some of those other theme developers are adding amazing features that I love to use on a daily basis, so Red Graphite fell in priority.
+The original Red Graphite theme has been largely untouched for over a year. Between work and family, keeping up with it wasn't a priority. I even personally switched to various other themes (mostly just the amazing [Minimal](https://github.com/kepano/obsidian-minimal) theme). Some of those other theme developers are adding amazing features that I love to use on a daily basis, so Red Graphite fell in priority.
 
 However, with the 1.0 release of Obsidian, I really wanted to release an updated version of the theme for those that prefer its simplicity. I won't be as active as other theme developers, and with that in mind, I've made this version not much more than a color-theme for the default theme. Most of the changes are with the UI and there are not many changes to the actual rendering of your notes.
 
