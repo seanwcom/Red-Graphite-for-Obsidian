@@ -8,6 +8,13 @@
   --nav-item-background-hover: var(--interactive-accent);
   --nav-item-background-active: var(--interactive-accent);
   --nav-indentation-guide-color: var(--color-base-90);
+  --nav-collapse-icon-color: var(--color-accent);
+  --nav-collapse-icon-color-collapsed: var(--color-accent);
+  
+  .nav-file-title:hover svg,
+  .nav-folder-title:hover svg {
+    color: var(--color-base-00);
+  }
 }
 
 .theme-dark {
@@ -20,4 +27,12 @@
   --nav-item-background-hover: var(--interactive-accent);
   --nav-item-background-active: var(--interactive-accent);
   --nav-indentation-guide-color: var(--color-base-110);
+  --nav-collapse-icon-color: var(--color-accent);
+  --nav-collapse-icon-color-collapsed: var(--color-accent);
+  
+  .nav-file-title:hover svg,
+  .nav-folder-title:hover svg {
+    color: var(--color-base-00);
+  }
 }
+
