@@ -74,7 +74,7 @@ module.exports = function (grunt) {
     watch: {
       css: {
         files: ['src/**/*.scss', 'src/**/*.css'],
-        tasks: ['sass:dist', 'concat_css:dist', 'copy']
+        tasks: ['env:local', 'loadconst', 'sass:dist', 'concat_css:dist', 'copy']
       }
     }
   });
