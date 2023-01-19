@@ -12,6 +12,7 @@
 @use 'app/font';
 @use 'app/headers';
 @use 'app/icons';
+@use 'app/lists';
 @use 'app/menu';
 @use 'app/misc';
 @use 'app/modals';
@@ -36,6 +37,8 @@
 // TODO: implement more plugins, especially alternate checkboxes
 // Plugins
 // @use 'plugins/alternate-checkboxes';
+@use 'plugins/calendar.scss';
 @use 'plugins/checklist.scss';
 @use 'plugins/dangling-links.scss';
+@use 'plugins/kanban.scss';
 @use 'plugins/style-settings';

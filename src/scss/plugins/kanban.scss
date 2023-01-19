@@ -1,0 +1,45 @@
+// https://github.com/mgmeyers/obsidian-kanban
+
+.theme-light {
+	.kanban-plugin {
+		--kanban-border:var(--border-width);
+
+    // add list popup - container
+    .kanban-plugin__lane-form-wrapper {
+      background-color: var(--color-base-00);
+      border: 0px;
+    }
+    
+    // add list popup - add button
+    .kanban-plugin__lane-action-add {
+      background-color: var(--interactive-accent-hover);
+    }
+
+    // lane colors
+    .kanban-plugin__lane {
+      background-color: var(--color-base-00);
+    }
+	}
+}
+
+.theme-dark {
+	.kanban-plugin {
+		--kanban-border:var(--border-width);
+
+    // add list popup - container
+    .kanban-plugin__lane-form-wrapper {
+      // background-color: var(--color-base-00);
+      border: 0px;
+    }
+
+    // add list popup - add button
+    .kanban-plugin__lane-action-add {
+      background-color: var(--interactive-accent-hover);
+    }
+
+    // lane colors
+    .kanban-plugin__lane {
+      // background-color: var(--color-base-00);
+    }
+	}
+}

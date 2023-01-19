@@ -21,6 +21,18 @@ body {
   .community-modal-sidebar {
     background-color: var(--background-primary);
   }
+
+  // Text in theme browser
+  .mod-community-theme {
+    .setting-item-name {
+      color: var(--nav-item-color);
+    }
+  }
+  .mod-community-plugin {
+    .setting-item-name {
+      color: var(--nav-item-color);
+    }
+  }
 }
 
 .theme-light {
