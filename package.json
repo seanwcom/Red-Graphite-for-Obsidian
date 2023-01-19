@@ -1,6 +1,6 @@
 {
   "name": "red-graphite",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "devDependencies": {
     "dotenv": "^16.0.3",
     "grunt": "^1.5.3",
