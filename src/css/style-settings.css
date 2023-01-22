@@ -42,13 +42,13 @@ settings:
   title: Interface font
   description: Font used for the user interface
   type: variable-text
-  default: "'Avenir Next'"
+  default: "'Avenir'"
 
 - id: red-graphite-text-font
   title: Text font
   description: Font used for text
   type: variable-text
-  default: "'Avenir Next'"
+  default: "'Avenir'"
 
 - id: red-graphite-monospace-font
   title: Monospace font

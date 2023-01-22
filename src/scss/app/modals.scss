@@ -28,10 +28,15 @@ body {
       color: var(--nav-item-color);
     }
   }
+  // Text in Plugin browser
   .mod-community-plugin {
     .setting-item-name {
       color: var(--nav-item-color);
     }
+  }
+  // Sort button color in theme and plugin browser
+  .mod-community-modal .modal-sidebar button.clickable-icon {
+    color: var(--nav-item-color);
   }
 }
 
