@@ -3,3 +3,74 @@
 .tree-item-self:hover .tree-item-flair {
   color: var(--color-base-20);
 }
+
+.suggestion-container.mod-search-suggestion {
+  // border: none;
+  // border-color: var(--interactive-accent);
+  border-color: var(--ribbon-background);
+}
+
+// search suggestions dropdown
+.suggestion-container {
+  .suggestion {
+
+    // -----------------------------------------------------------------
+    // highlighted (mouseover) styles
+    // -----------------------------------------------------------------
+    // text styles
+    .suggestion-item.mod-complex.search-suggest-item.is-selected {
+      
+      // section title - keep same color as non hovered
+      .suggestion-title.list-item-part.mod-extended {
+        color: white;
+      }
+
+      // normal line of text
+      .suggestion-title {
+        // text before colon
+        color: var(--interactive-accent);
+        // text after colon
+        .search-suggest-info-text {
+          color: white;
+        }
+      }
+    }
+
+    // -----------------------------------------------------------------
+    // normal, non-highlighted (non-mouseover) item styles
+    // -----------------------------------------------------------------
+    .suggestion-item {
+      .suggestion-content {
+        
+        // section title
+        .suggestion-title.list-item-part.mod-extended {
+          color: white;
+        }
+
+        // normal line of text
+        .suggestion-title {
+          // text before colon
+          color: var(--interactive-accent);
+          
+          // text after colon
+          .search-suggest-info-text {
+            color: var(--text-muted);
+          }
+        }
+      }
+      // icons on right of suggestion title
+      // .suggestion-aux {}
+    }
+  }
+}
+
+// search settings
+.search-params {
+  .setting-item {
+    .setting-item-info {
+      .setting-item-name {
+        color: var(--text-muted);
+      }
+    }
+  }
+}

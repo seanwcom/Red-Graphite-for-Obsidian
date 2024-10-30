@@ -1,0 +1,38 @@
+/* Fix left side scroll bar background color */
+
+// Fix from @ALonelySheep - Thanks!
+// https://github.com/seanwcom/Red-Graphite-for-Obsidian/issues/36
+
+/* WebKit Browsers */
+.search-result-container::-webkit-scrollbar,
+.tag-container::-webkit-scrollbar,
+.suggestion::-webkit-scrollbar,
+.nav-files-container::-webkit-scrollbar,
+.vertical-tab-header::-webkit-scrollbar {
+  width: 8px; /* Set a consistent width for better visibility and centering */
+}
+
+.search-result-container::-webkit-scrollbar-track,
+.tag-container::-webkit-scrollbar-track,
+.suggestion::-webkit-scrollbar-track,
+.nav-files-container::-webkit-scrollbar-track,
+.vertical-tab-header::-webkit-scrollbar-track {
+  background: var(--color-base-100); /* Track background color */
+}
+
+.search-result-container::-webkit-scrollbar-thumb,
+.tag-container::-webkit-scrollbar-thumb,
+.suggestion::-webkit-scrollbar-thumb,
+.nav-files-container::-webkit-scrollbar-thumb,
+.vertical-tab-header::-webkit-scrollbar-thumb {
+  background: var(--color-base-70); /* Thumb background color */
+  border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+.search-result-container::-webkit-scrollbar-thumb:hover,
+.tag-container::-webkit-scrollbar-thumb:hover,
+.suggestion::-webkit-scrollbar-thumb:hover,
+.nav-files-container::-webkit-scrollbar-thumb:hover,
+.vertical-tab-header::-webkit-scrollbar-thumb:hover {
+  background: var(--color-base-50); /* Hover background color for the thumb */
+}

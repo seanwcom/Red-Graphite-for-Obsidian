@@ -18,8 +18,9 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         options: {
-          style: 'compressed',
-          sourceMap: false
+          implementation: require('sass'),
+          sourceMap: false,
+          outputStyle: 'compressed'
         },
         files: {
           'src/css/red-graphite.min.css': 'src/scss/index.scss'
@@ -80,7 +81,7 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-env');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-concat-css');
   grunt.loadNpmTasks('grunt-contrib-copy');

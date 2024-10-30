@@ -1,0 +1,91 @@
+.theme-light {
+    .chat-container {
+        .chat-messages {
+            .chat-message-container {
+
+                // copilot user message (the question you asked)
+                .message.user-message {
+                    color: var(--interactive-normal);
+                }
+
+                // all other normal text (non code)
+                .message {
+                    color: var(--color-text-title);
+                }
+
+                // any code blocks
+                pre {
+                    background-color: var(--color-base-110);
+                    border: none;
+
+                    // style the non-tokenized code
+                    code {
+                        color: var(--color-base-10);
+
+                        // comments
+                        .comment {
+                            color: var(--color-base-60);
+                        }
+                    }
+                }
+
+                // inline code blocks
+                code {
+                    background-color: var(--color-base-110);
+                    border: none;
+
+                    color: var(--color-base-10);
+                    .comment {
+                        color: var(--color-base-60);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.theme-dark {
+    .chat-container {
+        .chat-messages {
+            .chat-message-container {
+
+                // copilot user message (the question you asked)
+                // .message.user-message {
+                //     color: var(--interactive-normal);
+                // }
+
+                // all other normal text (non code)
+                // .message {
+                //     color: var(--color-text-title);
+                // }
+
+                // any code blocks
+                pre {
+                    background-color: var(--color-base-110);
+                    border: none;
+
+                    // style the non-tokenized code
+                    // code {
+                    //     color: var(--color-base-10);
+
+                    //     // comments
+                    //     .comment {
+                    //         color: var(--color-base-60);
+                    //     }
+                    // }
+                }
+
+                // inline code blocks
+                code {
+                    background-color: var(--color-base-110);
+                    border: none;
+
+                    // color: var(--color-base-10);
+                    // .comment {
+                    //     color: var(--color-base-60);
+                    // }
+                }
+            }
+        }
+    }
+}

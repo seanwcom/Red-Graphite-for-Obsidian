@@ -17,6 +17,7 @@
 @use 'app/misc';
 @use 'app/modals';
 @use 'app/ribbon';
+@use 'app/scrollbars';
 @use 'app/stacked-tabs';
 @use 'app/status-bar';
 @use 'app/tables';
@@ -39,6 +40,8 @@
 // @use 'plugins/alternate-checkboxes';
 @use 'plugins/calendar.scss';
 @use 'plugins/checklist.scss';
+@use 'plugins/copilot.scss';
 @use 'plugins/dangling-links.scss';
 @use 'plugins/kanban.scss';
+@use 'plugins/makemd.scss';
 @use 'plugins/style-settings';

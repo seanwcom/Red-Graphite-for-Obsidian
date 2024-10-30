@@ -16,10 +16,13 @@
     color: var(--color-base-00);
   }
 
-  --nav-item-padding: 4px;
+  --nav-item-padding: var(--size-4-1) var(--size-4-2) var(--size-4-1) var(--size-4-6);
   .nav-file-title {
-    padding: 6px var(--nav-item-padding) var(--nav-item-padding) var(--nav-item-padding);
+    padding: var(--nav-item-padding);
   }
+
+  
+
 }
 
 .theme-dark {
