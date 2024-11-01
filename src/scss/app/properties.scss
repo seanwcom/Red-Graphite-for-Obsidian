@@ -1,0 +1,64 @@
+body {
+    --metadata-background: transparent;
+    --metadata-border-color: var(--background-modifier-border);
+
+    --metadata-divider-color: var(--background-modifier-border);
+    --metadata-divider-color-hover: transparent;
+    --metadata-divider-color-focus: transparent;
+
+    --metadata-property-background: transparent;
+    --metadata-property-background-hover: transparent;
+    --metadata-property-background-active: var(--background-modifier-hover);
+
+    --metadata-label-background-hover: transparent;
+    --metadata-label-background-active: var(--background-modifier-hover);
+
+    --metadata-label-text-color: var(--text-muted);
+    --metadata-label-text-color-hover: var(--text-muted);
+    --metadata-input-text-color: var(--text-normal);
+
+    --metadata-input-background: transparent;
+    --metadata-input-background-hover: transparent;
+    --metadata-input-background-active: var(--background-modifier-hover);
+}
+
+.theme-light {
+
+    .workspace-tab-container {
+
+    }
+
+    .mod-right-split {
+        .metadata-container {
+            .metadata-content {
+
+                .metadata-property-icon {
+                    color: var(--color-base-40);
+                }
+
+                // border between items
+                .metadata-property-key, .metadata-property-value {
+                    border-bottom-color: var(--color-base-90);
+                }
+
+                // focused item
+                .metadata-property:focus-within {
+                    box-shadow: 0 0 0 2px var(--color-accent);
+                }
+                
+                .metadata-input-longtext {
+                    color: var(--color-base-40);
+                }
+                input {
+                    color: var(--color-base-40);
+                }
+
+                .metadata-property:not([data-property-key="tags"]) {
+                    --pill-color: var(--color-base-40);
+                }
+            }
+        }
+    }
+}
+
+// .theme-dark {}
