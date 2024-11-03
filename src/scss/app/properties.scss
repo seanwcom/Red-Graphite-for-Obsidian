@@ -43,8 +43,27 @@ body {
 
                 // focused item
                 .metadata-property:focus-within {
-                    box-shadow: 0 0 0 2px var(--color-accent);
+                    box-shadow: 0 0 0 2px var(--color-base-80);
+                    
+                    .metadata-property-value:focus-within {
+                        background-color:  var(--color-base-95);
+
+                        // example: aliases property while focused
+                        .multi-select-input {
+                            color: var(--color-base-20);
+                        }
+                    }
                 }
+
+                // example: aliases property
+                .multi-select-input {
+                    color: var(--color-base-20);
+                }
+                // example: aliases property on hover
+                .multi-select-pill:hover {
+                    color: var(--color-accent);
+                }
+                
                 
                 .metadata-input-longtext {
                     color: var(--color-base-40);
@@ -55,6 +74,11 @@ body {
 
                 .metadata-property:not([data-property-key="tags"]) {
                     --pill-color: var(--color-base-40);
+                }
+
+                .metadata-add-button:hover {
+                    color: var(--color-base-40);
+                    background-color: var(--color-base-90);
                 }
             }
         }

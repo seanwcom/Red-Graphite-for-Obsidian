@@ -4,66 +4,6 @@
   color: var(--color-base-20);
 }
 
-.suggestion-container.mod-search-suggestion {
-  // border: none;
-  // border-color: var(--interactive-accent);
-  border-color: var(--ribbon-background);
-}
-
-// search suggestions dropdown
-.suggestion-container {
-  .suggestion {
-
-    // -----------------------------------------------------------------
-    // highlighted (mouseover) styles
-    // -----------------------------------------------------------------
-    // text styles
-    .suggestion-item.mod-complex.search-suggest-item.is-selected {
-      
-      // section title - keep same color as non hovered
-      .suggestion-title.list-item-part.mod-extended {
-        color: white;
-      }
-
-      // normal line of text
-      .suggestion-title {
-        // text before colon
-        color: var(--interactive-accent);
-        // text after colon
-        .search-suggest-info-text {
-          color: white;
-        }
-      }
-    }
-
-    // -----------------------------------------------------------------
-    // normal, non-highlighted (non-mouseover) item styles
-    // -----------------------------------------------------------------
-    .suggestion-item {
-      .suggestion-content {
-        
-        // section title
-        .suggestion-title.list-item-part.mod-extended {
-          color: white;
-        }
-
-        // normal line of text
-        .suggestion-title {
-          // text before colon
-          color: var(--interactive-accent);
-          
-          // text after colon
-          .search-suggest-info-text {
-            color: var(--text-muted);
-          }
-        }
-      }
-      // icons on right of suggestion title
-      // .suggestion-aux {}
-    }
-  }
-}
-
 // search settings
 .search-params {
   .setting-item {
@@ -73,4 +13,13 @@
       }
     }
   }
+}
+
+// Vault text color fix, thanks @WAS-D
+// https://github.com/seanwcom/Red-Graphite-for-Obsidian/pull/37
+.theme-light {
+  --vault-profile-color: var(--nav-item-color);
+}
+.theme-dark {
+  --vault-profile-color: var(--nav-item-color);
 }

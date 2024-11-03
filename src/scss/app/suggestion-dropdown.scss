@@ -1,0 +1,76 @@
+// search suggestions dropdown
+// .suggestion-container.mod-search-suggestion {
+//   border-color: red;
+// }
+.theme-light {
+  // border between search options and history in dropdown
+  .search-suggest-item.mod-group:not(:first-child) {
+    border-top: 1px solid var(--color-base-90);
+  }
+
+  // this styles the search dropdown and other suggestion dropdowns (like while
+  // filling in property details
+  .suggestion-container,
+  .suggestion-container.mod-search-suggestion {
+    // ??????????????????????????
+    background-color: var(--background-secondary);
+    border: 1px solid var(--color-base-90);
+    color: var(--color-base-40);
+
+    .suggestion {
+      background-color: var(--background-secondary);
+
+      // ??????????????????????????
+      .suggestion-item.is-selected {
+        background-color: var(--color-accent);
+        color: var(--color-base-20);
+      }
+
+      // -----------------------------------------------------------------
+      // highlighted (mouseover) styles
+      // -----------------------------------------------------------------
+      // text styles
+      .suggestion-item.mod-complex.search-suggest-item.is-selected {
+        // section title - keep same color as non hovered
+        .suggestion-title.list-item-part.mod-extended {
+          color: var(--color-base-20);
+        }
+
+        // normal line of text
+        .suggestion-title {
+          // text before colon
+          color: var(--color-base-00);
+          // text after colon
+          .search-suggest-info-text {
+            color: var(--color-base-20);
+          }
+        }
+      }
+
+      // -----------------------------------------------------------------
+      // normal, non-highlighted (non-mouseover) item styles
+      // -----------------------------------------------------------------
+      .suggestion-item {
+        .suggestion-content {
+          // section title
+          .suggestion-title.list-item-part.mod-extended {
+            color: white;
+          }
+
+          // normal line of text
+          .suggestion-title {
+            // text before colon
+            color: var(--color-base-40);
+
+            // text after colon
+            .search-suggest-info-text {
+              color: var(--color-base-60);
+            }
+          }
+        }
+        // icons on right of suggestion title
+        // .suggestion-aux {}
+      }
+    }
+  }
+}
