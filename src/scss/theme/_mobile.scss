@@ -1,6 +1,11 @@
 @media (max-width: 750px) {
+  body {
+    --file-margins-x: var(--size-4-6);
+    --file-margins-y: var(--size-4-2);
+  }
+
   body.theme-dark {
-    --mobile-sidebar-background: var(--background-secondary);
+    --mobile-sidebar-background: var(--background-primary);
   }
 
   body.theme-dark .workspace-drawer,

@@ -61,8 +61,8 @@ body.theme-dark {
   --nav-item-color-active: var(--text-normal);
   --nav-item-color-selected: var(--text-normal);
   --nav-item-background-hover: var(--background-modifier-hover);
-  --nav-item-background-active: var(--background-modifier-active-hover);
-  --nav-item-background-selected: var(--background-modifier-active-hover);
+  --nav-item-background-active: var(--background-modifier-hover);
+  --nav-item-background-selected: var(--background-modifier-hover);
   --input-shadow: inset 0 0 0 1px var(--background-modifier-border);
   --input-shadow-hover: inset 0 0 0 1px var(--background-modifier-border-hover);
   --input-placeholder-color: var(--text-faint);
@@ -189,20 +189,25 @@ body.theme-dark {
   --interactive-accent-hover: var(--color-accent-1);
   --interactive-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
   --text-selection: hsla(var(--interactive-accent-hsl), 0.22);
-  --titlebar-background: var(--background-secondary-alt);
-  --titlebar-background-focused: var(--background-secondary-alt);
+  --titlebar-background: var(--background-primary);
+  --titlebar-background-focused: var(--background-primary);
   --titlebar-text-color: var(--text-muted);
   --titlebar-text-color-focused: var(--text-normal);
+  --tab-container-background: var(--background-primary);
   --tab-background-active: var(--background-primary);
   --tab-text-color: var(--text-faint);
   --tab-text-color-focused: var(--text-muted);
   --tab-text-color-focused-active: var(--text-normal);
-  --tab-divider-color: var(--background-modifier-border);
-  --ribbon-background: var(--background-secondary);
-  --ribbon-background-collapsed: var(--background-secondary);
-  --status-bar-background: var(--background-secondary-alt);
-  --status-bar-border-color: var(--background-modifier-border);
-  --mobile-sidebar-background: var(--background-secondary);
+  --tab-divider-color: var(--background-primary);
+  --tab-outline-color: var(--background-primary);
+  --ribbon-background: var(--background-primary);
+  --ribbon-background-collapsed: var(--background-primary);
+  --status-bar-background: var(--background-primary);
+  --status-bar-border-color: transparent;
+  --status-bar-border-width: 0;
+  --status-bar-radius: var(--radius-s) 0 0 0;
+  --mobile-sidebar-background: var(--background-primary);
+  --file-header-border: 0;
   --modal-background: var(--background-primary);
   --modal-sidebar-background: var(--background-secondary);
   --menu-background: var(--background-primary);
@@ -223,7 +228,7 @@ body.theme-light {
   --color-base-50: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), calc(var(--red-graphite-document-light-color-l) - 36%));
   --color-base-60: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), calc(var(--red-graphite-document-light-color-l) - 55%));
   --color-base-70: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), calc(var(--red-graphite-document-light-color-l) - 62%));
-  --color-base-100: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), calc(var(--red-graphite-document-light-color-l) - 83%));
+  --color-base-100: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), calc(var(--red-graphite-document-light-color-l) - 75%));
   --background-primary: var(--color-base-00);
   --background-primary-alt: var(--color-base-05);
   --background-secondary: var(--color-base-05);
@@ -415,7 +420,7 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --color-base-50: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), calc(var(--red-graphite-document-light-color-l) - 36%));
   --color-base-60: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), calc(var(--red-graphite-document-light-color-l) - 55%));
   --color-base-70: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), calc(var(--red-graphite-document-light-color-l) - 62%));
-  --color-base-100: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), calc(var(--red-graphite-document-light-color-l) - 83%));
+  --color-base-100: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), calc(var(--red-graphite-document-light-color-l) - 75%));
   --background-primary: var(--color-base-00);
   --background-primary-alt: var(--color-base-05);
   --background-secondary: var(--color-base-05);
@@ -605,8 +610,8 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
   --nav-item-color-active: var(--text-normal);
   --nav-item-color-selected: var(--text-normal);
   --nav-item-background-hover: var(--background-modifier-hover);
-  --nav-item-background-active: var(--background-modifier-active-hover);
-  --nav-item-background-selected: var(--background-modifier-active-hover);
+  --nav-item-background-active: var(--background-modifier-hover);
+  --nav-item-background-selected: var(--background-modifier-hover);
   --input-shadow: inset 0 0 0 1px var(--background-modifier-border);
   --input-shadow-hover: inset 0 0 0 1px var(--background-modifier-border-hover);
   --input-placeholder-color: var(--text-faint);
@@ -737,6 +742,21 @@ body {
   --font-ui-small: 13px;
   --font-ui-medium: 15px;
   --font-ui-large: 20px;
+  --bold-weight: 600;
+  --inline-title-size: 1.8em;
+  --inline-title-weight: 600;
+  --inline-title-line-height: 1.25;
+  --h1-weight: 600;
+  --h2-weight: 600;
+  --h3-weight: 600;
+  --h4-weight: 600;
+  --h5-weight: 600;
+  --h6-weight: 600;
+  --heading-spacing: calc(var(--p-spacing) * 1.75);
+  --file-line-width: 700px;
+  --file-margins-x: 48px;
+  --file-margins-y: 36px;
+  --nav-item-radius: 5px;
   --vault-name-color: var(--interactive-accent);
   --vault-name-font-size: var(--font-ui-medium);
   --vault-name-font-weight: var(--font-semibold);
@@ -770,14 +790,6 @@ body {
 .markdown-source-view.mod-cm6 .cm-header-2 {
   color: var(--text-normal);
   letter-spacing: -0.015em;
-}
-
-.markdown-rendered h1,
-.markdown-source-view.mod-cm6 .cm-header-1 {
-  text-decoration-color: var(--interactive-accent);
-  text-decoration-line: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.2em;
 }
 
 .markdown-rendered blockquote {
@@ -838,6 +850,38 @@ button {
   color: var(--text-normal);
 }
 
+body.theme-dark .workspace-split:not(.mod-root) {
+  --nav-indentation-guide-color: transparent;
+}
+
+body.theme-dark .workspace-split:not(.mod-root) .workspace-tabs .workspace-leaf,
+body.theme-dark:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  background-color: var(--background-primary);
+}
+
+body.theme-dark .workspace-ribbon,
+body.theme-dark .workspace-split.mod-left-split,
+body.theme-dark .workspace-split.mod-right-split,
+body.theme-dark .workspace-tab-header-container,
+body.theme-dark .view-header,
+body.theme-dark .status-bar,
+body.theme-dark:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+body.theme-dark .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  border-color: transparent;
+}
+
+@media (hover: hover) {
+  body.theme-dark .workspace-split.mod-left-split > .workspace-leaf-resize-handle:hover,
+  body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle:hover {
+    background-color: var(--background-modifier-border-hover);
+    border-color: var(--background-modifier-border-hover);
+  }
+}
 ::-webkit-scrollbar {
   height: 10px;
   width: 10px;
@@ -858,8 +902,12 @@ button {
 }
 
 @media (max-width: 750px) {
+  body {
+    --file-margins-x: var(--size-4-6);
+    --file-margins-y: var(--size-4-2);
+  }
   body.theme-dark {
-    --mobile-sidebar-background: var(--background-secondary);
+    --mobile-sidebar-background: var(--background-primary);
   }
   body.theme-dark .workspace-drawer,
   body.theme-dark .workspace-drawer-inner,

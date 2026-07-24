@@ -23,6 +23,21 @@ body {
   --font-ui-small: 13px;
   --font-ui-medium: 15px;
   --font-ui-large: 20px;
+  --bold-weight: 600;
+  --inline-title-size: 1.8em;
+  --inline-title-weight: 600;
+  --inline-title-line-height: 1.25;
+  --h1-weight: 600;
+  --h2-weight: 600;
+  --h3-weight: 600;
+  --h4-weight: 600;
+  --h5-weight: 600;
+  --h6-weight: 600;
+  --heading-spacing: calc(var(--p-spacing) * 1.75);
+  --file-line-width: 700px;
+  --file-margins-x: 48px;
+  --file-margins-y: 36px;
+  --nav-item-radius: 5px;
   --vault-name-color: var(--interactive-accent);
   --vault-name-font-size: var(--font-ui-medium);
   --vault-name-font-weight: var(--font-semibold);
@@ -59,14 +74,6 @@ body {
 .markdown-source-view.mod-cm6 .cm-header-2 {
   color: var(--text-normal);
   letter-spacing: -0.015em;
-}
-
-.markdown-rendered h1,
-.markdown-source-view.mod-cm6 .cm-header-1 {
-  text-decoration-color: var(--interactive-accent);
-  text-decoration-line: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.2em;
 }
 
 .markdown-rendered blockquote {
@@ -125,6 +132,54 @@ button {
 .graph-view.color-fill,
 .graph-view.color-text {
   color: var(--text-normal);
+}
+
+body.theme-dark .workspace-split:not(.mod-root) {
+  --nav-indentation-guide-color: transparent;
+}
+
+body.theme-dark
+  .workspace-split:not(.mod-root)
+  .workspace-tabs
+  .workspace-leaf,
+body.theme-dark:not(.is-mobile)
+  .workspace-split.mod-left-split
+  .workspace-sidedock-vault-profile {
+  background-color: var(--background-primary);
+}
+
+body.theme-dark .workspace-ribbon,
+body.theme-dark .workspace-split.mod-left-split,
+body.theme-dark .workspace-split.mod-right-split,
+body.theme-dark .workspace-tab-header-container,
+body.theme-dark .view-header,
+body.theme-dark .status-bar,
+body.theme-dark:not(.is-mobile)
+  .workspace-split.mod-left-split
+  .workspace-sidedock-vault-profile {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+body.theme-dark
+  .workspace-split.mod-left-split
+  > .workspace-leaf-resize-handle,
+body.theme-dark
+  .workspace-split.mod-right-split
+  > .workspace-leaf-resize-handle {
+  border-color: transparent;
+}
+
+@media (hover: hover) {
+  body.theme-dark
+    .workspace-split.mod-left-split
+    > .workspace-leaf-resize-handle:hover,
+  body.theme-dark
+    .workspace-split.mod-right-split
+    > .workspace-leaf-resize-handle:hover {
+    background-color: var(--background-modifier-border-hover);
+    border-color: var(--background-modifier-border-hover);
+  }
 }
 
 ::-webkit-scrollbar {

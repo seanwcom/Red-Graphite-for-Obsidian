@@ -154,8 +154,8 @@
   --nav-item-color-active: var(--text-normal);
   --nav-item-color-selected: var(--text-normal);
   --nav-item-background-hover: var(--background-modifier-hover);
-  --nav-item-background-active: var(--background-modifier-active-hover);
-  --nav-item-background-selected: var(--background-modifier-active-hover);
+  --nav-item-background-active: var(--background-modifier-hover);
+  --nav-item-background-selected: var(--background-modifier-hover);
   --input-shadow: inset 0 0 0 1px var(--background-modifier-border);
   --input-shadow-hover: inset 0 0 0 1px var(--background-modifier-border-hover);
   --input-placeholder-color: var(--text-faint);
@@ -200,7 +200,7 @@
   --color-base-50: hsl(var(#{$h}), var(#{$s}), calc(var(#{$l}) - 36%));
   --color-base-60: hsl(var(#{$h}), var(#{$s}), calc(var(#{$l}) - 55%));
   --color-base-70: hsl(var(#{$h}), var(#{$s}), calc(var(#{$l}) - 62%));
-  --color-base-100: hsl(var(#{$h}), var(#{$s}), calc(var(#{$l}) - 83%));
+  --color-base-100: hsl(var(#{$h}), var(#{$s}), calc(var(#{$l}) - 75%));
 
   --background-primary: var(--color-base-00);
   --background-primary-alt: var(--color-base-05);

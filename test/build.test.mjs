@@ -56,7 +56,7 @@ test("default text and accent colors meet their contrast gates", () => {
     );
   };
 
-  assert.ok(contrast("#2b2b2b", "#ffffff") >= 4.5, "light primary text");
+  assert.ok(contrast("#404040", "#ffffff") >= 4.5, "light primary text");
   assert.ok(contrast("#616161", "#ffffff") >= 4.5, "light muted text");
   assert.ok(contrast("#737373", "#ffffff") >= 4.5, "light faint text");
   assert.ok(contrast("#f1f2f3", "#292c2e") >= 4.5, "dark primary text");
