@@ -102,7 +102,23 @@ body.theme-dark {
   --collapse-icon-color-collapsed: var(--text-accent);
   --list-marker-color: var(--text-accent);
   --flair-background: var(--background-modifier-hover);
+  --menu-background: var(--background-primary);
+  --menu-border-color: var(--background-modifier-border);
+  --menu-divider-color: var(--background-modifier-border);
+  --modal-background: var(--background-primary);
+  --modal-border-color: var(--background-modifier-border);
+  --modal-sidebar-background: var(--background-secondary);
+  --prompt-background: var(--background-primary);
   --prompt-border-color: var(--background-modifier-border);
+  --suggestion-background: var(--background-primary);
+  --pill-background: var(--background-modifier-hover);
+  --pill-background-hover: var(--background-modifier-active-hover);
+  --pill-border-color: var(--background-modifier-border);
+  --pill-border-color-hover: var(--background-modifier-border-hover);
+  --pill-color: var(--text-muted);
+  --pill-color-hover: var(--text-normal);
+  --pill-color-remove: var(--text-faint);
+  --pill-color-remove-hover: var(--text-normal);
   --blockquote-border-color: var(--interactive-accent);
   --embed-background: var(--background-secondary);
   --embed-border-start: 2px solid var(--background-modifier-border);
@@ -283,7 +299,23 @@ body.theme-light {
   --collapse-icon-color-collapsed: var(--text-accent);
   --list-marker-color: var(--text-accent);
   --flair-background: var(--background-modifier-hover);
+  --menu-background: var(--background-primary);
+  --menu-border-color: var(--background-modifier-border);
+  --menu-divider-color: var(--background-modifier-border);
+  --modal-background: var(--background-primary);
+  --modal-border-color: var(--background-modifier-border);
+  --modal-sidebar-background: var(--background-secondary);
+  --prompt-background: var(--background-primary);
   --prompt-border-color: var(--background-modifier-border);
+  --suggestion-background: var(--background-primary);
+  --pill-background: var(--background-modifier-hover);
+  --pill-background-hover: var(--background-modifier-active-hover);
+  --pill-border-color: var(--background-modifier-border);
+  --pill-border-color-hover: var(--background-modifier-border-hover);
+  --pill-color: var(--text-muted);
+  --pill-color-hover: var(--text-normal);
+  --pill-color-remove: var(--text-faint);
+  --pill-color-remove-hover: var(--text-normal);
   --blockquote-border-color: var(--interactive-accent);
   --embed-background: var(--background-secondary);
   --embed-border-start: 2px solid var(--background-modifier-border);
@@ -459,7 +491,23 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --collapse-icon-color-collapsed: var(--text-accent);
   --list-marker-color: var(--text-accent);
   --flair-background: var(--background-modifier-hover);
+  --menu-background: var(--background-primary);
+  --menu-border-color: var(--background-modifier-border);
+  --menu-divider-color: var(--background-modifier-border);
+  --modal-background: var(--background-primary);
+  --modal-border-color: var(--background-modifier-border);
+  --modal-sidebar-background: var(--background-secondary);
+  --prompt-background: var(--background-primary);
   --prompt-border-color: var(--background-modifier-border);
+  --suggestion-background: var(--background-primary);
+  --pill-background: var(--background-modifier-hover);
+  --pill-background-hover: var(--background-modifier-active-hover);
+  --pill-border-color: var(--background-modifier-border);
+  --pill-border-color-hover: var(--background-modifier-border-hover);
+  --pill-color: var(--text-muted);
+  --pill-color-hover: var(--text-normal);
+  --pill-color-remove: var(--text-faint);
+  --pill-color-remove-hover: var(--text-normal);
   --blockquote-border-color: var(--interactive-accent);
   --embed-background: var(--background-secondary);
   --embed-border-start: 2px solid var(--background-modifier-border);
@@ -598,7 +646,23 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
   --collapse-icon-color-collapsed: var(--text-accent);
   --list-marker-color: var(--text-accent);
   --flair-background: var(--background-modifier-hover);
+  --menu-background: var(--background-primary);
+  --menu-border-color: var(--background-modifier-border);
+  --menu-divider-color: var(--background-modifier-border);
+  --modal-background: var(--background-primary);
+  --modal-border-color: var(--background-modifier-border);
+  --modal-sidebar-background: var(--background-secondary);
+  --prompt-background: var(--background-primary);
   --prompt-border-color: var(--background-modifier-border);
+  --suggestion-background: var(--background-primary);
+  --pill-background: var(--background-modifier-hover);
+  --pill-background-hover: var(--background-modifier-active-hover);
+  --pill-border-color: var(--background-modifier-border);
+  --pill-border-color-hover: var(--background-modifier-border-hover);
+  --pill-color: var(--text-muted);
+  --pill-color-hover: var(--text-normal);
+  --pill-color-remove: var(--text-faint);
+  --pill-color-remove-hover: var(--text-normal);
   --blockquote-border-color: var(--interactive-accent);
   --embed-background: var(--background-secondary);
   --embed-border-start: 2px solid var(--background-modifier-border);
@@ -810,8 +874,32 @@ button {
  *
  * Plugins inherit Obsidian's semantic variables. Add a selector here only when
  * a tested plugin remains unreadable or unusable after those variables are
- * applied. Every exception must name the plugin version and upstream issue.
+ * applied. Every exception must name the plugin version and its upstream issue
+ * or source mechanism.
  */
+/*
+ * Claudian 2.0.24 selects logo colors and image variants from body.theme-dark
+ * instead of semantic surface variables. A Claudian view opened in Red
+ * Graphite's light center would otherwise render its Codex and Pi branding
+ * white on white. Sidebar instances continue to use Claudian's dark styling.
+ * Source: github.com/YishenTu/claudian (base/variables.css, base/container.css).
+ */
+body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .workspace-leaf-content .claudian-container {
+  --claudian-brand-codex: #000000;
+  --claudian-brand-codex-rgb: 0, 0, 0;
+  --claudian-brand-opencode: #707070;
+  --claudian-brand-opencode-rgb: 112, 112, 112;
+  --claudian-brand-pi: #000000;
+  --claudian-brand-pi-rgb: 0, 0, 0;
+}
+
+body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .workspace-leaf-content .claudian-provider-icon-variant--light {
+  display: inline;
+}
+
+body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .workspace-leaf-content .claudian-provider-icon-variant--dark {
+  display: none;
+}
 
 /* @settings
 
