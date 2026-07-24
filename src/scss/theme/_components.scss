@@ -1,0 +1,147 @@
+body {
+  --font-interface-theme: var(
+    --red-graphite-interface-font,
+    "Avenir Next",
+    "Avenir",
+    "Segoe UI",
+    sans-serif
+  );
+  --font-text-theme: var(
+    --red-graphite-text-font,
+    "Avenir Next",
+    "Avenir",
+    "Segoe UI",
+    sans-serif
+  );
+  --font-monospace-theme: var(
+    --red-graphite-monospace-font,
+    "SFMono-Regular",
+    Consolas,
+    monospace
+  );
+  --font-ui-smaller: 12px;
+  --font-ui-small: 13px;
+  --font-ui-medium: 15px;
+  --font-ui-large: 20px;
+  --vault-name-color: var(--interactive-accent);
+  --vault-name-font-size: var(--font-ui-medium);
+  --vault-name-font-weight: var(--font-semibold);
+}
+
+.workspace-split.mod-root .workspace-leaf-content,
+.workspace-split.mod-root .view-content,
+.workspace-split.mod-root .markdown-source-view,
+.workspace-split.mod-root .markdown-reading-view,
+.workspace-split.mod-root .empty-state {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+}
+
+.workspace-tab-header.is-active {
+  --icon-color: var(--interactive-accent);
+}
+
+.is-focused
+  .mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-icon {
+  color: var(--interactive-accent);
+}
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  box-shadow: inset 3px 0 0 var(--interactive-accent);
+}
+
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-source-view.mod-cm6 .cm-header-1,
+.markdown-source-view.mod-cm6 .cm-header-2 {
+  color: var(--text-normal);
+  letter-spacing: -0.015em;
+}
+
+.markdown-rendered h1,
+.markdown-source-view.mod-cm6 .cm-header-1 {
+  text-decoration-color: var(--interactive-accent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+.markdown-rendered blockquote {
+  border-radius: var(--radius-s);
+  padding-block: 0.25em;
+}
+
+.markdown-rendered table,
+.markdown-source-view.mod-cm6 .cm-table-widget {
+  border-collapse: collapse;
+}
+
+.metadata-container,
+.bases-view {
+  color: var(--text-normal);
+}
+
+.metadata-property:focus-within {
+  --metadata-divider-color: var(--interactive-accent);
+}
+
+.bases-table-container,
+.bases-cards-container {
+  background: var(--background-primary);
+  color: var(--text-normal);
+}
+
+.menu-item.is-selected:not(.is-disabled),
+.suggestion-item.is-selected {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.menu-item.is-selected:not(.is-disabled) .menu-item-icon,
+.suggestion-item.is-selected .suggestion-highlight {
+  color: var(--text-on-accent);
+}
+
+input,
+textarea,
+select,
+button {
+  color-scheme: inherit;
+}
+
+::selection {
+  background: var(--text-selection);
+}
+
+:focus-visible {
+  outline-color: var(--interactive-accent);
+}
+
+.pdf-container,
+.canvas-wrapper,
+.graph-view.color-fill,
+.graph-view.color-text {
+  color: var(--text-normal);
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border-hover);
+  border: 2px solid var(--background-secondary);
+  border-radius: var(--radius-l);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}

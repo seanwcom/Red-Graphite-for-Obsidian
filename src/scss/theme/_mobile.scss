@@ -1,0 +1,14 @@
+@media (max-width: 750px) {
+  body.theme-dark {
+    --mobile-sidebar-background: var(--background-secondary);
+  }
+
+  body.theme-dark .workspace-drawer,
+  body.theme-dark .workspace-drawer-inner,
+  body.theme-dark .workspace-drawer-tab-container,
+  body.theme-dark .mobile-navbar {
+    background-color: var(--mobile-sidebar-background);
+    color: var(--text-normal);
+  }
+
+}

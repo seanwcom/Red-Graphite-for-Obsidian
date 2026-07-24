@@ -1,0 +1,89 @@
+@use "palettes";
+
+body {
+  --red-graphite-base-color-h: 222;
+  --red-graphite-base-color-s: 22%;
+  --red-graphite-base-color-l: 15%;
+  --red-graphite-document-light-color-h: 0;
+  --red-graphite-document-light-color-s: 0%;
+  --red-graphite-document-light-color-l: 100%;
+  --red-graphite-document-dark-color-h: 222;
+  --red-graphite-document-dark-color-s: 22%;
+  --red-graphite-document-dark-color-l: 15%;
+  --red-graphite-accent-color-h: 2;
+  --red-graphite-accent-color-s: 56%;
+  --red-graphite-accent-color-l: 54%;
+}
+
+body.theme-dark {
+  @include palettes.dark(
+    "--red-graphite-base-color-h",
+    "--red-graphite-base-color-s",
+    "--red-graphite-base-color-l"
+  );
+  @include palettes.accent;
+
+  --titlebar-background: var(--background-secondary-alt);
+  --titlebar-background-focused: var(--background-secondary-alt);
+  --titlebar-text-color: var(--text-muted);
+  --titlebar-text-color-focused: var(--text-normal);
+  --tab-background-active: var(--background-primary);
+  --tab-text-color: var(--text-faint);
+  --tab-text-color-focused: var(--text-muted);
+  --tab-text-color-focused-active: var(--text-normal);
+  --tab-divider-color: var(--background-modifier-border);
+  --ribbon-background: var(--background-secondary);
+  --ribbon-background-collapsed: var(--background-secondary);
+  --status-bar-background: var(--background-secondary-alt);
+  --status-bar-border-color: var(--background-modifier-border);
+  --mobile-sidebar-background: var(--background-secondary);
+  --modal-background: var(--background-primary);
+  --modal-sidebar-background: var(--background-secondary);
+  --menu-background: var(--background-primary);
+  --menu-border-color: var(--background-modifier-border);
+  --menu-divider-color: var(--background-modifier-border);
+}
+
+body.theme-light {
+  @include palettes.light(
+    "--red-graphite-document-light-color-h",
+    "--red-graphite-document-light-color-s",
+    "--red-graphite-document-light-color-l"
+  );
+  @include palettes.accent;
+
+  --titlebar-background: var(--background-secondary);
+  --titlebar-background-focused: var(--background-secondary);
+  --titlebar-text-color: var(--text-muted);
+  --titlebar-text-color-focused: var(--text-normal);
+  --tab-background-active: var(--background-primary);
+  --tab-text-color: var(--text-faint);
+  --tab-text-color-focused: var(--text-muted);
+  --tab-text-color-focused-active: var(--text-normal);
+  --tab-divider-color: var(--background-modifier-border);
+  --ribbon-background: var(--background-secondary);
+  --ribbon-background-collapsed: var(--background-secondary);
+  --status-bar-background: var(--background-secondary);
+  --status-bar-border-color: var(--background-modifier-border);
+  --mobile-sidebar-background: var(--background-secondary);
+}
+
+body.theme-dark:not(.red-graphite-dark-document)
+  .workspace-split.mod-root
+  .workspace-leaf-content {
+  @include palettes.light(
+    "--red-graphite-document-light-color-h",
+    "--red-graphite-document-light-color-s",
+    "--red-graphite-document-light-color-l"
+  );
+}
+
+body.theme-dark.red-graphite-dark-document
+  .workspace-split.mod-root
+  .workspace-leaf-content {
+  @include palettes.dark(
+    "--red-graphite-document-dark-color-h",
+    "--red-graphite-document-dark-color-s",
+    "--red-graphite-document-dark-color-l"
+  );
+}

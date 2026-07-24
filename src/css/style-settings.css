@@ -4,55 +4,82 @@ name: Red Graphite
 id: red-graphite
 settings:
 
-- id: red-graphite-colors
-  title: Colors
-  type: heading
-  level: 2
-  collapsed: false
-
-- id: red-graphite-base-color
-  title: Base Color
-  description: |
-    This sets the base color that many other colors are derived from.
-    Note that the light theme defaults to a contrast of darker side panels. Those darker panels are what you are changing here. However, with the dark theme, you will be adjusting the entire theme. Try some changes to see how it looks.
-  type: variable-themed-color
-  format: hsl-split
-  opacity: false
-  default-light: '#292C2E'
-  default-dark: '#1e232f'
-
-- id: red-graphite-accent-color
-  title: Accent Color
-  description: In the light theme, this is the red highlight. In the dark theme, this is the yellow highlight. This can also be adjusted in the Appearance settings section, but changing it there will override this setting. You will have to reset that color for this one to work.
-  type: variable-themed-color
-  format: hsl-split
-  opacity: false
-  default-light: '#cb4c48'
-  default-dark: '#f6cd74'
-
-
-
-- id: red-graphite-fonts
-  title: Fonts
-  type: heading
-  level: 2
-  collapsed: false
-
-- id: red-graphite-interface-font
-  title: Interface font
-  description: Font used for the user interface
-  type: variable-text
-  default: "'Avenir'"
-
-- id: red-graphite-text-font
-  title: Text font
-  description: Font used for text
-  type: variable-text
-  default: "'Avenir'"
-
-- id: red-graphite-monospace-font
-  title: Monospace font
-  description: Font used for monospace text
-  type: variable-text
-  default: ''
+  -
+    id: red-graphite-appearance
+    title: Appearance
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: red-graphite-dark-document
+    title: Use a dark central workspace
+    description: In Obsidian Dark mode, replace the flagship light center with a fully dark workspace.
+    type: class-toggle
+    default: false
+  -
+    id: red-graphite-colors
+    title: Colors
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: red-graphite-base-color
+    title: Frame base color
+    description: Base color for the title bar, tabs, ribbons, and sidebars in Obsidian Dark mode.
+    type: variable-themed-color
+    format: hsl-split
+    opacity: false
+    default-light: '#1e232f'
+    default-dark: '#1e232f'
+  -
+    id: red-graphite-document-light-color
+    title: Light document base
+    description: Background base for the central workspace in flagship and Obsidian Light modes.
+    type: variable-themed-color
+    format: hsl-split
+    opacity: false
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+  -
+    id: red-graphite-document-dark-color
+    title: Dark document base
+    description: Background base used when the dark central workspace toggle is enabled.
+    type: variable-themed-color
+    format: hsl-split
+    opacity: false
+    default-light: '#1e232f'
+    default-dark: '#1e232f'
+  -
+    id: red-graphite-accent-color
+    title: Accent color
+    description: Red Graphite's highlight color. Obsidian's Appearance accent setting overrides this value.
+    type: variable-themed-color
+    format: hsl-split
+    opacity: false
+    default-light: '#cb4c48'
+    default-dark: '#cb4c48'
+  -
+    id: red-graphite-fonts
+    title: Fonts
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: red-graphite-interface-font
+    title: Interface font
+    description: Font used for the user interface.
+    type: variable-text
+    default: "'Avenir Next', 'Avenir', 'Segoe UI', sans-serif"
+  -
+    id: red-graphite-text-font
+    title: Text font
+    description: Font used for note content.
+    type: variable-text
+    default: "'Avenir Next', 'Avenir', 'Segoe UI', sans-serif"
+  -
+    id: red-graphite-monospace-font
+    title: Monospace font
+    description: Font used for code.
+    type: variable-text
+    default: "'SFMono-Regular', Consolas, monospace"
 */
