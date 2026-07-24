@@ -1,63 +1,105 @@
 # Red Graphite for Obsidian
-A minimal theme for [Obsidian](https://obsidian.md/) with both light and dark variants. This theme is based on Bear.app's Red Graphite theme.
 
-Here are a couple screenshots (with more further down the page):
+Red Graphite is a minimal, Bear-inspired theme for
+[Obsidian](https://obsidian.md/). Version 2 uses Obsidian's real dark mode for
+the application frame and sidebars while keeping the central workspace light.
+Plugins in a sidebar therefore receive the dark-mode environment they expect
+without a growing collection of theme-specific overrides.
 
-![Screenshot](./screenshots/light-callout.png)
-![Screenshot](./screenshots/dark-callout.png)
+![Red Graphite theme preview](./thumbnail.png)
 
 ## Installation
-- Open Obsidian settings
-- In the `Appearance` section, click the `Manage` button
-- Search for "Red Graphite" in the community themes, and select it
-- Click the `Use this theme` button
 
-## A note about development and updates
+1. Open **Settings → Appearance** in Obsidian.
+2. Select **Manage** under Themes.
+3. Search for **Red Graphite**, install it, and choose **Use this theme**.
+4. Set **Base color scheme** to **Dark** for the flagship mixed appearance.
 
-The original Red Graphite theme has been largely untouched for over a year. Between work and family, keeping up with it wasn't a priority. I even personally switched to various other themes (mostly just the amazing [Minimal](https://github.com/kepano/obsidian-minimal) theme). Some of those other theme developers are adding amazing features that I love to use on a daily basis, so Red Graphite fell in priority.
+## Appearance modes
 
-However, with the 1.0 release of Obsidian, I really wanted to release an updated version of the theme for those that prefer its simplicity. I won't be as active as other theme developers, and with that in mind, I've made this version not much more than a color-theme for the default theme. Most of the changes are with the UI and there are not many changes to the actual rendering of your notes.
+| Obsidian setting | Red Graphite result |
+| --- | --- |
+| Dark | Graphite frame and sidebars with a light central workspace |
+| Dark + **Use a dark central workspace** | Fully dark application |
+| Light | Conventional fully light fallback |
 
-## More Screenshots
+The dark-workspace toggle and color/font controls require the
+[Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+Red Graphite uses its signature red accent in every mode. A custom accent set
+in Obsidian's Appearance settings takes precedence over the theme setting.
 
-Here's a few more screenshots in addition to those above:
+## Live development on Windows
 
-![Screenshot](./screenshots/light-table.png)
-![Screenshot](./screenshots/dark-table.png)
-![Screenshot](./screenshots/light-task.png)
-![Screenshot](./screenshots/dark-task.png)
+Red Graphite requires Node.js 24.10 or newer. The repository records Node 24 in
+`.node-version`.
 
-## Style Settings
-
-If you use the Style Settings plugin, you can adjust a few things. Here you can see changing the base and accent colors. Most of the colors in the theme are derived from the base color, so play with it and see if you like a different color. 
-
-![Screenshot](./screenshots/light-stylesettings.png)
-![Screenshot](./screenshots/dark-stylesettings.png)
-
-
-## Build
-
-If you want to fork this and make your own version, feel free to. Hopefully you are familiar with build systems like NPM and Grunt, here are just a few notes.
-
-You will need to make a `.env` file (copy/rename the `.env.example` file). This just defines a location for Grunt to copy files to. It should be the location of some vault that you want to test the theme in.
-
-After cloning, install dependencies:
-
-```shell
-npm install
+```powershell
+npm ci
+Copy-Item .env.example .env
 ```
 
-Run in dev mode (watch):
+Set `OBSIDIAN_PATH` in `.env` to the theme folder inside the development vault.
+For this workstation the live target is:
 
-```shell
+```dotenv
+OBSIDIAN_PATH='../obsidian-personal/.obsidian/themes/Red Graphite'
+```
+
+Start the watcher:
+
+```powershell
 npm run dev
 ```
 
-Build for distribution:
+The command builds immediately, copies `theme.css` and `manifest.json` into the
+vault, and watches `src` and `manifest.json`. Obsidian reloads CSS changes
+automatically. A manifest change may require switching themes or restarting
+Obsidian.
 
-```shell
-npm run build
-```
+The deployer refuses destinations that do not end in
+`.obsidian/themes/Red Graphite`.
 
-## License
-This theme is copied from Bear.app's Red Graphite theme, so it would be silly to pretend to have a license. Do as you please, all credit to the Bear designers for putting good colors together.
+### Development commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run build` | Compile expanded, deterministic CSS into `theme.css` |
+| `npm run dev` | Build, deploy to the configured vault, and watch |
+| `npm run check` | Validate metadata and confirm `theme.css` is current |
+| `npm test` | Run build, deployment, release, and contrast tests |
+| `npm run version -- 2.0.1` | Update all version metadata together |
+
+`npm run build` and CI never require `.env` and never write to an Obsidian
+vault.
+
+## Theme architecture and compatibility
+
+The distributed package remains the standard Obsidian `theme.css` and
+`manifest.json` pair. Sass is used only as a maintainable source format.
+
+In Obsidian Dark mode, global UI inherits Red Graphite's graphite dark semantic
+palette. Each leaf in the central root workspace receives a complete light
+semantic palette and `color-scheme: light`; tab headers and global menus remain
+part of the dark frame. The Style Settings toggle replaces that local palette
+with the dark document palette.
+
+Plugins are expected to use Obsidian semantic variables. Red Graphite adds a
+plugin-specific rule only when a tested plugin hardcodes the body theme and the
+result is unreadable or unusable. Cosmetic differences alone are not overridden.
+See [the QA matrix](./docs/QA.md) for the current compatibility targets.
+
+## Release process
+
+1. Complete the desktop and physical iOS checklist in `docs/QA.md`.
+2. Update the gallery thumbnail and screenshots from the approved build.
+3. Run `npm run version -- <version>`, build, test, and commit the result.
+4. Push an exact numeric tag such as `2.0.0`—tags prefixed with `v` are invalid.
+5. GitHub Actions validates and rebuilds the theme, then creates a **draft**
+   release containing `manifest.json` and `theme.css`.
+6. Review and publish the draft manually.
+
+## License and attribution
+
+The code is released under [The Unlicense](./LICENSE). The visual direction and
+original Red Graphite color concept are inspired by Bear; credit belongs to
+Bear's designers for that design language.

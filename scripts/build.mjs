@@ -150,11 +150,13 @@ async function listFiles(directory) {
 }
 
 export async function validateMetadata(root = projectRoot) {
-  const [manifestText, packageText, versionsText] = await Promise.all([
+  const [lockText, manifestText, packageText, versionsText] = await Promise.all([
+    readFile(join(root, "package-lock.json"), "utf8"),
     readFile(join(root, "manifest.json"), "utf8"),
     readFile(join(root, "package.json"), "utf8"),
     readFile(join(root, "versions.json"), "utf8"),
   ]);
+  const packageLock = JSON.parse(lockText);
   const manifest = JSON.parse(manifestText);
   const packageJson = JSON.parse(packageText);
   const versions = JSON.parse(versionsText);
@@ -168,13 +170,34 @@ export async function validateMetadata(root = projectRoot) {
       `Version mismatch: manifest=${manifest.version}, package=${packageJson.version}`,
     );
   }
+  if (
+    packageLock.version !== packageJson.version ||
+    packageLock.packages?.[""]?.version !== packageJson.version
+  ) {
+    throw new Error(
+      `Version mismatch: package=${packageJson.version}, lock=${packageLock.version}`,
+    );
+  }
   if (versions[manifest.version] !== manifest.minAppVersion) {
     throw new Error(
       `versions.json must map ${manifest.version} to ${manifest.minAppVersion}.`,
     );
   }
 
-  return { manifest, packageJson, versions };
+  return { manifest, packageJson, packageLock, versions };
+}
+
+export async function validateReleaseTag(tag, root = projectRoot) {
+  if (!/^\d+\.\d+\.\d+$/.test(tag ?? "")) {
+    throw new Error(`Release tag must be numeric SemVer without a prefix: ${tag}`);
+  }
+  const { manifest } = await validateMetadata(root);
+  if (tag !== manifest.version) {
+    throw new Error(
+      `Release tag ${tag} does not match project version ${manifest.version}.`,
+    );
+  }
+  return manifest;
 }
 
 export async function runStaticChecks(root = projectRoot, css) {
@@ -292,6 +315,12 @@ async function main(command = process.argv[2] ?? "build") {
   }
   if (command === "dev") {
     await runDevelopmentServer();
+    return;
+  }
+  if (command === "release") {
+    await validateReleaseTag(process.argv[3]);
+    await checkTheme();
+    console.log(`Release metadata is valid for ${process.argv[3]}.`);
     return;
   }
   throw new Error(`Unknown command: ${command}`);

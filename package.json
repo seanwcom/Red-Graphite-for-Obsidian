@@ -24,6 +24,7 @@
     "dev": "node scripts/build.mjs dev",
     "check": "node scripts/build.mjs check",
     "test": "node --test",
+    "release:check": "node scripts/build.mjs release",
     "version": "node scripts/version-bump.mjs"
   },
   "devDependencies": {

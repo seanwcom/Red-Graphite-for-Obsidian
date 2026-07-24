@@ -8,6 +8,7 @@ import {
   createDebouncedTask,
   validateDeployPath,
   validateMetadata,
+  validateReleaseTag,
 } from "../scripts/build.mjs";
 
 test("theme source compiles without warnings or remote assets", async () => {
@@ -113,6 +114,13 @@ test("metadata validation rejects mismatched versions", async () => {
       ),
       writeFile(join(root, "package.json"), JSON.stringify({ version: "2.0.1" })),
       writeFile(
+        join(root, "package-lock.json"),
+        JSON.stringify({
+          version: "2.0.1",
+          packages: { "": { version: "2.0.1" } },
+        }),
+      ),
+      writeFile(
         join(root, "versions.json"),
         JSON.stringify({ "2.0.0": "1.12.7" }),
       ),
@@ -121,4 +129,13 @@ test("metadata validation rejects mismatched versions", async () => {
   } finally {
     await rm(root, { force: true, recursive: true });
   }
+});
+
+test("release validation accepts only the exact numeric project version", async () => {
+  await assert.doesNotReject(() => validateReleaseTag("2.0.0"));
+  await assert.rejects(() => validateReleaseTag("v2.0.0"), /numeric SemVer/);
+  await assert.rejects(
+    () => validateReleaseTag("2.0.1"),
+    /does not match project version/,
+  );
 });

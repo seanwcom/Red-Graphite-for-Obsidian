@@ -1,25 +1,50 @@
-name: Release Obsidian theme
+name: Draft release
 
 on:
   push:
     tags:
-      - "*"
+      - "*.*.*"
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Check out repository
+        uses: actions/checkout@v7
 
-      - name: Create release
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate release metadata
+        run: npm run release:check -- "$GITHUB_REF_NAME"
+
+      - name: Run tests
+        run: npm test
+
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+
+      - name: Rebuild distribution artifact
+        run: |
+          npm run build
+          git diff --exit-code -- theme.css
+
+      - name: Create draft release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          tag="${GITHUB_REF#refs/tags/}"
-
-          gh release create "$tag" \
-            --title="$tag" \
+          gh release create "$GITHUB_REF_NAME" \
+            --title="$GITHUB_REF_NAME" \
             --generate-notes \
             --draft \
             manifest.json theme.css
