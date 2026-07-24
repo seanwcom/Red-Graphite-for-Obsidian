@@ -1,21 +1,32 @@
 {
   "name": "red-graphite",
-  "version": "2.0.2",
-  "devDependencies": {
-    "dotenv": "^16.0.3",
-    "grunt": "^1.5.3",
-    "grunt-concat-css": "^0.3.2",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^4.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-env": "^1.0.1",
-    "grunt-sass": "^3.1.0",
-    "rimraf": "^3.0.2",
-    "sass": "^1.80.4"
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A Bear-inspired mixed-mode theme for Obsidian.",
+  "license": "Unlicense",
+  "engines": {
+    "node": ">=24.10",
+    "npm": ">=11"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=24.10"
+    },
+    "packageManager": {
+      "name": "npm",
+      "version": ">=11"
+    }
   },
   "scripts": {
-    "reset": "rimraf ./node_modules && npm install",
-    "dev": "grunt",
-    "build": "grunt build"
+    "build": "node scripts/build.mjs build",
+    "dev": "node scripts/build.mjs dev",
+    "check": "node scripts/build.mjs check",
+    "test": "node --test",
+    "version": "node scripts/version-bump.mjs"
+  },
+  "devDependencies": {
+    "sass": "^1.101.0"
   }
 }
