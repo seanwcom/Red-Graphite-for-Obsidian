@@ -29,8 +29,8 @@ settings:
     type: variable-themed-color
     format: hsl-split
     opacity: false
-    default-light: '#1e232f'
-    default-dark: '#1e232f'
+    default-light: '#292c2e'
+    default-dark: '#292c2e'
   -
     id: red-graphite-document-light-color
     title: Light document base
@@ -47,8 +47,8 @@ settings:
     type: variable-themed-color
     format: hsl-split
     opacity: false
-    default-light: '#1e232f'
-    default-dark: '#1e232f'
+    default-light: '#292c2e'
+    default-dark: '#292c2e'
   -
     id: red-graphite-accent-color
     title: Accent color

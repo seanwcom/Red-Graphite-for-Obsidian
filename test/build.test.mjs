@@ -59,11 +59,11 @@ test("default text and accent colors meet their contrast gates", () => {
   assert.ok(contrast("#2b2b2b", "#ffffff") >= 4.5, "light primary text");
   assert.ok(contrast("#616161", "#ffffff") >= 4.5, "light muted text");
   assert.ok(contrast("#737373", "#ffffff") >= 4.5, "light faint text");
-  assert.ok(contrast("#e9ecf1", "#1e232f") >= 4.5, "dark primary text");
-  assert.ok(contrast("#9ba6bf", "#1e232f") >= 4.5, "dark muted text");
-  assert.ok(contrast("#7c8aab", "#1e232f") >= 4.5, "dark faint text");
+  assert.ok(contrast("#f1f2f3", "#292c2e") >= 4.5, "dark primary text");
+  assert.ok(contrast("#aeb3b7", "#292c2e") >= 4.5, "dark muted text");
+  assert.ok(contrast("#939a9f", "#292c2e") >= 4.5, "dark faint text");
   assert.ok(contrast("#cb4c48", "#ffffff") >= 4.5, "light accent text");
-  assert.ok(contrast("#d97b78", "#1e232f") >= 4.5, "dark accent text");
+  assert.ok(contrast("#d97b78", "#292c2e") >= 4.5, "dark accent text");
 });
 
 test("deployment path accepts only the matching Obsidian theme folder", () => {
