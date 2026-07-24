@@ -407,6 +407,7 @@ body.theme-light {
   --mobile-sidebar-background: var(--background-secondary);
 }
 
+body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .workspace-tabs,
 body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .workspace-leaf-content {
   color-scheme: light;
   --color-base-00: hsl(var(--red-graphite-document-light-color-h), var(--red-graphite-document-light-color-s), var(--red-graphite-document-light-color-l));
@@ -560,6 +561,22 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --graph-node-attachment: var(--color-yellow);
   --graph-node-unresolved: var(--text-faint);
   --graph-text: var(--text-normal);
+}
+
+body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .workspace-tabs {
+  --tab-container-background: var(--background-primary);
+  --tab-background-active: var(--background-primary);
+  --tab-divider-color: var(--background-primary);
+  --tab-outline-color: var(--background-primary);
+  --tab-text-color: var(--text-faint);
+  --tab-text-color-active: var(--text-muted);
+  --tab-text-color-focused: var(--text-muted);
+  --tab-text-color-focused-active: var(--text-normal);
+  --tab-text-color-focused-active-current: var(--text-normal);
+  --tab-text-color-focused-highlighted: var(--text-normal);
+  --file-header-background: var(--background-primary);
+  --file-header-background-focused: var(--background-primary);
+  --file-header-border: 0;
 }
 
 body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-leaf-content {
