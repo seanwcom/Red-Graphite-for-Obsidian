@@ -28,6 +28,7 @@ test("compiled theme contains all three appearance states", async () => {
     css,
     /body\.theme-dark\.red-graphite-dark-document \.workspace-split\.mod-root \.workspace-leaf-content/,
   );
+  assert.match(css, /:has\(\.workspace\.is-right-sidedock-open\)/);
   assert.match(css, /color-scheme: light/);
   assert.match(css, /color-scheme: dark/);
 });

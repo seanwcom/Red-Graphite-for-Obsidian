@@ -104,6 +104,48 @@ body.theme-dark:not(.red-graphite-dark-document)
   --file-header-border: 0;
 }
 
+// These controls live outside .workspace, so mirror the right dock via :has().
+body.theme-dark:not(.red-graphite-dark-document):not(
+    :has(.workspace.is-right-sidedock-open)
+  )
+  .titlebar-button-container.mod-right,
+body.theme-dark:not(.red-graphite-dark-document):not(
+    :has(.workspace.is-right-sidedock-open)
+  )
+  .status-bar {
+  color-scheme: light;
+  --background-primary: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    var(--red-graphite-document-light-color-l)
+  );
+  --background-modifier-hover: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 4%)
+  );
+  --background-modifier-active-hover: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 8%)
+  );
+  --text-normal: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 75%)
+  );
+  --text-muted: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 62%)
+  );
+  --icon-color: var(--text-muted);
+  --icon-color-hover: var(--text-normal);
+
+  background-color: var(--background-primary);
+  color: var(--text-muted);
+}
+
 body.theme-dark.red-graphite-dark-document
   .workspace-split.mod-root
   .workspace-leaf-content {
