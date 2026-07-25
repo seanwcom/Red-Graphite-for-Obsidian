@@ -24,8 +24,7 @@ npm ci
 | `theme.css` | Generated, tracked distribution artifact |
 | `manifest.json` | Obsidian theme metadata |
 
-Read [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) before changing palette
-scope or workspace selectors. Do not edit `theme.css` by hand.
+Read [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) before changing palette scope or workspace selectors. Do not edit `theme.css` by hand.
 
 ## Live development
 
@@ -35,9 +34,7 @@ Copy the local environment template:
 Copy-Item .env.example .env
 ```
 
-Set `OBSIDIAN_PATH` to a folder ending in
-`.obsidian/themes/Red Graphite`. Relative paths resolve from the repository
-root. The current development default is:
+Set `OBSIDIAN_PATH` to a folder ending in `.obsidian/themes/Red Graphite`. Relative paths resolve from the repository root. The current development default is:
 
 ```dotenv
 OBSIDIAN_PATH='../obsidian-personal/.obsidian/themes/Red Graphite'
@@ -49,13 +46,9 @@ Then run:
 npm run dev
 ```
 
-The watcher builds immediately, deploys `theme.css` and `manifest.json`, and
-watches `src` and `manifest.json`. The deployer refuses any destination whose
-last three path segments are not `.obsidian/themes/Red Graphite`.
+The watcher builds immediately, deploys `theme.css` and `manifest.json`, and watches `src` and `manifest.json`. The deployer refuses any destination whose last three path segments are not `.obsidian/themes/Red Graphite`.
 
-Select Red Graphite in Obsidian before evaluating changes. CSS usually reloads
-live; manifest changes may require switching themes, refreshing Obsidian, or
-restarting it.
+Select Red Graphite in Obsidian before evaluating changes. CSS usually reloads live; manifest changes may require switching themes, refreshing Obsidian, or restarting it.
 
 ## Commands
 
@@ -67,21 +60,15 @@ restarting it.
 | `npm test` | Run the Node test suite |
 | `npm run version -- 2.0.1` | Synchronize package, lock, manifest, and versions metadata |
 
-`npm run build`, `npm run check`, tests, and CI do not require `.env` and do
-not write to an Obsidian vault.
+`npm run build`, `npm run check`, tests, and CI do not require `.env` and do not write to an Obsidian vault.
 
 ## Change policy
 
 1. Prefer Obsidian semantic variables over internal selectors.
-2. Keep the flagship Dark-mode frame, locally light central workspace,
-   full-dark option, and conventional Light fallback working together.
-3. Add a plugin stylesheet only when the remaining problem is unreadable or
-   unusable. Include the plugin name, tested version, and relevant issue in a
-   source comment.
-4. Add new Style Settings controls to the appropriate group and preserve the
-   current value as the default.
-5. Add new Markdown treatments to
-   [`docs/STYLE-SPECIMEN.md`](./docs/STYLE-SPECIMEN.md).
+2. Keep the flagship Dark-mode frame, locally light central workspace, full-dark option, and conventional Light fallback working together.
+3. Add a plugin stylesheet only when the remaining problem is unreadable or unusable. Include the plugin name, tested version, and relevant issue in a source comment.
+4. Add new Style Settings controls to the appropriate group and preserve the current value as the default.
+5. Add new Markdown treatments to [`docs/STYLE-SPECIMEN.md`](./docs/STYLE-SPECIMEN.md).
 6. Do not alter an existing vault's plugin data or settings during QA.
 
 ## Before submitting a change
@@ -93,10 +80,6 @@ npm test
 npm audit --audit-level=high
 ```
 
-For visual changes, test all three appearance states and record the relevant
-manual results in [`docs/QA.md`](./docs/QA.md). The source build, tracked
-`theme.css`, and deployed vault copy must match at acceptance.
+For visual changes, test all three appearance states and record the relevant manual results in [`docs/QA.md`](./docs/QA.md). The source build, tracked `theme.css`, and deployed vault copy must match at acceptance.
 
-Do not tag or publish a release, or modify public issues, as part of an ordinary
-contribution. Follow [`docs/RELEASING.md`](./docs/RELEASING.md) only after
-explicit approval.
+Do not tag or publish a release, or modify public issues, as part of an ordinary contribution. Follow [`docs/RELEASING.md`](./docs/RELEASING.md) only after explicit approval.

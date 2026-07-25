@@ -14,29 +14,17 @@ cssclasses: []
 
 # Red Graphite Style Specimen
 
-Copy this entire file into a disposable note in the visual-test vault. Keep the
-fixture unchanged while comparing reading, Live Preview, and source modes so
-the same content exposes regressions between builds. Add a representative case
-here whenever the theme gains a new Markdown treatment.
+Copy this entire file into a disposable note in the visual-test vault. Keep the fixture unchanged while comparing reading, Live Preview, and source modes so the same content exposes regressions between builds. Add a representative case here whenever the theme gains a new Markdown treatment.
 
-This page is a visual stress test for Red Graphite. It includes the Markdown
-elements most likely to expose problems with hierarchy, rhythm, contrast,
-alignment, wrapping, and interactive states.
+This page is a visual stress test for Red Graphite. It includes the Markdown elements most likely to expose problems with hierarchy, rhythm, contrast, alignment, wrapping, and interactive states.
 
-The body type should remain comfortable across a full paragraph. Red Graphite
-should feel calm and editorial without becoming faint, cramped, or overly
-formal. A readable line should be easy to follow from beginning to end, while
-adjacent paragraphs should feel related without running together.
+The body type should remain comfortable across a full paragraph. Red Graphite should feel calm and editorial without becoming faint, cramped, or overly formal. A readable line should be easy to follow from beginning to end, while adjacent paragraphs should feel related without running together.
 
-This paragraph contains **bold text**, *italic text*, ***bold italic text***,
-~~strikethrough~~, ==highlighted text==, `inline code`, an
-[external link](https://obsidian.md), a resolved-style [[Internal Link]], an
-[[Unresolved Note]], #theme-testing, and a nested #design/typography tag.
+This paragraph contains **bold text**, *italic text*, ***bold italic text***, ~~strikethrough~~, ==highlighted text==, `inline code`, an [external link](https://obsidian.md), a resolved-style [[Internal Link]], an [[Unresolved Note]], #theme-testing, and a nested #design/typography tag.
 
 ## Heading hierarchy
 
-The headings below are intentionally close together. Each level should remain
-recognizable without relying on extreme size changes.
+The headings below are intentionally close together. Each level should remain recognizable without relying on extreme size changes.
 
 # Heading level one
 
@@ -52,29 +40,22 @@ recognizable without relying on extreme size changes.
 
 ## A long heading that wraps onto another line and tests spacing, weight, line height, and hierarchy
 
-The wrapped heading should stay cohesive. Its second line should not collide
-with the paragraph below it or look like a separate heading.
+The wrapped heading should stay cohesive. Its second line should not collide with the paragraph below it or look like a separate heading.
 
 ## Paragraph rhythm
 
-Typography is the interface between an idea and the person reading it. Good
-theme typography should largely disappear during sustained reading while still
-making structure obvious when the reader scans the page.
+Typography is the interface between an idea and the person reading it. Good theme typography should largely disappear during sustained reading while still making structure obvious when the reader scans the page.
 
 Short paragraphs need enough separation to breathe.
 
-Longer paragraphs need a comfortable line height and a restrained line width.
-This sentence adds enough material to reveal whether the text becomes tiring,
-whether punctuation remains crisp, and whether the right edge of the text block
-feels balanced against the surrounding workspace.
+Longer paragraphs need a comfortable line height and a restrained line width. This sentence adds enough material to reveal whether the text becomes tiring, whether punctuation remains crisp, and whether the right edge of the text block feels balanced against the surrounding workspace.
 
 ---
 
 ## Unordered lists
 
 - First-level item
-- Another first-level item with enough text to wrap onto a second line so that
-  hanging indentation and line spacing can be evaluated clearly
+- Another first-level item with enough text to wrap onto a second line so that hanging indentation and line spacing can be evaluated clearly
   - Second-level item
   - Second-level item with **bold text** and an [[Internal Link]]
     - Third-level item
@@ -91,8 +72,7 @@ feels balanced against the surrounding workspace.
 ## Numbered lists
 
 1. First numbered item
-2. Second numbered item with enough text to wrap onto another line so that the
-   number gutter and continuation indentation can be evaluated
+2. Second numbered item with enough text to wrap onto another line so that the number gutter and continuation indentation can be evaluated
    1. Nested numbered item
    2. Another nested numbered item
       1. Third-level numbered item
@@ -112,8 +92,7 @@ feels balanced against the surrounding workspace.
 
 - [ ] Unchecked task
 - [x] Completed task
-- [ ] Task with a longer description that wraps and reveals checkbox alignment
-  across multiple lines
+- [ ] Task with a longer description that wraps and reveals checkbox alignment across multiple lines
   - [ ] Nested unchecked task
   - [x] Nested completed task
 - [ ] Task containing an [external link](https://help.obsidian.md)
@@ -122,14 +101,11 @@ feels balanced against the surrounding workspace.
 
 ## Quotes and blockquotes
 
-> A simple quotation should feel distinct from body text without becoming a
-> heavy container. The accent should support the quotation rather than dominate
-> it.
+> A simple quotation should feel distinct from body text without becoming a heavy container. The accent should support the quotation rather than dominate it.
 
 > A blockquote can contain multiple paragraphs.
 >
-> The spacing between quoted paragraphs should remain clear, and both paragraphs
-> should share the same visual structure.
+> The spacing between quoted paragraphs should remain clear, and both paragraphs should share the same visual structure.
 
 > A first-level quotation
 >
@@ -139,18 +115,15 @@ feels balanced against the surrounding workspace.
 
 > **Quoted heading**
 >
-> Quotes may contain **bold text**, *emphasis*, `inline code`, and
-> [links](https://obsidian.md).
+> Quotes may contain **bold text**, *emphasis*, `inline code`, and [links](https://obsidian.md).
 
 ## Callouts
 
 > [!note] Note callout
-> A standard callout with enough content to wrap onto a second line. Its title,
-> icon, border, and background should belong to the same visual system.
+> A standard callout with enough content to wrap onto a second line. Its title, icon, border, and background should belong to the same visual system.
 
 > [!tip] Tip callout
-> Use semantic color carefully. The content should remain readable without
-> depending only on hue.
+> Use semantic color carefully. The content should remain readable without depending only on hue.
 
 > [!warning] Warning callout
 > Warning states need emphasis, but they should not overwhelm the document.
@@ -192,8 +165,7 @@ feels balanced against the surrounding workspace.
 
 ## Code
 
-Inline code should sit naturally within a sentence: `npm run dev` rebuilds and
-deploys the theme.
+Inline code should sit naturally within a sentence: `npm run dev` rebuilds and deploys the theme.
 
 ```javascript
 const theme = {
@@ -229,13 +201,10 @@ $$
 
 ## Footnotes
 
-Red Graphite is inspired by Bear while being designed for Obsidian.[^1] A
-second footnote tests spacing between references.[^details]
+Red Graphite is inspired by Bear while being designed for Obsidian.[^1] A second footnote tests spacing between references.[^details]
 
-[^1]: Bear is a notes application with a distinctive graphite-and-paper visual
-    language.
-[^details]: Footnotes should be quieter than body text while remaining fully
-    readable.
+[^1]: Bear is a notes application with a distinctive graphite-and-paper visual language.
+[^details]: Footnotes should be quieter than body text while remaining fully readable.
 
 ## Embeds and media placeholders
 
@@ -253,8 +222,7 @@ second footnote tests spacing between references.[^details]
 <details>
 <summary>Expandable details section</summary>
 
-Content inside a native details element should use the same document palette
-and typography as the rest of the note.
+Content inside a native details element should use the same document palette and typography as the rest of the note.
 
 </details>
 

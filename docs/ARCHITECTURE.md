@@ -1,7 +1,6 @@
 # Red Graphite architecture
 
-This document records the stable design decisions behind Red Graphite 2. The
-current test status belongs in [`QA.md`](./QA.md), not here.
+This document records the stable design decisions behind Red Graphite 2. The current test status belongs in [`QA.md`](./QA.md), not here.
 
 ## Appearance contract
 
@@ -13,15 +12,9 @@ Red Graphite supports three states:
 | Dark + `red-graphite-dark-document` | Graphite dark | Dark | Dark |
 | Obsidian Light | Light | Light | Light |
 
-The first row is the flagship appearance. It uses real Obsidian Dark mode so
-sidebars and sidebar plugins receive the dark-mode environment they expect.
-The central root workspace then overrides the complete semantic palette with
-light values. Tabs belong visually to the document rail, while menus, prompts,
-popovers, modals, ribbons, and sidebars remain global framing surfaces.
+The first row is the flagship appearance. It uses real Obsidian Dark mode so sidebars and sidebar plugins receive the dark-mode environment they expect. The central root workspace then overrides the complete semantic palette with light values. Tabs belong visually to the document rail, while menus, prompts, popovers, modals, ribbons, and sidebars remain global framing surfaces.
 
-CSS cannot assign a `.theme-light` body class to a subtree. A plugin that
-hardcodes `body.theme-dark` selectors can therefore defeat the central light
-palette even when all semantic variables are correct.
+CSS cannot assign a `.theme-light` body class to a subtree. A plugin that hardcodes `body.theme-dark` selectors can therefore defeat the central light palette even when all semantic variables are correct.
 
 ## Palette model
 
@@ -31,14 +24,9 @@ The configurable base tokens are:
 - light document base; and
 - dark document base.
 
-The Sass palette mixins derive Obsidian semantic variables for backgrounds,
-text, borders, interaction states, forms, metadata, code, and other surfaces.
-Obsidian's native Accent color remains the global accent. Theme component
-tokens such as the H1 color or active-tab indicator inherit that accent unless
-the user overrides them through Style Settings.
+The Sass palette mixins derive Obsidian semantic variables for backgrounds, text, borders, interaction states, forms, metadata, code, and other surfaces. Obsidian's native Accent color remains the global accent. Theme component tokens such as the H1 color or active-tab indicator inherit that accent unless the user overrides them through Style Settings.
 
-Do not revive the old inverted base-color scale or the legacy Red Graphite
-dark-mode colors.
+Do not revive the old inverted base-color scale or the legacy Red Graphite dark-mode colors.
 
 ## Source organization
 
@@ -51,14 +39,11 @@ The build entry point is `src/scss/index.scss`:
 5. `plugins/_<plugin>.scss` contains justified compatibility exceptions.
 6. `plugins/_style-settings.scss` styles the Style Settings plugin interface.
 
-`src/css/style-settings.css` is the Style Settings metadata schema. The Node
-build compiles Sass, appends that schema, and writes deterministic expanded CSS
-to the tracked root `theme.css`.
+`src/css/style-settings.css` is the Style Settings metadata schema. The Node build compiles Sass, appends that schema, and writes deterministic expanded CSS to the tracked root `theme.css`.
 
 ## Selector strategy
 
-Use documented Obsidian semantic variables wherever possible. When selectors
-are unavoidable:
+Use documented Obsidian semantic variables wherever possible. When selectors are unavoidable:
 
 - scope local document rules beneath `.workspace-split.mod-root`;
 - keep sidebar leaves on the host palette;
@@ -66,11 +51,7 @@ are unavoidable:
 - avoid brittle DOM-depth and plugin-class assumptions; and
 - explain non-obvious selectors in source comments.
 
-The window controls and status bar sit outside `.workspace`. In the flagship
-state, their palette follows whether the right sidebar is open so no isolated
-dark rectangle remains beside a light center. This currently requires a
-narrowly scoped `:has()` state selector and must be tested after Obsidian UI
-changes.
+The window controls and status bar sit outside `.workspace`. In the flagship state, their palette follows whether the right sidebar is open so no isolated dark rectangle remains beside a light center. This currently requires a narrowly scoped `:has()` state selector and must be tested after Obsidian UI changes.
 
 ## Plugin compatibility policy
 
@@ -78,17 +59,14 @@ Add an integration only when all of these are true:
 
 1. semantic variables cannot solve the remaining behavior;
 2. the result is unreadable or unusable, not merely different; and
-3. the rule records the plugin, tested version, failure mechanism, and relevant
-   issue.
+3. the rule records the plugin, tested version, failure mechanism, and relevant issue.
 
-Keep one file per plugin and one import in `src/scss/index.scss`. Test the same
-view in the central workspace and sidebar when Obsidian allows both.
+Keep one file per plugin and one import in `src/scss/index.scss`. Test the same view in the central workspace and sidebar when Obsidian allows both.
 
 ## Distribution invariants
 
 - `theme.css` and `manifest.json` are the complete release package.
 - Builds are deterministic and do not require `.env`.
-- Deployment requires `.env` and a validated destination ending in
-  `.obsidian/themes/Red Graphite`.
+- Deployment requires `.env` and a validated destination ending in `.obsidian/themes/Red Graphite`.
 - Package, lockfile, manifest, and versions metadata must agree.
 - Remote CSS assets and unapproved `!important` declarations are rejected.

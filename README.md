@@ -1,18 +1,9 @@
 # Red Graphite for Obsidian
 
 > [!IMPORTANT]
-> **Red Graphite 2 changes its primary Obsidian appearance from Light to
-> Dark.** If you are upgrading from Red Graphite 1.x, open **Settings →
-> Appearance** and set **Base color scheme** to **Dark** after the update.
-> Obsidian will not change this setting for you. Leaving it on Light selects
-> Red Graphite's supported all-light fallback, not its signature mixed
-> appearance.
+> **Red Graphite 2 changes its primary Obsidian appearance from Light to Dark.** This gives Obsidian and sidebar plugins a genuine dark-mode environment, so they receive appropriate dark styling out of the box instead of requiring Red Graphite to maintain custom CSS for every add-on. If you are upgrading from Red Graphite 1.x, open **Settings → Appearance** and set **Base color scheme** to **Dark** after the update. Obsidian will not change this setting for you. Leaving it on Light selects Red Graphite's supported all-light fallback, not its signature mixed appearance.
 
-Red Graphite is a calm, Bear-inspired theme for
-[Obsidian](https://obsidian.md/). Its default layout uses Obsidian's real dark
-mode for the graphite application frame and sidebars, then gives the central
-workspace a light reading surface. Sidebar plugins therefore receive the dark
-environment they expect without a growing collection of plugin overrides.
+Red Graphite is a calm, Bear-inspired theme for [Obsidian](https://obsidian.md/). Its default layout uses Obsidian's real dark mode for the graphite application frame and sidebars, then gives the central workspace a light reading surface. Sidebar plugins therefore receive the dark environment they expect without a growing collection of plugin overrides.
 
 ![Red Graphite showing a light central workspace inside a graphite frame](./thumbnail.png)
 
@@ -33,18 +24,13 @@ Red Graphite 2 requires Obsidian 1.12.7 or newer.
 | Dark + **Use a dark central workspace** | Fully dark application |
 | Light | Conventional fully light fallback |
 
-The full-dark toggle is available through the
-[Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
-The mixed and all-light appearances do not require that plugin.
+The full-dark toggle is available through the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings). The mixed and all-light appearances do not require that plugin.
 
 ## Customize Red Graphite
 
-Use Obsidian's **Settings → Appearance → Accent color** control to change the
-theme-wide accent. This is the canonical global accent and works without Style
-Settings.
+Use Obsidian's **Settings → Appearance → Accent color** control to change the theme-wide accent. This is the canonical global accent and works without Style Settings.
 
-Style Settings adds a grouped **Red Graphite** section for the rest of the
-design system, including:
+Style Settings adds a grouped **Red Graphite** section for the rest of the design system, including:
 
 - light and dark palettes;
 - fonts, type sizes, weights, line heights, and heading treatments;
@@ -53,16 +39,11 @@ design system, including:
 - blockquotes, callouts, code, tables, tags, and embeds; and
 - light and dark syntax colors plus narrow plugin integrations.
 
-Component colors follow Obsidian's accent by default. Individual overrides can
-intentionally diverge, and every control can be reset to the shipped default.
+Component colors follow Obsidian's accent by default. Individual overrides can intentionally diverge, and every control can be reset to the shipped default.
 
 ## Plugin compatibility
 
-Red Graphite styles Obsidian's semantic variables so third-party views inherit
-the correct palette when moved between the central workspace and a sidebar.
-Plugin-specific CSS is reserved for unreadable or unusable behavior that
-semantic variables cannot solve; cosmetic differences alone are not
-overridden.
+Red Graphite styles Obsidian's semantic variables so third-party views inherit the correct palette when moved between the central workspace and a sidebar. Plugin-specific CSS is reserved for unreadable or unusable behavior that semantic variables cannot solve; cosmetic differences alone are not overridden.
 
 When reporting a compatibility problem, include:
 
@@ -71,14 +52,11 @@ When reporting a compatibility problem, include:
 - the selected Obsidian appearance and whether the full-dark toggle is on; and
 - a screenshot plus short reproduction steps.
 
-Use the repository's
-[GitHub issues](https://github.com/seanwcom/Red-Graphite-for-Obsidian/issues)
-for reproducible problems.
+Use the repository's [GitHub issues](https://github.com/seanwcom/Red-Graphite-for-Obsidian/issues) for reproducible problems.
 
 ## Development
 
-Red Graphite is built from Sass, while Obsidian consumes the tracked root
-`theme.css` and `manifest.json`.
+Red Graphite is built from Sass, while Obsidian consumes the tracked root `theme.css` and `manifest.json`.
 
 - [Contributing and live development](./CONTRIBUTING.md)
 - [Theme architecture](./docs/ARCHITECTURE.md)
@@ -89,7 +67,4 @@ Red Graphite is built from Sass, while Obsidian consumes the tracked root
 
 ## License and attribution
 
-The code is released under [The Unlicense](./LICENSE). Red Graphite's visual
-direction and original color concept are inspired by Bear; credit belongs to
-Bear's designers for that design language. Red Graphite is an independent
-Obsidian theme and is not affiliated with Bear.
+The code is released under [The Unlicense](./LICENSE). Red Graphite's visual direction and original color concept are inspired by Bear; credit belongs to Bear's designers for that design language. Red Graphite is an independent Obsidian theme and is not affiliated with Bear.

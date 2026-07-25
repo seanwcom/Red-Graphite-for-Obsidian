@@ -28,6 +28,7 @@ test("README keeps the 2.0 migration warning and one local screenshot", async ()
   const readme = await readFile(join(projectRoot, "README.md"), "utf8");
   assert.match(readme, /^> \[!IMPORTANT\]/m);
   assert.match(readme, /Base color scheme\*\* to \*\*Dark\*\*/);
+  assert.match(readme, /sidebar plugins a genuine dark-mode environment/);
 
   const images = [...readme.matchAll(/!\[[^\]]*]\(([^)]+)\)/g)];
   assert.equal(images.length, 1, "README must contain exactly one screenshot");
@@ -60,4 +61,70 @@ test("local Markdown links resolve", async () => {
   }
 
   assert.deepEqual(broken, []);
+});
+
+test("Markdown prose relies on reader wrapping", async () => {
+  const files = await markdownFiles(projectRoot);
+  const wrapped = [];
+
+  for (const file of files) {
+    const lines = (await readFile(file, "utf8")).split(/\r?\n/);
+    let inFrontmatter = lines[0] === "---";
+    let inFence = false;
+    let inMath = false;
+
+    for (let index = 0; index < lines.length - 1; index += 1) {
+      const current = lines[index];
+      const next = lines[index + 1];
+
+      if (inFrontmatter) {
+        if (index > 0 && current === "---") {
+          inFrontmatter = false;
+        }
+        continue;
+      }
+      if (/^\s*(```|~~~)/.test(current)) {
+        inFence = !inFence;
+        continue;
+      }
+      if (inFence) {
+        continue;
+      }
+      if (/^\s*\$\$\s*$/.test(current)) {
+        inMath = !inMath;
+        continue;
+      }
+      if (inMath || !current.trim() || !next.trim()) {
+        continue;
+      }
+
+      const structural = (line) =>
+        /^\s*(?:#{1,6}\s|[-+*]\s+|\d+[.)]\s+|\[\^[^\]]+]:|\|.*\|\s*$|(?:---|\*\*\*|___)\s*$|<\/?(?:details|summary)>|%%)/.test(
+          line,
+        );
+      const currentQuote = current.match(/^(\s*(?:>\s*)+)(.*)$/);
+      const nextQuote = next.match(/^(\s*(?:>\s*)+)(.*)$/);
+
+      if (
+        currentQuote &&
+        nextQuote &&
+        currentQuote[1] === nextQuote[1] &&
+        !/^\[![^\]]+]/.test(currentQuote[2].trim())
+      ) {
+        wrapped.push(`${file}:${index + 1}`);
+        continue;
+      }
+
+      if (
+        !currentQuote &&
+        !nextQuote &&
+        !structural(current) &&
+        !structural(next)
+      ) {
+        wrapped.push(`${file}:${index + 1}`);
+      }
+    }
+  }
+
+  assert.deepEqual(wrapped, []);
 });
