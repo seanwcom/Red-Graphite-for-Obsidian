@@ -97,8 +97,34 @@ body {
 
 .markdown-rendered h2,
 .markdown-source-view.mod-cm6 .HyperMD-header-2 {
-  border-inline-start: 3px solid var(--interactive-accent);
-  padding-inline-start: 0.6em;
+  position: relative;
+  padding-inline-start: 0.85em;
+}
+
+.markdown-rendered h2::before,
+.markdown-source-view.mod-cm6 .HyperMD-header-2::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  width: 3px;
+  height: 1em;
+  border-radius: 1px;
+  background-color: var(--interactive-accent);
+}
+
+.markdown-rendered h2::before {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-header-2::before {
+  top: calc(var(--p-spacing) + 0.125em);
+}
+
+.markdown-source-view.mod-cm6
+  .HyperMD-header-2
+  .cm-fold-indicator {
+  margin-inline-start: 0.45em;
 }
 
 .markdown-rendered h6,
@@ -113,6 +139,7 @@ body {
 .workspace-split.mod-root .workspace-tab-header.is-active {
   background-color: var(--tab-background-active);
   box-shadow: inset 0 -2px 0 var(--interactive-accent);
+  border-radius: var(--tab-radius) var(--tab-radius) 0 0;
 }
 
 .workspace-split.mod-root .workspace-tab-header.is-active::before,
