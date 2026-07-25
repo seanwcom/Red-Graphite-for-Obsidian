@@ -146,6 +146,27 @@ body.theme-dark:not(.red-graphite-dark-document):not(
   color: var(--text-muted);
 }
 
+body.theme-dark:not(.red-graphite-dark-document):not(
+    :has(.workspace.is-right-sidedock-open)
+  )
+  .titlebar-button-container.mod-right {
+  --background-primary: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 4%)
+  );
+  --background-modifier-hover: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 8%)
+  );
+  --background-modifier-active-hover: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 11%)
+  );
+}
+
 body.theme-dark.red-graphite-dark-document
   .workspace-split.mod-root
   .workspace-leaf-content {

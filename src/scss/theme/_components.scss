@@ -96,35 +96,13 @@ body {
 }
 
 .markdown-rendered h2,
-.markdown-source-view.mod-cm6 .HyperMD-header-2 {
-  position: relative;
-  padding-inline-start: 0.85em;
-}
-
-.markdown-rendered h2::before,
-.markdown-source-view.mod-cm6 .HyperMD-header-2::before {
-  content: "";
-  position: absolute;
-  inset-inline-start: 0;
-  width: 3px;
-  height: 1em;
-  border-radius: 1px;
-  background-color: var(--interactive-accent);
-}
-
-.markdown-rendered h2::before {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.markdown-source-view.mod-cm6 .HyperMD-header-2::before {
-  top: calc(var(--p-spacing) + 0.125em);
-}
-
 .markdown-source-view.mod-cm6
-  .HyperMD-header-2
-  .cm-fold-indicator {
-  margin-inline-start: 0.45em;
+  .cm-header-2:not(.cm-formatting) {
+  text-decoration-color: var(--interactive-accent);
+  text-decoration-line: underline;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
 }
 
 .markdown-rendered h6,

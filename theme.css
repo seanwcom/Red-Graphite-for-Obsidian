@@ -103,8 +103,7 @@ body.theme-dark {
   --caret-color: var(--text-normal);
   --hr-color: var(--background-modifier-border);
   --list-marker-color: var(--text-accent);
-  --embed-block-shadow-hover:
-    0 0 0 1px var(--background-modifier-border-hover);
+  --embed-block-shadow-hover: none;
   --flair-background: var(--background-modifier-hover);
   --menu-background: var(--background-primary);
   --menu-border-color: var(--background-modifier-border);
@@ -326,8 +325,7 @@ body.theme-light {
   --caret-color: var(--text-normal);
   --hr-color: var(--background-modifier-border);
   --list-marker-color: var(--text-accent);
-  --embed-block-shadow-hover:
-    0 0 0 1px var(--background-modifier-border-hover);
+  --embed-block-shadow-hover: none;
   --flair-background: var(--background-modifier-hover);
   --menu-background: var(--background-primary);
   --menu-border-color: var(--background-modifier-border);
@@ -540,8 +538,7 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --caret-color: var(--text-normal);
   --hr-color: var(--background-modifier-border);
   --list-marker-color: var(--text-accent);
-  --embed-block-shadow-hover:
-    0 0 0 1px var(--background-modifier-border-hover);
+  --embed-block-shadow-hover: none;
   --flair-background: var(--background-modifier-hover);
   --menu-background: var(--background-primary);
   --menu-border-color: var(--background-modifier-border);
@@ -676,6 +673,24 @@ body.theme-dark:not(.red-graphite-dark-document):not(:has(.workspace.is-right-si
   color: var(--text-muted);
 }
 
+body.theme-dark:not(.red-graphite-dark-document):not(:has(.workspace.is-right-sidedock-open)) .titlebar-button-container.mod-right {
+  --background-primary: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 4%)
+  );
+  --background-modifier-hover: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 8%)
+  );
+  --background-modifier-active-hover: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 11%)
+  );
+}
+
 body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-leaf-content {
   color-scheme: dark;
   --color-base-00: hsl(var(--red-graphite-document-dark-color-h), var(--red-graphite-document-dark-color-s), calc(var(--red-graphite-document-dark-color-l) - 5%));
@@ -766,8 +781,7 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
   --caret-color: var(--text-normal);
   --hr-color: var(--background-modifier-border);
   --list-marker-color: var(--text-accent);
-  --embed-block-shadow-hover:
-    0 0 0 1px var(--background-modifier-border-hover);
+  --embed-block-shadow-hover: none;
   --flair-background: var(--background-modifier-hover);
   --menu-background: var(--background-primary);
   --menu-border-color: var(--background-modifier-border);
@@ -947,33 +961,12 @@ body {
 }
 
 .markdown-rendered h2,
-.markdown-source-view.mod-cm6 .HyperMD-header-2 {
-  position: relative;
-  padding-inline-start: 0.85em;
-}
-
-.markdown-rendered h2::before,
-.markdown-source-view.mod-cm6 .HyperMD-header-2::before {
-  content: "";
-  position: absolute;
-  inset-inline-start: 0;
-  width: 3px;
-  height: 1em;
-  border-radius: 1px;
-  background-color: var(--interactive-accent);
-}
-
-.markdown-rendered h2::before {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.markdown-source-view.mod-cm6 .HyperMD-header-2::before {
-  top: calc(var(--p-spacing) + 0.125em);
-}
-
-.markdown-source-view.mod-cm6 .HyperMD-header-2 .cm-fold-indicator {
-  margin-inline-start: 0.45em;
+.markdown-source-view.mod-cm6 .cm-header-2:not(.cm-formatting) {
+  text-decoration-color: var(--interactive-accent);
+  text-decoration-line: underline;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
 }
 
 .markdown-rendered h6,
