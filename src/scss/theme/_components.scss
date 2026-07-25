@@ -92,7 +92,11 @@ body {
 
 .markdown-rendered h1,
 .markdown-source-view.mod-cm6 .cm-header-1 {
-  color: var(--text-normal);
+  color: color-mix(
+    in srgb,
+    var(--interactive-accent) 68%,
+    var(--text-normal)
+  );
 }
 
 .markdown-rendered h2,
