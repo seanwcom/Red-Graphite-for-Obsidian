@@ -98,4 +98,67 @@ $red-graphite-settings:
       var(--interactive-accent)
     );
   }
+
+  /*
+   * Style Settings clears the inline --pcr-color values during a section-wide
+   * reset, but its themed-color controls do not repopulate their previews
+   * until each individual reset button runs. Use the actual palette tokens as
+   * preview fallbacks. Inline picker values still win when a user customizes a
+   * color.
+   */
+  [data-id="red-graphite-base-color"] .themed-color-wrapper > div {
+    --pcr-color: hsl(
+      var(--red-graphite-base-color-h),
+      var(--red-graphite-base-color-s),
+      var(--red-graphite-base-color-l)
+    );
+  }
+
+  [data-id="red-graphite-document-light-color"]
+    .themed-color-wrapper
+    > div {
+    --pcr-color: hsl(
+      var(--red-graphite-document-light-color-h),
+      var(--red-graphite-document-light-color-s),
+      var(--red-graphite-document-light-color-l)
+    );
+  }
+
+  [data-id="red-graphite-document-dark-color"]
+    .themed-color-wrapper
+    > div {
+    --pcr-color: hsl(
+      var(--red-graphite-document-dark-color-h),
+      var(--red-graphite-document-dark-color-s),
+      var(--red-graphite-document-dark-color-l)
+    );
+  }
+
+  /*
+   * Pickr rounds its checkerboard and color pseudo-elements independently.
+   * At dark colors their anti-aliased edges expose bright checkerboard pixels.
+   * Clip square pseudo-elements once at the button boundary instead.
+   */
+  .pickr .pcr-button {
+    overflow: hidden;
+    border-radius: var(--red-graphite-style-settings-swatch-radius);
+  }
+
+  .pickr .pcr-button::before,
+  .pickr .pcr-button::after {
+    border-radius: 0;
+  }
+
+  // Red Graphite's color controls are opaque, so the checkerboard is never
+  // meaningful. Painting both layers with the selected color also prevents
+  // subpixel checkerboard leakage around dark swatches.
+  .pickr .pcr-button::before {
+    background: var(--pcr-color);
+  }
+
+  .pickr .pcr-button::after {
+    box-shadow: inset 0 0 0
+      var(--red-graphite-style-settings-swatch-border-width)
+      var(--background-modifier-border-hover);
+  }
 }

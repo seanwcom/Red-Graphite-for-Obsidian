@@ -1227,6 +1227,24 @@ settings:
     max: 32
     step: 1
     format: px
+  -
+    id: red-graphite-style-settings-swatch-radius
+    title: Color swatch corner radius
+    type: variable-number-slider
+    default: 3
+    min: 0
+    max: 12
+    step: 1
+    format: px
+  -
+    id: red-graphite-style-settings-swatch-border-width
+    title: Color swatch border width
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 4
+    step: 1
+    format: px
 
   -
     id: red-graphite-settings-help

@@ -43,6 +43,19 @@ test("compiled theme contains all three appearance states", async () => {
     css,
     /\.style-settings-heading\[data-id=(?:"red-graphite"|red-graphite)\] \+ \.style-settings-container/,
   );
+  for (const settingId of [
+    "red-graphite-base-color",
+    "red-graphite-document-light-color",
+    "red-graphite-document-dark-color",
+  ]) {
+    assert.match(
+      css,
+      new RegExp(
+        `\\[data-id=${settingId}\\] \\.themed-color-wrapper > div`,
+      ),
+    );
+  }
+  assert.match(css, /\.pickr \.pcr-button\s*\{[^}]*overflow: hidden/s);
 });
 
 test("Style Settings exposes a unique, comprehensive token schema", async () => {

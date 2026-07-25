@@ -95,6 +95,8 @@ body {
   --red-graphite-style-settings-group-gap: 18px;
   --red-graphite-style-settings-heading-padding-y: 10px;
   --red-graphite-style-settings-heading-padding-x: 12px;
+  --red-graphite-style-settings-swatch-radius: 3px;
+  --red-graphite-style-settings-swatch-border-width: 1px;
   --red-graphite-table-cell-padding-y: 0.6em;
   --red-graphite-table-cell-padding-x: 0.75em;
   --red-graphite-table-editor-padding-y: 0.5em;
@@ -1433,6 +1435,57 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
 .style-settings-heading[data-id=red-graphite] + .style-settings-container .style-settings-heading:not(.is-collapsed) .style-settings-collapse-indicator {
   color: var(--red-graphite-style-settings-guide-color, var(--interactive-accent));
 }
+.style-settings-heading[data-id=red-graphite] + .style-settings-container {
+  /*
+   * Style Settings clears the inline --pcr-color values during a section-wide
+   * reset, but its themed-color controls do not repopulate their previews
+   * until each individual reset button runs. Use the actual palette tokens as
+   * preview fallbacks. Inline picker values still win when a user customizes a
+   * color.
+   */
+}
+.style-settings-heading[data-id=red-graphite] + .style-settings-container [data-id=red-graphite-base-color] .themed-color-wrapper > div {
+  --pcr-color: hsl(
+    var(--red-graphite-base-color-h),
+    var(--red-graphite-base-color-s),
+    var(--red-graphite-base-color-l)
+  );
+}
+.style-settings-heading[data-id=red-graphite] + .style-settings-container [data-id=red-graphite-document-light-color] .themed-color-wrapper > div {
+  --pcr-color: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    var(--red-graphite-document-light-color-l)
+  );
+}
+.style-settings-heading[data-id=red-graphite] + .style-settings-container [data-id=red-graphite-document-dark-color] .themed-color-wrapper > div {
+  --pcr-color: hsl(
+    var(--red-graphite-document-dark-color-h),
+    var(--red-graphite-document-dark-color-s),
+    var(--red-graphite-document-dark-color-l)
+  );
+}
+.style-settings-heading[data-id=red-graphite] + .style-settings-container {
+  /*
+   * Pickr rounds its checkerboard and color pseudo-elements independently.
+   * At dark colors their anti-aliased edges expose bright checkerboard pixels.
+   * Clip square pseudo-elements once at the button boundary instead.
+   */
+}
+.style-settings-heading[data-id=red-graphite] + .style-settings-container .pickr .pcr-button {
+  overflow: hidden;
+  border-radius: var(--red-graphite-style-settings-swatch-radius);
+}
+.style-settings-heading[data-id=red-graphite] + .style-settings-container .pickr .pcr-button::before,
+.style-settings-heading[data-id=red-graphite] + .style-settings-container .pickr .pcr-button::after {
+  border-radius: 0;
+}
+.style-settings-heading[data-id=red-graphite] + .style-settings-container .pickr .pcr-button::before {
+  background: var(--pcr-color);
+}
+.style-settings-heading[data-id=red-graphite] + .style-settings-container .pickr .pcr-button::after {
+  box-shadow: inset 0 0 0 var(--red-graphite-style-settings-swatch-border-width) var(--background-modifier-border-hover);
+}
 
 /* @settings
 
@@ -2661,6 +2714,24 @@ settings:
     default: 12
     min: 2
     max: 32
+    step: 1
+    format: px
+  -
+    id: red-graphite-style-settings-swatch-radius
+    title: Color swatch corner radius
+    type: variable-number-slider
+    default: 3
+    min: 0
+    max: 12
+    step: 1
+    format: px
+  -
+    id: red-graphite-style-settings-swatch-border-width
+    title: Color swatch border width
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 4
     step: 1
     format: px
 
