@@ -97,12 +97,9 @@ body {
 
 .markdown-rendered h2,
 .markdown-source-view.mod-cm6
-  .cm-header-2:not(.cm-formatting) {
-  text-decoration-color: var(--interactive-accent);
-  text-decoration-line: underline;
-  text-decoration-skip-ink: auto;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.22em;
+  .HyperMD-header-2 {
+  border-block-end: 1px solid var(--interactive-accent);
+  padding-block-end: 0.25em;
 }
 
 .markdown-rendered h6,
