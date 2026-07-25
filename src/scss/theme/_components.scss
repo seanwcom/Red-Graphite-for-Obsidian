@@ -53,6 +53,9 @@ body {
   --h3-letter-spacing: -0.012em;
   --heading-spacing: calc(var(--p-spacing) * 1.75);
   --hr-thickness: 1px;
+  --list-indent: 1.8em;
+  --list-indent-editing: 1.4em;
+  --list-spacing: 0.15em;
   --file-line-width: 700px;
   --file-margins-x: 48px;
   --file-margins-y: 36px;
@@ -120,7 +123,75 @@ body {
 
 .markdown-rendered blockquote {
   border-radius: var(--radius-s);
-  padding-block: 0.25em;
+  padding-block: 0.65em;
+  padding-inline-end: 1em;
+}
+
+.markdown-rendered blockquote blockquote {
+  --blockquote-border-color: var(--background-modifier-border-hover);
+}
+
+.markdown-source-view.mod-cm6 .cm-blockquote-border::before {
+  border-inline-start-color: var(--background-modifier-border-hover);
+}
+
+.markdown-rendered ol > li::marker {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.markdown-rendered
+  :is(ul, ol)
+  :is(ul, ol)
+  > li::marker {
+  color: var(--text-muted);
+}
+
+.markdown-rendered
+  :is(ul, ol)
+  :is(ul, ol)
+  .list-bullet::after {
+  background-color: var(--text-muted);
+}
+
+.markdown-source-view.mod-cm6
+  :is(
+    .HyperMD-list-line-2,
+    .HyperMD-list-line-3,
+    .HyperMD-list-line-4,
+    .HyperMD-list-line-5,
+    .HyperMD-list-line-6
+  ) {
+  --list-marker-color: var(--text-muted);
+}
+
+.markdown-source-view.mod-cm6 .cm-formatting-list-ol {
+  font-weight: 600;
+}
+
+.callout {
+  background-color: rgba(var(--callout-color), 0.07);
+  box-shadow: none;
+}
+
+.callout-title,
+.callout-icon .svg-icon {
+  color: color-mix(
+    in srgb,
+    rgb(var(--callout-color)) 72%,
+    var(--text-normal)
+  );
+}
+
+.markdown-rendered th,
+.markdown-rendered td {
+  padding: 0.6em 0.75em;
+}
+
+.markdown-source-view.mod-cm6
+  .cm-table-widget
+  .table-cell-wrapper {
+  padding: 0.5em 0.7em;
 }
 
 .markdown-rendered table,
