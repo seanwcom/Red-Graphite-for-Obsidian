@@ -1,5 +1,10 @@
 # Red Graphite 2 QA
 
+This is the living release-acceptance record, not a substitute for the stable
+design contract in [`ARCHITECTURE.md`](./ARCHITECTURE.md). Update versions and
+results as testing occurs; do not mark a manual result complete from compiled
+CSS inspection alone.
+
 Do not create the `2.0.0` tag until every required row is complete and the final
 desktop and iOS appearance has been approved.
 
@@ -108,8 +113,12 @@ authorization.
 - [x] `npm ci`, `npm run check`, `npm test`, and high-level audit pass.
 - [x] No temporary test plugins were installed; existing vault plugins and data
   were left intact.
-- [ ] Updated 512×288 thumbnail and current screenshots contain no personal
-  vault content.
+- [ ] The single updated 512×288 flagship screenshot contains no personal vault
+  content and is saved as `thumbnail.png`.
+- [ ] README, changelog, and draft release notes put the Dark-mode migration
+  instruction first.
 - [ ] Desktop appearance approved.
 - [ ] Physical iOS appearance approved.
 - [ ] Working tree clean and CI green.
+
+Follow [`RELEASING.md`](./RELEASING.md) after every acceptance item is complete.

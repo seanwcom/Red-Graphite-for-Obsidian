@@ -14,6 +14,11 @@ cssclasses: []
 
 # Red Graphite Style Specimen
 
+Copy this entire file into a disposable note in the visual-test vault. Keep the
+fixture unchanged while comparing reading, Live Preview, and source modes so
+the same content exposes regressions between builds. Add a representative case
+here whenever the theme gains a new Markdown treatment.
+
 This page is a visual stress test for Red Graphite. It includes the Markdown
 elements most likely to expose problems with hierarchy, rhythm, contrast,
 alignment, wrapping, and interactive states.

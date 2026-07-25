@@ -1,0 +1,38 @@
+# Changelog
+
+Notable changes to Red Graphite are recorded here. This project uses numeric
+[Semantic Versioning](https://semver.org/) tags without a `v` prefix.
+
+## 2.0.0 — Unreleased
+
+### Breaking change
+
+Red Graphite's primary appearance has moved from Obsidian Light to Obsidian
+Dark. Existing users must open **Settings → Appearance** and set **Base color
+scheme** to **Dark** after updating. Obsidian Light remains supported as a
+conventional all-light fallback.
+
+### Changed
+
+- Rebuilt the theme around Obsidian's semantic variables and current interface.
+- Made the signature appearance a graphite dark frame with a light central
+  workspace.
+- Added a Style Settings toggle for a fully dark central workspace.
+- Replaced the legacy Grunt build with a deterministic Node 24 and Dart Sass
+  build.
+- Expanded Style Settings into grouped controls for the theme design system.
+- Updated tabs, typography, headings, lists, tables, content blocks, mobile
+  surfaces, and current Obsidian views.
+- Adopted semantic-first plugin compatibility with isolated exceptions.
+- Added modern CI, dependency updates, version synchronization, and draft
+  release automation.
+
+### Compatibility
+
+- Minimum Obsidian version: 1.12.7.
+- Release acceptance still requires the desktop and physical iOS checklist in
+  [`docs/QA.md`](./docs/QA.md).
+
+## 1.0.5
+
+Last release in the original light-mode-first theme architecture.
