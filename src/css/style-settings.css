@@ -26,7 +26,7 @@ settings:
   -
     id: red-graphite-base-palettes
     title: Base palettes
-    description: These four colors generate the semantic frame, document, text, border, and interaction palettes.
+    description: These three colors generate the semantic frame, document, text, border, and interaction palettes. Set the global accent in Obsidian's Appearance settings.
     type: heading
     level: 3
     collapsed: false
@@ -57,15 +57,6 @@ settings:
     opacity: false
     default-light: '#292c2e'
     default-dark: '#292c2e'
-  -
-    id: red-graphite-accent-color
-    title: Accent
-    description: Signature Red Graphite accent. Obsidian's Appearance accent setting has higher precedence.
-    type: variable-themed-color
-    format: hsl-split
-    opacity: false
-    default-light: '#cb4c48'
-    default-dark: '#cb4c48'
   -
     id: red-graphite-state-colors
     title: Selection and state colors
@@ -1152,9 +1143,95 @@ settings:
     default: '#8ab4f8'
 
   -
+    id: red-graphite-plugin-compatibility
+    title: Plugin compatibility
+    description: Narrowly scoped controls for plugins that need additional visual integration.
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: red-graphite-style-settings-plugin
+    title: Style Settings
+    description: Controls the indentation and grouping used to distinguish Red Graphite's expanded settings sections.
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-style-settings-guide-color
+    title: Expanded-group guide color
+    description: Overrides the native Obsidian accent used by expanded group guides.
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-style-settings-guide-width
+    title: Major guide width
+    type: variable-number-slider
+    default: 3
+    min: 1
+    max: 8
+    step: 1
+    format: px
+  -
+    id: red-graphite-style-settings-major-radius
+    title: Major group corner radius
+    type: variable-number-slider
+    default: 6
+    min: 0
+    max: 16
+    step: 1
+    format: px
+  -
+    id: red-graphite-style-settings-major-indent
+    title: Major group content indent
+    type: variable-number-slider
+    default: 12
+    min: 0
+    max: 40
+    step: 1
+    format: px
+  -
+    id: red-graphite-style-settings-nested-indent
+    title: Nested group indent
+    type: variable-number-slider
+    default: 14
+    min: 0
+    max: 40
+    step: 1
+    format: px
+  -
+    id: red-graphite-style-settings-group-gap
+    title: Space between major groups
+    type: variable-number-slider
+    default: 18
+    min: 0
+    max: 48
+    step: 1
+    format: px
+  -
+    id: red-graphite-style-settings-heading-padding-y
+    title: Group heading vertical padding
+    type: variable-number-slider
+    default: 10
+    min: 2
+    max: 24
+    step: 1
+    format: px
+  -
+    id: red-graphite-style-settings-heading-padding-x
+    title: Group heading horizontal padding
+    type: variable-number-slider
+    default: 12
+    min: 2
+    max: 32
+    step: 1
+    format: px
+
+  -
     id: red-graphite-settings-help
     title: About these controls
-    description: "Resetting a control restores Red Graphite's shipped default. Base palette controls generate the semantic colors used by Obsidian and plugins; component controls override individual visual decisions."
+    description: "Resetting a control restores Red Graphite's shipped default. Base palette controls generate the semantic colors used by Obsidian and plugins; Obsidian's Appearance setting controls the global accent; component controls override individual visual decisions."
     type: info-text
     markdown: true
 */

@@ -52,7 +52,7 @@ plugin and cannot be solved through Obsidian semantic variables.
 | --- | --- | --- | --- | --- |
 | Git | 2.38.1 | Pending | Pending | Uses semantic variables |
 | List Callouts | 1.2.9 | Pending | N/A | Body mode changes opacity only |
-| Style Settings | 1.0.9 | Pending | N/A | Verify every Red Graphite control |
+| Style Settings | 1.0.9 | N/A | N/A | Control schema and expanded/collapsed group hierarchy verified |
 | BRAT | 2.0.4 | Pending | Pending | Uses semantic variables |
 | Claudian | 2.0.24 | Pending | Pending | Light-center logo exception included |
 | Dataview | 0.5.70 | Pending | Pending | Verify issue #39 inline fields |

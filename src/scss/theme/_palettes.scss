@@ -1,7 +1,9 @@
 @mixin accent {
-  --accent-h: var(--red-graphite-accent-color-h);
-  --accent-s: var(--red-graphite-accent-color-s);
-  --accent-l: var(--red-graphite-accent-color-l);
+  // These are the theme defaults. Obsidian's native Appearance accent setting
+  // overrides --accent-h, --accent-s, and --accent-l directly.
+  --accent-h: 2;
+  --accent-s: 56%;
+  --accent-l: 54%;
   --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   --color-accent-1: hsl(
     var(--accent-h),

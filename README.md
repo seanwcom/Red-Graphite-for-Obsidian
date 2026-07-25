@@ -25,8 +25,9 @@ without a growing collection of theme-specific overrides.
 
 The dark-workspace toggle and theme controls require the
 [Style Settings plugin](https://github.com/obsidian-community/obsidian-style-settings).
-Red Graphite uses its signature red accent in every mode. A custom accent set
-in Obsidian's Appearance settings takes precedence over the theme setting.
+Red Graphite uses its signature red accent by default in every mode. Obsidian's
+native **Settings → Appearance → Accent color** control is the single global
+accent setting and works whether or not Style Settings is installed.
 
 ## Style Settings
 
@@ -37,18 +38,19 @@ itself.
 
 | Group | Controls |
 | --- | --- |
-| Appearance | Display mode, light and dark palettes, accent, selection, and state colors |
+| Appearance | Display mode, light and dark palettes, selection, and state colors |
 | Typography | Font families, interface scale, body text, note titles, and all six heading levels |
 | Layout and spacing | Document width and margins, mobile spacing, lists, and horizontal rules |
 | Workspace chrome | Tabs, sidebar navigation, status bar, vault name, and scrollbars |
 | Markdown and content | Blockquotes, callouts, code blocks, tables, tags, and embeds |
 | Code syntax colors | Complete light-document and dark-document syntax palettes |
+| Plugin compatibility | Narrowly scoped integration controls, organized by plugin |
 
-Component colors can follow the semantic theme palette or be overridden
-individually. This keeps global palette changes coherent while still allowing,
-for example, an H1 color or active-tab indicator to diverge from the main
-accent. Style Settings provides reset controls at each level to return a value,
-subgroup, or the entire Red Graphite section to the shipped defaults.
+Component colors follow Obsidian's native accent by default or can be overridden
+individually. This keeps global accent changes coherent while still allowing,
+for example, an H1 color or active-tab indicator to diverge. Style Settings
+provides reset controls at each level to return a value, subgroup, or the entire
+Red Graphite section to the shipped defaults.
 
 ## Live development on Windows
 
@@ -105,9 +107,10 @@ semantic palette and `color-scheme: light`; tab headers and global menus remain
 part of the dark frame. The Style Settings toggle replaces that local palette
 with the dark document palette.
 
-Plugins are expected to use Obsidian semantic variables. Red Graphite adds a
-plugin-specific rule only when a tested plugin hardcodes the body theme and the
-result is unreadable or unusable. Cosmetic differences alone are not overridden.
+Plugins are expected to use Obsidian semantic variables. Red Graphite keeps
+each exceptional integration in its own `src/scss/plugins/_<plugin>.scss` file
+and adds one only when a tested plugin hardcodes the body theme or otherwise
+becomes unreadable or unusable. Cosmetic differences alone are not overridden.
 See [the QA matrix](./docs/QA.md) for the current compatibility targets.
 
 ## Release process

@@ -2,4 +2,5 @@
 @use "theme/modes";
 @use "theme/components";
 @use "theme/mobile";
-@use "theme/compatibility";
+@use "plugins/claudian";
+@use "plugins/style-settings";

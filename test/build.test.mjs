@@ -37,6 +37,12 @@ test("compiled theme contains all three appearance states", async () => {
   );
   assert.match(css, /color-scheme: light/);
   assert.match(css, /color-scheme: dark/);
+  assert.match(css, /--accent-h: 2/);
+  assert.doesNotMatch(css, /--red-graphite-accent-color-/);
+  assert.match(
+    css,
+    /\.style-settings-heading\[data-id=(?:"red-graphite"|red-graphite)\] \+ \.style-settings-container/,
+  );
 });
 
 test("Style Settings exposes a unique, comprehensive token schema", async () => {
@@ -59,6 +65,10 @@ test("Style Settings exposes a unique, comprehensive token schema", async () => 
         id === "red-graphite-dark-document" && type === "class-toggle",
     ),
     "dark document toggle",
+  );
+  assert.ok(
+    !ids.includes("red-graphite-accent-color"),
+    "Obsidian Appearance must remain the only global accent control",
   );
 
   for (const { id, type } of definitions) {

@@ -1,14 +1,7 @@
 /*
- * Compatibility policy
+ * Claudian 2.0.24
  *
- * Plugins inherit Obsidian's semantic variables. Add a selector here only when
- * a tested plugin remains unreadable or unusable after those variables are
- * applied. Every exception must name the plugin version and its upstream issue
- * or source mechanism.
- */
-
-/*
- * Claudian 2.0.24 selects logo colors and image variants from body.theme-dark
+ * Claudian selects logo colors and image variants from body.theme-dark
  * instead of semantic surface variables. A Claudian view opened in Red
  * Graphite's light center would otherwise render its Codex and Pi branding
  * white on white. Sidebar instances continue to use Claudian's dark styling.

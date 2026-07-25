@@ -9,9 +9,6 @@ body {
   --red-graphite-document-dark-color-h: 204;
   --red-graphite-document-dark-color-s: 6%;
   --red-graphite-document-dark-color-l: 17%;
-  --red-graphite-accent-color-h: 2;
-  --red-graphite-accent-color-s: 56%;
-  --red-graphite-accent-color-l: 54%;
   --red-graphite-selection-opacity: 0.22;
   --red-graphite-error-color: #c94444;
   --red-graphite-success-color: #3f8f64;
@@ -105,6 +102,15 @@ body {
   --red-graphite-callout-padding-x: 16px;
   --red-graphite-code-border-width: 1px;
   --red-graphite-code-radius: 6px;
+
+  // Style Settings plugin hierarchy
+  --red-graphite-style-settings-guide-width: 3px;
+  --red-graphite-style-settings-major-radius: 6px;
+  --red-graphite-style-settings-major-indent: 12px;
+  --red-graphite-style-settings-nested-indent: 14px;
+  --red-graphite-style-settings-group-gap: 18px;
+  --red-graphite-style-settings-heading-padding-y: 10px;
+  --red-graphite-style-settings-heading-padding-x: 12px;
 
   // Tables
   --red-graphite-table-cell-padding-y: 0.6em;

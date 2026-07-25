@@ -1,0 +1,101 @@
+/*
+ * Style Settings 1.0.9
+ *
+ * The plugin renders every heading level with nearly identical geometry.
+ * Red Graphite's large, deeply nested control tree therefore loses its parent
+ * and child relationships. Scope the treatment to Red Graphite's own section:
+ * major groups become panels, expanded groups receive an accent guide, and
+ * nested groups receive progressively indented guide rails.
+ *
+ * Source: github.com/mgmeyers/obsidian-style-settings (styles.css, main.js).
+ */
+
+$red-graphite-settings:
+  '.style-settings-heading[data-id="red-graphite"] + .style-settings-container';
+
+#{$red-graphite-settings} {
+  > .style-settings-heading[data-level="2"] {
+    margin-block:
+      var(--red-graphite-style-settings-group-gap)
+      0;
+    padding:
+      var(--red-graphite-style-settings-heading-padding-y)
+      var(--red-graphite-style-settings-heading-padding-x);
+    border: 0;
+    border-radius: var(--red-graphite-style-settings-major-radius);
+    background: var(--background-secondary-alt);
+  }
+
+  > .style-settings-heading[data-level="2"]:first-child {
+    margin-block-start: 0;
+  }
+
+  > .style-settings-heading[data-level="2"]:not(.is-collapsed) {
+    border-inline-start:
+      var(--red-graphite-style-settings-guide-width)
+      solid
+      var(
+        --red-graphite-style-settings-guide-color,
+        var(--interactive-accent)
+      );
+    border-end-start-radius: 0;
+  }
+
+  > .style-settings-heading[data-level="2"] + .style-settings-container {
+    margin-inline-start: var(--red-graphite-style-settings-major-indent);
+    padding:
+      var(--size-4-2)
+      0
+      var(--size-4-2)
+      var(--red-graphite-style-settings-nested-indent);
+    border-inline-start:
+      var(--red-graphite-style-settings-guide-width)
+      solid
+      color-mix(
+        in srgb,
+        var(
+            --red-graphite-style-settings-guide-color,
+            var(--interactive-accent)
+          )
+          38%,
+        transparent
+      );
+  }
+
+  .style-settings-heading[data-level="3"],
+  .style-settings-heading[data-level="4"] {
+    margin-block: 0;
+    padding:
+      var(--red-graphite-style-settings-heading-padding-y)
+      var(--red-graphite-style-settings-heading-padding-x);
+    border-bottom-color: var(--background-modifier-border);
+  }
+
+  .style-settings-heading[data-level="3"]:not(.is-collapsed),
+  .style-settings-heading[data-level="4"]:not(.is-collapsed) {
+    color: var(--text-normal);
+    background: color-mix(
+      in srgb,
+      var(--background-secondary) 72%,
+      transparent
+    );
+    border-radius: var(--radius-s) var(--radius-s) 0 0;
+  }
+
+  .style-settings-heading[data-level="3"]:not(.is-collapsed)
+    + .style-settings-container,
+  .style-settings-heading[data-level="4"]:not(.is-collapsed)
+    + .style-settings-container {
+    margin-inline-start: var(--red-graphite-style-settings-nested-indent);
+    padding-inline-start: var(--red-graphite-style-settings-nested-indent);
+    border-inline-start: 1px solid var(--background-modifier-border-hover);
+  }
+
+  .style-settings-heading:not(.is-collapsed)
+    .style-settings-collapse-indicator {
+    color: var(
+      --red-graphite-style-settings-guide-color,
+      var(--interactive-accent)
+    );
+  }
+}
