@@ -11,6 +11,114 @@ body {
   --red-graphite-accent-color-h: 2;
   --red-graphite-accent-color-s: 56%;
   --red-graphite-accent-color-l: 54%;
+  --red-graphite-selection-opacity: 0.22;
+  --red-graphite-error-color: #c94444;
+  --red-graphite-success-color: #3f8f64;
+  --red-graphite-interface-font:
+    "Avenir Next", "Avenir", "Segoe UI", sans-serif;
+  --red-graphite-text-font:
+    "Avenir Next", "Avenir", "Segoe UI", sans-serif;
+  --red-graphite-monospace-font: "SFMono-Regular", Consolas, monospace;
+  --red-graphite-ui-font-smaller: 12px;
+  --red-graphite-ui-font-small: 13px;
+  --red-graphite-ui-font-medium: 15px;
+  --red-graphite-ui-font-large: 20px;
+  --red-graphite-body-line-height: 1.6;
+  --red-graphite-paragraph-spacing: 0.9rem;
+  --red-graphite-bold-weight: 600;
+  --red-graphite-inline-title-size: 1.95em;
+  --red-graphite-inline-title-weight: 650;
+  --red-graphite-inline-title-line-height: 1.18;
+  --red-graphite-inline-title-margin-bottom: 0.7em;
+  --red-graphite-h1-size: 1.55em;
+  --red-graphite-h2-size: 1.32em;
+  --red-graphite-h3-size: 1.16em;
+  --red-graphite-h4-size: 1.05em;
+  --red-graphite-h5-size: 0.95em;
+  --red-graphite-h6-size: 0.9em;
+  --red-graphite-h1-weight: 650;
+  --red-graphite-h2-weight: 650;
+  --red-graphite-h3-weight: 600;
+  --red-graphite-h4-weight: 600;
+  --red-graphite-h5-weight: 650;
+  --red-graphite-h6-weight: 650;
+  --red-graphite-h1-line-height: 1.18;
+  --red-graphite-h2-line-height: 1.25;
+  --red-graphite-h3-line-height: 1.3;
+  --red-graphite-h4-line-height: 1.35;
+  --red-graphite-h5-line-height: 1.4;
+  --red-graphite-h6-line-height: 1.4;
+  --red-graphite-h1-letter-spacing: -0.025em;
+  --red-graphite-h2-letter-spacing: -0.018em;
+  --red-graphite-h3-letter-spacing: -0.012em;
+  --red-graphite-heading-spacing-multiplier: 1.75;
+  --red-graphite-h2-rule-color: var(--interactive-accent);
+  --red-graphite-h2-rule-width: 1px;
+  --red-graphite-h2-rule-gap: 0.25em;
+  --red-graphite-content-width: 700px;
+  --red-graphite-document-margin-x: 48px;
+  --red-graphite-document-margin-y: 36px;
+  --red-graphite-mobile-margin-x: 24px;
+  --red-graphite-mobile-margin-y: 8px;
+  --red-graphite-horizontal-rule-width: 1px;
+  --red-graphite-horizontal-rule-margin: 2.5em;
+  --red-graphite-list-indent: 1.8em;
+  --red-graphite-list-indent-editing: 1.4em;
+  --red-graphite-list-spacing: 0.15em;
+  --red-graphite-list-number-weight: 600;
+  --red-graphite-tab-indicator-color: var(--interactive-accent);
+  --red-graphite-tab-indicator-width: 2px;
+  --red-graphite-tab-radius: 6px;
+  --red-graphite-nav-item-radius: 5px;
+  --red-graphite-nav-indicator-color: var(--interactive-accent);
+  --red-graphite-nav-indicator-width: 3px;
+  --red-graphite-vault-name-color: var(--interactive-accent);
+  --red-graphite-vault-name-size: 15px;
+  --red-graphite-vault-name-weight: 600;
+  --red-graphite-status-bar-radius: 4px;
+  --red-graphite-blockquote-border-color: var(--interactive-accent);
+  --red-graphite-blockquote-border-width: 3px;
+  --red-graphite-blockquote-radius: 4px;
+  --red-graphite-blockquote-padding-y: 0.65em;
+  --red-graphite-blockquote-padding-end: 1em;
+  --red-graphite-callout-background-opacity: 0.07;
+  --red-graphite-callout-border-opacity: 0.22;
+  --red-graphite-callout-border-width: 3px;
+  --red-graphite-callout-radius: 6px;
+  --red-graphite-callout-title-weight: 600;
+  --red-graphite-callout-title-color-mix: 72%;
+  --red-graphite-callout-padding-y: 12px;
+  --red-graphite-callout-padding-x: 16px;
+  --red-graphite-code-border-width: 1px;
+  --red-graphite-code-radius: 6px;
+  --red-graphite-table-cell-padding-y: 0.6em;
+  --red-graphite-table-cell-padding-x: 0.75em;
+  --red-graphite-table-editor-padding-y: 0.5em;
+  --red-graphite-table-editor-padding-x: 0.7em;
+  --red-graphite-table-header-weight: 600;
+  --red-graphite-table-line-height: 1.45;
+  --red-graphite-tag-background-opacity-light: 0.1;
+  --red-graphite-tag-background-hover-opacity-light: 0.18;
+  --red-graphite-tag-background-opacity-dark: 0.16;
+  --red-graphite-tag-background-hover-opacity-dark: 0.24;
+  --red-graphite-embed-border-width: 2px;
+  --red-graphite-scrollbar-size: 10px;
+  --red-graphite-scrollbar-border-width: 2px;
+  --red-graphite-scrollbar-radius: 12px;
+  --red-graphite-code-light-function: #2457a7;
+  --red-graphite-code-light-important: #a92727;
+  --red-graphite-code-light-keyword: #713da6;
+  --red-graphite-code-light-property: #2c6c3f;
+  --red-graphite-code-light-string: #8a5a00;
+  --red-graphite-code-light-tag: #a92727;
+  --red-graphite-code-light-value: #2457a7;
+  --red-graphite-code-dark-function: #8ab4f8;
+  --red-graphite-code-dark-important: #f28b82;
+  --red-graphite-code-dark-keyword: #c58af9;
+  --red-graphite-code-dark-property: #81c995;
+  --red-graphite-code-dark-string: #fdd663;
+  --red-graphite-code-dark-tag: #f28b82;
+  --red-graphite-code-dark-value: #8ab4f8;
 }
 
 body.theme-dark {
@@ -69,17 +177,23 @@ body.theme-dark {
   --code-background: var(--color-base-05);
   --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
-  --code-function: #8ab4f8;
-  --code-important: #f28b82;
-  --code-keyword: #c58af9;
+  --code-function: var(--red-graphite-code-dark-function);
+  --code-important: var(--red-graphite-code-dark-important);
+  --code-keyword: var(--red-graphite-code-dark-keyword);
   --code-operator: var(--text-muted);
-  --code-property: #81c995;
+  --code-property: var(--red-graphite-code-dark-property);
   --code-punctuation: var(--text-muted);
-  --code-string: #fdd663;
-  --code-tag: #f28b82;
-  --code-value: #8ab4f8;
-  --tag-background: hsla(var(--interactive-accent-hsl), 0.16);
-  --tag-background-hover: hsla(var(--interactive-accent-hsl), 0.24);
+  --code-string: var(--red-graphite-code-dark-string);
+  --code-tag: var(--red-graphite-code-dark-tag);
+  --code-value: var(--red-graphite-code-dark-value);
+  --tag-background: hsla(
+    var(--interactive-accent-hsl),
+    var(--red-graphite-tag-background-opacity-dark)
+  );
+  --tag-background-hover: hsla(
+    var(--interactive-accent-hsl),
+    var(--red-graphite-tag-background-hover-opacity-dark)
+  );
   --checkbox-border-color: var(--text-faint);
   --checkbox-border-color-hover: var(--interactive-accent);
   --checkbox-color: var(--color-accent);
@@ -89,20 +203,25 @@ body.theme-dark {
   --blockquote-background-color: var(--background-secondary);
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
-  --background-modifier-error: #c94444;
-  --background-modifier-error-hover: #b93b3b;
-  --background-modifier-error-rgb: 201, 68, 68;
-  --background-modifier-success: #3f8f64;
-  --background-modifier-success-rgb: 63, 143, 100;
-  --text-error: #d84c4c;
-  --text-success: #3f8f64;
+  --background-modifier-error: var(--red-graphite-error-color);
+  --background-modifier-error-hover: color-mix(
+    in srgb,
+    var(--red-graphite-error-color) 88%,
+    black
+  );
+  --background-modifier-success: var(--red-graphite-success-color);
+  --text-error: var(--red-graphite-error-color);
+  --text-success: var(--red-graphite-success-color);
   --divider-color: var(--background-modifier-border);
   --divider-color-hover: var(--interactive-accent);
   --collapse-icon-color: var(--text-faint);
   --collapse-icon-color-collapsed: var(--text-accent);
   --caret-color: var(--text-normal);
   --hr-color: var(--background-modifier-border);
-  --list-marker-color: var(--text-accent);
+  --list-marker-color: var(
+    --red-graphite-list-marker-color,
+    var(--text-accent)
+  );
   --embed-block-shadow-hover: none;
   --flair-background: var(--background-modifier-hover);
   --menu-background: var(--background-primary);
@@ -114,16 +233,19 @@ body.theme-dark {
   --prompt-background: var(--background-primary);
   --prompt-border-color: var(--background-modifier-border);
   --suggestion-background: var(--background-primary);
-  --callout-border-width: 1px 1px 1px 3px;
-  --callout-border-opacity: 0.22;
+  --callout-border-width:
+    1px 1px 1px var(--red-graphite-callout-border-width);
+  --callout-border-opacity: var(--red-graphite-callout-border-opacity);
   --callout-blend-mode: normal;
-  --callout-padding: var(--size-4-3) var(--size-4-4);
-  --callout-radius: 6px;
-  --callout-title-weight: 600;
+  --callout-padding:
+    var(--red-graphite-callout-padding-y)
+    var(--red-graphite-callout-padding-x);
+  --callout-radius: var(--red-graphite-callout-radius);
+  --callout-title-weight: var(--red-graphite-callout-title-weight);
   --code-background: var(--background-secondary-alt);
   --code-border-color: var(--background-modifier-border);
-  --code-border-width: 1px;
-  --code-radius: 6px;
+  --code-border-width: var(--red-graphite-code-border-width);
+  --code-radius: var(--red-graphite-code-radius);
   --pill-background: var(--background-modifier-hover);
   --pill-background-hover: var(--background-modifier-active-hover);
   --pill-border-color: var(--background-modifier-border);
@@ -132,17 +254,23 @@ body.theme-dark {
   --pill-color-hover: var(--text-normal);
   --pill-color-remove: var(--text-faint);
   --pill-color-remove-hover: var(--text-normal);
-  --blockquote-border-color: var(--interactive-accent);
-  --blockquote-border-thickness: 3px;
+  --blockquote-border-color: var(
+    --red-graphite-blockquote-border-color
+  );
+  --blockquote-border-thickness: var(
+    --red-graphite-blockquote-border-width
+  );
   --blockquote-font-style: normal;
   --embed-background: var(--background-secondary);
-  --embed-border-start: 2px solid var(--background-modifier-border);
+  --embed-border-start:
+    var(--red-graphite-embed-border-width) solid
+      var(--background-modifier-border);
   --table-border-color: var(--background-modifier-border);
   --table-header-border-color: var(--background-modifier-border);
   --table-header-background: var(--background-secondary-alt);
   --table-header-background-hover: var(--background-modifier-hover);
-  --table-header-weight: 600;
-  --table-line-height: 1.45;
+  --table-header-weight: var(--red-graphite-table-header-weight);
+  --table-line-height: var(--red-graphite-table-line-height);
   --table-row-background-hover: var(--background-secondary);
   --table-row-alt-background-hover: var(--background-secondary);
   --table-cell-vertical-alignment: middle;
@@ -208,7 +336,10 @@ body.theme-dark {
   --interactive-accent: var(--color-accent);
   --interactive-accent-hover: var(--color-accent-1);
   --interactive-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
-  --text-selection: hsla(var(--interactive-accent-hsl), 0.22);
+  --text-selection: hsla(
+    var(--interactive-accent-hsl),
+    var(--red-graphite-selection-opacity)
+  );
   --titlebar-background: var(--background-primary);
   --titlebar-background-focused: var(--background-primary);
   --titlebar-text-color: var(--text-muted);
@@ -225,7 +356,7 @@ body.theme-dark {
   --status-bar-background: var(--background-primary);
   --status-bar-border-color: transparent;
   --status-bar-border-width: 0;
-  --status-bar-radius: var(--radius-s) 0 0 0;
+  --status-bar-radius: var(--red-graphite-status-bar-radius) 0 0 0;
   --mobile-sidebar-background: var(--background-primary);
   --file-header-border: 0;
   --modal-background: var(--background-primary);
@@ -291,17 +422,23 @@ body.theme-light {
   --code-background: var(--color-base-05);
   --code-normal: var(--text-normal);
   --code-comment: var(--text-muted);
-  --code-function: #2457a7;
-  --code-important: #a92727;
-  --code-keyword: #713da6;
+  --code-function: var(--red-graphite-code-light-function);
+  --code-important: var(--red-graphite-code-light-important);
+  --code-keyword: var(--red-graphite-code-light-keyword);
   --code-operator: var(--text-muted);
-  --code-property: #2c6c3f;
+  --code-property: var(--red-graphite-code-light-property);
   --code-punctuation: var(--text-muted);
-  --code-string: #8a5a00;
-  --code-tag: #a92727;
-  --code-value: #2457a7;
-  --tag-background: hsla(var(--interactive-accent-hsl), 0.1);
-  --tag-background-hover: hsla(var(--interactive-accent-hsl), 0.18);
+  --code-string: var(--red-graphite-code-light-string);
+  --code-tag: var(--red-graphite-code-light-tag);
+  --code-value: var(--red-graphite-code-light-value);
+  --tag-background: hsla(
+    var(--interactive-accent-hsl),
+    var(--red-graphite-tag-background-opacity-light)
+  );
+  --tag-background-hover: hsla(
+    var(--interactive-accent-hsl),
+    var(--red-graphite-tag-background-hover-opacity-light)
+  );
   --checkbox-border-color: var(--text-faint);
   --checkbox-border-color-hover: var(--interactive-accent);
   --checkbox-color: var(--color-accent);
@@ -311,20 +448,25 @@ body.theme-light {
   --blockquote-background-color: var(--background-secondary);
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
-  --background-modifier-error: #c94444;
-  --background-modifier-error-hover: #b93b3b;
-  --background-modifier-error-rgb: 201, 68, 68;
-  --background-modifier-success: #3f8f64;
-  --background-modifier-success-rgb: 63, 143, 100;
-  --text-error: #d84c4c;
-  --text-success: #3f8f64;
+  --background-modifier-error: var(--red-graphite-error-color);
+  --background-modifier-error-hover: color-mix(
+    in srgb,
+    var(--red-graphite-error-color) 88%,
+    black
+  );
+  --background-modifier-success: var(--red-graphite-success-color);
+  --text-error: var(--red-graphite-error-color);
+  --text-success: var(--red-graphite-success-color);
   --divider-color: var(--background-modifier-border);
   --divider-color-hover: var(--interactive-accent);
   --collapse-icon-color: var(--text-faint);
   --collapse-icon-color-collapsed: var(--text-accent);
   --caret-color: var(--text-normal);
   --hr-color: var(--background-modifier-border);
-  --list-marker-color: var(--text-accent);
+  --list-marker-color: var(
+    --red-graphite-list-marker-color,
+    var(--text-accent)
+  );
   --embed-block-shadow-hover: none;
   --flair-background: var(--background-modifier-hover);
   --menu-background: var(--background-primary);
@@ -336,16 +478,19 @@ body.theme-light {
   --prompt-background: var(--background-primary);
   --prompt-border-color: var(--background-modifier-border);
   --suggestion-background: var(--background-primary);
-  --callout-border-width: 1px 1px 1px 3px;
-  --callout-border-opacity: 0.22;
+  --callout-border-width:
+    1px 1px 1px var(--red-graphite-callout-border-width);
+  --callout-border-opacity: var(--red-graphite-callout-border-opacity);
   --callout-blend-mode: normal;
-  --callout-padding: var(--size-4-3) var(--size-4-4);
-  --callout-radius: 6px;
-  --callout-title-weight: 600;
+  --callout-padding:
+    var(--red-graphite-callout-padding-y)
+    var(--red-graphite-callout-padding-x);
+  --callout-radius: var(--red-graphite-callout-radius);
+  --callout-title-weight: var(--red-graphite-callout-title-weight);
   --code-background: var(--background-secondary-alt);
   --code-border-color: var(--background-modifier-border);
-  --code-border-width: 1px;
-  --code-radius: 6px;
+  --code-border-width: var(--red-graphite-code-border-width);
+  --code-radius: var(--red-graphite-code-radius);
   --pill-background: var(--background-modifier-hover);
   --pill-background-hover: var(--background-modifier-active-hover);
   --pill-border-color: var(--background-modifier-border);
@@ -354,17 +499,23 @@ body.theme-light {
   --pill-color-hover: var(--text-normal);
   --pill-color-remove: var(--text-faint);
   --pill-color-remove-hover: var(--text-normal);
-  --blockquote-border-color: var(--interactive-accent);
-  --blockquote-border-thickness: 3px;
+  --blockquote-border-color: var(
+    --red-graphite-blockquote-border-color
+  );
+  --blockquote-border-thickness: var(
+    --red-graphite-blockquote-border-width
+  );
   --blockquote-font-style: normal;
   --embed-background: var(--background-secondary);
-  --embed-border-start: 2px solid var(--background-modifier-border);
+  --embed-border-start:
+    var(--red-graphite-embed-border-width) solid
+      var(--background-modifier-border);
   --table-border-color: var(--background-modifier-border);
   --table-header-border-color: var(--background-modifier-border);
   --table-header-background: var(--background-secondary-alt);
   --table-header-background-hover: var(--background-modifier-hover);
-  --table-header-weight: 600;
-  --table-line-height: 1.45;
+  --table-header-weight: var(--red-graphite-table-header-weight);
+  --table-line-height: var(--red-graphite-table-line-height);
   --table-row-background-hover: var(--background-secondary);
   --table-row-alt-background-hover: var(--background-secondary);
   --table-cell-vertical-alignment: middle;
@@ -430,7 +581,10 @@ body.theme-light {
   --interactive-accent: var(--color-accent);
   --interactive-accent-hover: var(--color-accent-1);
   --interactive-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
-  --text-selection: hsla(var(--interactive-accent-hsl), 0.22);
+  --text-selection: hsla(
+    var(--interactive-accent-hsl),
+    var(--red-graphite-selection-opacity)
+  );
   --titlebar-background: var(--background-secondary);
   --titlebar-background-focused: var(--background-secondary);
   --titlebar-text-color: var(--text-muted);
@@ -504,17 +658,23 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --code-background: var(--color-base-05);
   --code-normal: var(--text-normal);
   --code-comment: var(--text-muted);
-  --code-function: #2457a7;
-  --code-important: #a92727;
-  --code-keyword: #713da6;
+  --code-function: var(--red-graphite-code-light-function);
+  --code-important: var(--red-graphite-code-light-important);
+  --code-keyword: var(--red-graphite-code-light-keyword);
   --code-operator: var(--text-muted);
-  --code-property: #2c6c3f;
+  --code-property: var(--red-graphite-code-light-property);
   --code-punctuation: var(--text-muted);
-  --code-string: #8a5a00;
-  --code-tag: #a92727;
-  --code-value: #2457a7;
-  --tag-background: hsla(var(--interactive-accent-hsl), 0.1);
-  --tag-background-hover: hsla(var(--interactive-accent-hsl), 0.18);
+  --code-string: var(--red-graphite-code-light-string);
+  --code-tag: var(--red-graphite-code-light-tag);
+  --code-value: var(--red-graphite-code-light-value);
+  --tag-background: hsla(
+    var(--interactive-accent-hsl),
+    var(--red-graphite-tag-background-opacity-light)
+  );
+  --tag-background-hover: hsla(
+    var(--interactive-accent-hsl),
+    var(--red-graphite-tag-background-hover-opacity-light)
+  );
   --checkbox-border-color: var(--text-faint);
   --checkbox-border-color-hover: var(--interactive-accent);
   --checkbox-color: var(--color-accent);
@@ -524,20 +684,25 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --blockquote-background-color: var(--background-secondary);
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
-  --background-modifier-error: #c94444;
-  --background-modifier-error-hover: #b93b3b;
-  --background-modifier-error-rgb: 201, 68, 68;
-  --background-modifier-success: #3f8f64;
-  --background-modifier-success-rgb: 63, 143, 100;
-  --text-error: #d84c4c;
-  --text-success: #3f8f64;
+  --background-modifier-error: var(--red-graphite-error-color);
+  --background-modifier-error-hover: color-mix(
+    in srgb,
+    var(--red-graphite-error-color) 88%,
+    black
+  );
+  --background-modifier-success: var(--red-graphite-success-color);
+  --text-error: var(--red-graphite-error-color);
+  --text-success: var(--red-graphite-success-color);
   --divider-color: var(--background-modifier-border);
   --divider-color-hover: var(--interactive-accent);
   --collapse-icon-color: var(--text-faint);
   --collapse-icon-color-collapsed: var(--text-accent);
   --caret-color: var(--text-normal);
   --hr-color: var(--background-modifier-border);
-  --list-marker-color: var(--text-accent);
+  --list-marker-color: var(
+    --red-graphite-list-marker-color,
+    var(--text-accent)
+  );
   --embed-block-shadow-hover: none;
   --flair-background: var(--background-modifier-hover);
   --menu-background: var(--background-primary);
@@ -549,16 +714,19 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --prompt-background: var(--background-primary);
   --prompt-border-color: var(--background-modifier-border);
   --suggestion-background: var(--background-primary);
-  --callout-border-width: 1px 1px 1px 3px;
-  --callout-border-opacity: 0.22;
+  --callout-border-width:
+    1px 1px 1px var(--red-graphite-callout-border-width);
+  --callout-border-opacity: var(--red-graphite-callout-border-opacity);
   --callout-blend-mode: normal;
-  --callout-padding: var(--size-4-3) var(--size-4-4);
-  --callout-radius: 6px;
-  --callout-title-weight: 600;
+  --callout-padding:
+    var(--red-graphite-callout-padding-y)
+    var(--red-graphite-callout-padding-x);
+  --callout-radius: var(--red-graphite-callout-radius);
+  --callout-title-weight: var(--red-graphite-callout-title-weight);
   --code-background: var(--background-secondary-alt);
   --code-border-color: var(--background-modifier-border);
-  --code-border-width: 1px;
-  --code-radius: 6px;
+  --code-border-width: var(--red-graphite-code-border-width);
+  --code-radius: var(--red-graphite-code-radius);
   --pill-background: var(--background-modifier-hover);
   --pill-background-hover: var(--background-modifier-active-hover);
   --pill-border-color: var(--background-modifier-border);
@@ -567,17 +735,23 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --pill-color-hover: var(--text-normal);
   --pill-color-remove: var(--text-faint);
   --pill-color-remove-hover: var(--text-normal);
-  --blockquote-border-color: var(--interactive-accent);
-  --blockquote-border-thickness: 3px;
+  --blockquote-border-color: var(
+    --red-graphite-blockquote-border-color
+  );
+  --blockquote-border-thickness: var(
+    --red-graphite-blockquote-border-width
+  );
   --blockquote-font-style: normal;
   --embed-background: var(--background-secondary);
-  --embed-border-start: 2px solid var(--background-modifier-border);
+  --embed-border-start:
+    var(--red-graphite-embed-border-width) solid
+      var(--background-modifier-border);
   --table-border-color: var(--background-modifier-border);
   --table-header-border-color: var(--background-modifier-border);
   --table-header-background: var(--background-secondary-alt);
   --table-header-background-hover: var(--background-modifier-hover);
-  --table-header-weight: 600;
-  --table-line-height: 1.45;
+  --table-header-weight: var(--red-graphite-table-header-weight);
+  --table-line-height: var(--red-graphite-table-line-height);
   --table-row-background-hover: var(--background-secondary);
   --table-row-alt-background-hover: var(--background-secondary);
   --table-cell-vertical-alignment: middle;
@@ -747,17 +921,23 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
   --code-background: var(--color-base-05);
   --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
-  --code-function: #8ab4f8;
-  --code-important: #f28b82;
-  --code-keyword: #c58af9;
+  --code-function: var(--red-graphite-code-dark-function);
+  --code-important: var(--red-graphite-code-dark-important);
+  --code-keyword: var(--red-graphite-code-dark-keyword);
   --code-operator: var(--text-muted);
-  --code-property: #81c995;
+  --code-property: var(--red-graphite-code-dark-property);
   --code-punctuation: var(--text-muted);
-  --code-string: #fdd663;
-  --code-tag: #f28b82;
-  --code-value: #8ab4f8;
-  --tag-background: hsla(var(--interactive-accent-hsl), 0.16);
-  --tag-background-hover: hsla(var(--interactive-accent-hsl), 0.24);
+  --code-string: var(--red-graphite-code-dark-string);
+  --code-tag: var(--red-graphite-code-dark-tag);
+  --code-value: var(--red-graphite-code-dark-value);
+  --tag-background: hsla(
+    var(--interactive-accent-hsl),
+    var(--red-graphite-tag-background-opacity-dark)
+  );
+  --tag-background-hover: hsla(
+    var(--interactive-accent-hsl),
+    var(--red-graphite-tag-background-hover-opacity-dark)
+  );
   --checkbox-border-color: var(--text-faint);
   --checkbox-border-color-hover: var(--interactive-accent);
   --checkbox-color: var(--color-accent);
@@ -767,20 +947,25 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
   --blockquote-background-color: var(--background-secondary);
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
-  --background-modifier-error: #c94444;
-  --background-modifier-error-hover: #b93b3b;
-  --background-modifier-error-rgb: 201, 68, 68;
-  --background-modifier-success: #3f8f64;
-  --background-modifier-success-rgb: 63, 143, 100;
-  --text-error: #d84c4c;
-  --text-success: #3f8f64;
+  --background-modifier-error: var(--red-graphite-error-color);
+  --background-modifier-error-hover: color-mix(
+    in srgb,
+    var(--red-graphite-error-color) 88%,
+    black
+  );
+  --background-modifier-success: var(--red-graphite-success-color);
+  --text-error: var(--red-graphite-error-color);
+  --text-success: var(--red-graphite-success-color);
   --divider-color: var(--background-modifier-border);
   --divider-color-hover: var(--interactive-accent);
   --collapse-icon-color: var(--text-faint);
   --collapse-icon-color-collapsed: var(--text-accent);
   --caret-color: var(--text-normal);
   --hr-color: var(--background-modifier-border);
-  --list-marker-color: var(--text-accent);
+  --list-marker-color: var(
+    --red-graphite-list-marker-color,
+    var(--text-accent)
+  );
   --embed-block-shadow-hover: none;
   --flair-background: var(--background-modifier-hover);
   --menu-background: var(--background-primary);
@@ -792,16 +977,19 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
   --prompt-background: var(--background-primary);
   --prompt-border-color: var(--background-modifier-border);
   --suggestion-background: var(--background-primary);
-  --callout-border-width: 1px 1px 1px 3px;
-  --callout-border-opacity: 0.22;
+  --callout-border-width:
+    1px 1px 1px var(--red-graphite-callout-border-width);
+  --callout-border-opacity: var(--red-graphite-callout-border-opacity);
   --callout-blend-mode: normal;
-  --callout-padding: var(--size-4-3) var(--size-4-4);
-  --callout-radius: 6px;
-  --callout-title-weight: 600;
+  --callout-padding:
+    var(--red-graphite-callout-padding-y)
+    var(--red-graphite-callout-padding-x);
+  --callout-radius: var(--red-graphite-callout-radius);
+  --callout-title-weight: var(--red-graphite-callout-title-weight);
   --code-background: var(--background-secondary-alt);
   --code-border-color: var(--background-modifier-border);
-  --code-border-width: 1px;
-  --code-radius: 6px;
+  --code-border-width: var(--red-graphite-code-border-width);
+  --code-radius: var(--red-graphite-code-radius);
   --pill-background: var(--background-modifier-hover);
   --pill-background-hover: var(--background-modifier-active-hover);
   --pill-border-color: var(--background-modifier-border);
@@ -810,17 +998,23 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
   --pill-color-hover: var(--text-normal);
   --pill-color-remove: var(--text-faint);
   --pill-color-remove-hover: var(--text-normal);
-  --blockquote-border-color: var(--interactive-accent);
-  --blockquote-border-thickness: 3px;
+  --blockquote-border-color: var(
+    --red-graphite-blockquote-border-color
+  );
+  --blockquote-border-thickness: var(
+    --red-graphite-blockquote-border-width
+  );
   --blockquote-font-style: normal;
   --embed-background: var(--background-secondary);
-  --embed-border-start: 2px solid var(--background-modifier-border);
+  --embed-border-start:
+    var(--red-graphite-embed-border-width) solid
+      var(--background-modifier-border);
   --table-border-color: var(--background-modifier-border);
   --table-header-border-color: var(--background-modifier-border);
   --table-header-background: var(--background-secondary-alt);
   --table-header-background-hover: var(--background-modifier-hover);
-  --table-header-weight: 600;
-  --table-line-height: 1.45;
+  --table-header-weight: var(--red-graphite-table-header-weight);
+  --table-line-height: var(--red-graphite-table-line-height);
   --table-row-background-hover: var(--background-secondary);
   --table-row-alt-background-hover: var(--background-secondary);
   --table-cell-vertical-alignment: middle;
@@ -867,70 +1061,57 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
 }
 
 body {
-  --font-interface-theme: var(
-    --red-graphite-interface-font,
-    "Avenir Next",
-    "Avenir",
-    "Segoe UI",
-    sans-serif
+  --font-interface-theme: var(--red-graphite-interface-font);
+  --font-text-theme: var(--red-graphite-text-font);
+  --font-monospace-theme: var(--red-graphite-monospace-font);
+  --font-ui-smaller: var(--red-graphite-ui-font-smaller);
+  --font-ui-small: var(--red-graphite-ui-font-small);
+  --font-ui-medium: var(--red-graphite-ui-font-medium);
+  --font-ui-large: var(--red-graphite-ui-font-large);
+  --line-height-normal: var(--red-graphite-body-line-height);
+  --p-spacing: var(--red-graphite-paragraph-spacing);
+  --bold-weight: var(--red-graphite-bold-weight);
+  --inline-title-size: var(--red-graphite-inline-title-size);
+  --inline-title-weight: var(--red-graphite-inline-title-weight);
+  --inline-title-line-height: var(--red-graphite-inline-title-line-height);
+  --inline-title-margin-bottom: var(
+    --red-graphite-inline-title-margin-bottom
   );
-  --font-text-theme: var(
-    --red-graphite-text-font,
-    "Avenir Next",
-    "Avenir",
-    "Segoe UI",
-    sans-serif
+  --h1-size: var(--red-graphite-h1-size);
+  --h2-size: var(--red-graphite-h2-size);
+  --h3-size: var(--red-graphite-h3-size);
+  --h4-size: var(--red-graphite-h4-size);
+  --h5-size: var(--red-graphite-h5-size);
+  --h6-size: var(--red-graphite-h6-size);
+  --h1-weight: var(--red-graphite-h1-weight);
+  --h2-weight: var(--red-graphite-h2-weight);
+  --h3-weight: var(--red-graphite-h3-weight);
+  --h4-weight: var(--red-graphite-h4-weight);
+  --h5-weight: var(--red-graphite-h5-weight);
+  --h6-weight: var(--red-graphite-h6-weight);
+  --h1-line-height: var(--red-graphite-h1-line-height);
+  --h2-line-height: var(--red-graphite-h2-line-height);
+  --h3-line-height: var(--red-graphite-h3-line-height);
+  --h4-line-height: var(--red-graphite-h4-line-height);
+  --h5-line-height: var(--red-graphite-h5-line-height);
+  --h6-line-height: var(--red-graphite-h6-line-height);
+  --h1-letter-spacing: var(--red-graphite-h1-letter-spacing);
+  --h2-letter-spacing: var(--red-graphite-h2-letter-spacing);
+  --h3-letter-spacing: var(--red-graphite-h3-letter-spacing);
+  --heading-spacing: calc(
+    var(--p-spacing) * var(--red-graphite-heading-spacing-multiplier)
   );
-  --font-monospace-theme: var(
-    --red-graphite-monospace-font,
-    "SFMono-Regular",
-    Consolas,
-    monospace
-  );
-  --font-ui-smaller: 12px;
-  --font-ui-small: 13px;
-  --font-ui-medium: 15px;
-  --font-ui-large: 20px;
-  --line-height-normal: 1.6;
-  --p-spacing: 0.9rem;
-  --bold-weight: 600;
-  --inline-title-size: 1.95em;
-  --inline-title-weight: 650;
-  --inline-title-line-height: 1.18;
-  --inline-title-margin-bottom: 0.7em;
-  --h1-size: 1.55em;
-  --h2-size: 1.32em;
-  --h3-size: 1.16em;
-  --h4-size: 1.05em;
-  --h5-size: 0.95em;
-  --h6-size: 0.9em;
-  --h1-weight: 650;
-  --h2-weight: 650;
-  --h3-weight: 600;
-  --h4-weight: 600;
-  --h5-weight: 650;
-  --h6-weight: 650;
-  --h1-line-height: 1.18;
-  --h2-line-height: 1.25;
-  --h3-line-height: 1.3;
-  --h4-line-height: 1.35;
-  --h5-line-height: 1.4;
-  --h6-line-height: 1.4;
-  --h1-letter-spacing: -0.025em;
-  --h2-letter-spacing: -0.018em;
-  --h3-letter-spacing: -0.012em;
-  --heading-spacing: calc(var(--p-spacing) * 1.75);
-  --hr-thickness: 1px;
-  --list-indent: 1.8em;
-  --list-indent-editing: 1.4em;
-  --list-spacing: 0.15em;
-  --file-line-width: 700px;
-  --file-margins-x: 48px;
-  --file-margins-y: 36px;
-  --nav-item-radius: 5px;
-  --vault-name-color: var(--interactive-accent);
-  --vault-name-font-size: var(--font-ui-medium);
-  --vault-name-font-weight: var(--font-semibold);
+  --hr-thickness: var(--red-graphite-horizontal-rule-width);
+  --list-indent: var(--red-graphite-list-indent);
+  --list-indent-editing: var(--red-graphite-list-indent-editing);
+  --list-spacing: var(--red-graphite-list-spacing);
+  --file-line-width: var(--red-graphite-content-width);
+  --file-margins-x: var(--red-graphite-document-margin-x);
+  --file-margins-y: var(--red-graphite-document-margin-y);
+  --nav-item-radius: var(--red-graphite-nav-item-radius);
+  --vault-name-color: var(--red-graphite-vault-name-color);
+  --vault-name-font-size: var(--red-graphite-vault-name-size);
+  --vault-name-font-weight: var(--red-graphite-vault-name-weight);
 }
 
 .workspace-split.mod-root .workspace-leaf-content,
@@ -952,18 +1133,18 @@ body {
 
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
-  box-shadow: inset 3px 0 0 var(--interactive-accent);
+  box-shadow: inset var(--red-graphite-nav-indicator-width) 0 0 var(--red-graphite-nav-indicator-color);
 }
 
 .markdown-rendered h1,
 .markdown-source-view.mod-cm6 .cm-header-1 {
-  color: color-mix(in srgb, var(--interactive-accent) 68%, var(--text-normal));
+  color: var(--red-graphite-h1-color, color-mix(in srgb, var(--interactive-accent) 68%, var(--text-normal)));
 }
 
 .markdown-rendered h2,
 .markdown-source-view.mod-cm6 .HyperMD-header-2 {
-  border-block-end: 1px solid var(--interactive-accent);
-  padding-block-end: 0.25em;
+  border-block-end: var(--red-graphite-h2-rule-width) solid var(--red-graphite-h2-rule-color);
+  padding-block-end: var(--red-graphite-h2-rule-gap);
 }
 
 .markdown-rendered h6,
@@ -972,13 +1153,13 @@ body {
 }
 
 .markdown-rendered hr {
-  margin-block: 2.5em;
+  margin-block: var(--red-graphite-horizontal-rule-margin);
 }
 
 .workspace-split.mod-root .workspace-tab-header.is-active {
   background-color: var(--tab-background-active);
-  box-shadow: inset 0 -2px 0 var(--interactive-accent);
-  border-radius: var(--tab-radius) var(--tab-radius) 0 0;
+  box-shadow: inset 0 calc(-1 * var(--red-graphite-tab-indicator-width)) 0 var(--red-graphite-tab-indicator-color);
+  border-radius: var(--red-graphite-tab-radius) var(--red-graphite-tab-radius) 0 0;
 }
 
 .workspace-split.mod-root .workspace-tab-header.is-active::before,
@@ -991,9 +1172,9 @@ body {
 }
 
 .markdown-rendered blockquote {
-  border-radius: var(--radius-s);
-  padding-block: 0.65em;
-  padding-inline-end: 1em;
+  border-radius: var(--red-graphite-blockquote-radius);
+  padding-block: var(--red-graphite-blockquote-padding-y);
+  padding-inline-end: var(--red-graphite-blockquote-padding-end);
 }
 
 .markdown-rendered blockquote blockquote {
@@ -1006,15 +1187,15 @@ body {
 
 .markdown-rendered ol > li::marker {
   font-variant-numeric: tabular-nums;
-  font-weight: 600;
+  font-weight: var(--red-graphite-list-number-weight);
 }
 
 .markdown-rendered :is(ul, ol) :is(ul, ol) > li::marker {
-  color: var(--text-muted);
+  color: var(--red-graphite-nested-list-marker-color, var(--text-muted));
 }
 
 .markdown-rendered :is(ul, ol) :is(ul, ol) .list-bullet::after {
-  background-color: var(--text-muted);
+  background-color: var(--red-graphite-nested-list-marker-color, var(--text-muted));
 }
 
 .markdown-source-view.mod-cm6 :is(.HyperMD-list-line-2,
@@ -1022,30 +1203,33 @@ body {
 .HyperMD-list-line-4,
 .HyperMD-list-line-5,
 .HyperMD-list-line-6) {
-  --list-marker-color: var(--text-muted);
+  --list-marker-color: var(
+    --red-graphite-nested-list-marker-color,
+    var(--text-muted)
+  );
 }
 
 .markdown-source-view.mod-cm6 .cm-formatting-list-ol {
-  font-weight: 600;
+  font-weight: var(--red-graphite-list-number-weight);
 }
 
 .callout {
-  background-color: rgba(var(--callout-color), 0.07);
+  background-color: rgba(var(--callout-color), var(--red-graphite-callout-background-opacity));
   box-shadow: none;
 }
 
 .callout-title,
 .callout-icon .svg-icon {
-  color: color-mix(in srgb, rgb(var(--callout-color)) 72%, var(--text-normal));
+  color: color-mix(in srgb, rgb(var(--callout-color)) var(--red-graphite-callout-title-color-mix), var(--text-normal));
 }
 
 .markdown-rendered th,
 .markdown-rendered td {
-  padding: 0.6em 0.75em;
+  padding: var(--red-graphite-table-cell-padding-y) var(--red-graphite-table-cell-padding-x);
 }
 
 .markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
-  padding: 0.5em 0.7em;
+  padding: var(--red-graphite-table-editor-padding-y) var(--red-graphite-table-editor-padding-x);
 }
 
 .markdown-rendered table,
@@ -1134,8 +1318,8 @@ body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle
   }
 }
 ::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
+  height: var(--red-graphite-scrollbar-size);
+  width: var(--red-graphite-scrollbar-size);
 }
 
 ::-webkit-scrollbar-track {
@@ -1144,8 +1328,8 @@ body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle
 
 ::-webkit-scrollbar-thumb {
   background: var(--background-modifier-border-hover);
-  border: 2px solid var(--background-secondary);
-  border-radius: var(--radius-l);
+  border: var(--red-graphite-scrollbar-border-width) solid var(--background-secondary);
+  border-radius: var(--red-graphite-scrollbar-radius);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -1154,8 +1338,8 @@ body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle
 
 @media (max-width: 750px) {
   body {
-    --file-margins-x: var(--size-4-6);
-    --file-margins-y: var(--size-4-2);
+    --file-margins-x: var(--red-graphite-mobile-margin-x);
+    --file-margins-y: var(--red-graphite-mobile-margin-y);
   }
   body.theme-dark {
     --mobile-sidebar-background: var(--background-primary);
@@ -1213,21 +1397,29 @@ settings:
     level: 2
     collapsed: false
   -
+    id: red-graphite-display-mode
+    title: Display mode
+    type: heading
+    level: 3
+    collapsed: false
+  -
     id: red-graphite-dark-document
     title: Use a dark central workspace
     description: In Obsidian Dark mode, replace the flagship light center with a fully dark workspace.
     type: class-toggle
     default: false
+    addCommand: true
   -
-    id: red-graphite-colors
-    title: Colors
+    id: red-graphite-base-palettes
+    title: Base palettes
+    description: These four colors generate the semantic frame, document, text, border, and interaction palettes.
     type: heading
-    level: 2
+    level: 3
     collapsed: false
   -
     id: red-graphite-base-color
-    title: Frame base color
-    description: Base color for the title bar, tabs, ribbons, and sidebars in Obsidian Dark mode.
+    title: Frame base
+    description: Base color for the dark title bar, ribbons, sidebars, menus, and global interface.
     type: variable-themed-color
     format: hsl-split
     opacity: false
@@ -1236,7 +1428,7 @@ settings:
   -
     id: red-graphite-document-light-color
     title: Light document base
-    description: Background base for the central workspace in flagship and Obsidian Light modes.
+    description: Base color for the flagship center and conventional Obsidian Light mode.
     type: variable-themed-color
     format: hsl-split
     opacity: false
@@ -1245,7 +1437,7 @@ settings:
   -
     id: red-graphite-document-dark-color
     title: Dark document base
-    description: Background base used when the dark central workspace toggle is enabled.
+    description: Base color used by the full-dark central workspace.
     type: variable-themed-color
     format: hsl-split
     opacity: false
@@ -1253,35 +1445,1102 @@ settings:
     default-dark: '#292c2e'
   -
     id: red-graphite-accent-color
-    title: Accent color
-    description: Red Graphite's highlight color. Obsidian's Appearance accent setting overrides this value.
+    title: Accent
+    description: Signature Red Graphite accent. Obsidian's Appearance accent setting has higher precedence.
     type: variable-themed-color
     format: hsl-split
     opacity: false
     default-light: '#cb4c48'
     default-dark: '#cb4c48'
   -
-    id: red-graphite-fonts
-    title: Fonts
+    id: red-graphite-state-colors
+    title: Selection and state colors
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-selection-opacity
+    title: Selection opacity
+    description: Opacity of the accent-colored text selection.
+    type: variable-number-slider
+    default: 0.22
+    min: 0.05
+    max: 0.6
+    step: 0.01
+  -
+    id: red-graphite-error-color
+    title: Error
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#c94444'
+  -
+    id: red-graphite-success-color
+    title: Success
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#3f8f64'
+
+  -
+    id: red-graphite-typography
+    title: Typography
     type: heading
     level: 2
     collapsed: false
   -
+    id: red-graphite-font-families
+    title: Font families
+    type: heading
+    level: 3
+    collapsed: false
+  -
     id: red-graphite-interface-font
     title: Interface font
-    description: Font used for the user interface.
+    description: Font stack for tabs, navigation, settings, menus, and controls.
     type: variable-text
     default: "'Avenir Next', 'Avenir', 'Segoe UI', sans-serif"
   -
     id: red-graphite-text-font
-    title: Text font
-    description: Font used for note content.
+    title: Note font
+    description: Font stack for Markdown and other central workspace content.
     type: variable-text
     default: "'Avenir Next', 'Avenir', 'Segoe UI', sans-serif"
   -
     id: red-graphite-monospace-font
     title: Monospace font
-    description: Font used for code.
+    description: Font stack for code and preformatted content.
     type: variable-text
     default: "'SFMono-Regular', Consolas, monospace"
+  -
+    id: red-graphite-interface-scale
+    title: Interface scale
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-ui-font-smaller
+    title: Extra-small interface text
+    type: variable-number-slider
+    default: 12
+    min: 9
+    max: 18
+    step: 1
+    format: px
+  -
+    id: red-graphite-ui-font-small
+    title: Small interface text
+    type: variable-number-slider
+    default: 13
+    min: 9
+    max: 20
+    step: 1
+    format: px
+  -
+    id: red-graphite-ui-font-medium
+    title: Medium interface text
+    type: variable-number-slider
+    default: 15
+    min: 11
+    max: 24
+    step: 1
+    format: px
+  -
+    id: red-graphite-ui-font-large
+    title: Large interface text
+    type: variable-number-slider
+    default: 20
+    min: 14
+    max: 32
+    step: 1
+    format: px
+  -
+    id: red-graphite-body-type
+    title: Body text
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-body-line-height
+    title: Line height
+    type: variable-number-slider
+    default: 1.6
+    min: 1.2
+    max: 2.2
+    step: 0.05
+  -
+    id: red-graphite-paragraph-spacing
+    title: Paragraph spacing
+    type: variable-number-slider
+    default: 0.9
+    min: 0
+    max: 2
+    step: 0.05
+    format: rem
+  -
+    id: red-graphite-bold-weight
+    title: Bold weight
+    type: variable-number-slider
+    default: 600
+    min: 400
+    max: 900
+    step: 50
+  -
+    id: red-graphite-inline-title
+    title: Inline note title
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-inline-title-size
+    title: Size
+    type: variable-number-slider
+    default: 1.95
+    min: 1
+    max: 3
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-inline-title-weight
+    title: Weight
+    type: variable-number-slider
+    default: 650
+    min: 400
+    max: 900
+    step: 50
+  -
+    id: red-graphite-inline-title-line-height
+    title: Line height
+    type: variable-number-slider
+    default: 1.18
+    min: 1
+    max: 1.8
+    step: 0.02
+  -
+    id: red-graphite-inline-title-margin-bottom
+    title: Bottom spacing
+    type: variable-number-slider
+    default: 0.7
+    min: 0
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-headings
+    title: Headings
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-heading-sizes
+    title: Sizes
+    type: heading
+    level: 4
+    collapsed: false
+  -
+    id: red-graphite-h1-size
+    title: H1 size
+    type: variable-number-slider
+    default: 1.55
+    min: 1
+    max: 3
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-h2-size
+    title: H2 size
+    type: variable-number-slider
+    default: 1.32
+    min: 1
+    max: 2.5
+    step: 0.01
+    format: em
+  -
+    id: red-graphite-h3-size
+    title: H3 size
+    type: variable-number-slider
+    default: 1.16
+    min: 0.8
+    max: 2
+    step: 0.01
+    format: em
+  -
+    id: red-graphite-h4-size
+    title: H4 size
+    type: variable-number-slider
+    default: 1.05
+    min: 0.8
+    max: 1.8
+    step: 0.01
+    format: em
+  -
+    id: red-graphite-h5-size
+    title: H5 size
+    type: variable-number-slider
+    default: 0.95
+    min: 0.7
+    max: 1.6
+    step: 0.01
+    format: em
+  -
+    id: red-graphite-h6-size
+    title: H6 size
+    type: variable-number-slider
+    default: 0.9
+    min: 0.7
+    max: 1.5
+    step: 0.01
+    format: em
+  -
+    id: red-graphite-heading-weights
+    title: Weights
+    type: heading
+    level: 4
+    collapsed: true
+  -
+    id: red-graphite-h1-weight
+    title: H1 weight
+    type: variable-number-slider
+    default: 650
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-h2-weight
+    title: H2 weight
+    type: variable-number-slider
+    default: 650
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-h3-weight
+    title: H3 weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-h4-weight
+    title: H4 weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-h5-weight
+    title: H5 weight
+    type: variable-number-slider
+    default: 650
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-h6-weight
+    title: H6 weight
+    type: variable-number-slider
+    default: 650
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-heading-line-heights
+    title: Line heights
+    type: heading
+    level: 4
+    collapsed: true
+  -
+    id: red-graphite-h1-line-height
+    title: H1 line height
+    type: variable-number-slider
+    default: 1.18
+    min: 1
+    max: 2
+    step: 0.02
+  -
+    id: red-graphite-h2-line-height
+    title: H2 line height
+    type: variable-number-slider
+    default: 1.25
+    min: 1
+    max: 2
+    step: 0.05
+  -
+    id: red-graphite-h3-line-height
+    title: H3 line height
+    type: variable-number-slider
+    default: 1.3
+    min: 1
+    max: 2
+    step: 0.05
+  -
+    id: red-graphite-h4-line-height
+    title: H4 line height
+    type: variable-number-slider
+    default: 1.35
+    min: 1
+    max: 2
+    step: 0.05
+  -
+    id: red-graphite-h5-line-height
+    title: H5 line height
+    type: variable-number-slider
+    default: 1.4
+    min: 1
+    max: 2
+    step: 0.05
+  -
+    id: red-graphite-h6-line-height
+    title: H6 line height
+    type: variable-number-slider
+    default: 1.4
+    min: 1
+    max: 2
+    step: 0.05
+  -
+    id: red-graphite-heading-tracking
+    title: Tracking and rhythm
+    type: heading
+    level: 4
+    collapsed: true
+  -
+    id: red-graphite-h1-letter-spacing
+    title: H1 letter spacing
+    type: variable-number-slider
+    default: -0.025
+    min: -0.1
+    max: 0.1
+    step: 0.005
+    format: em
+  -
+    id: red-graphite-h2-letter-spacing
+    title: H2 letter spacing
+    type: variable-number-slider
+    default: -0.018
+    min: -0.1
+    max: 0.1
+    step: 0.002
+    format: em
+  -
+    id: red-graphite-h3-letter-spacing
+    title: H3 letter spacing
+    type: variable-number-slider
+    default: -0.012
+    min: -0.1
+    max: 0.1
+    step: 0.002
+    format: em
+  -
+    id: red-graphite-heading-spacing-multiplier
+    title: Heading spacing multiplier
+    description: Multiplies the paragraph spacing value to create vertical space before headings.
+    type: variable-number-slider
+    default: 1.75
+    min: 0.5
+    max: 4
+    step: 0.05
+  -
+    id: red-graphite-heading-accents
+    title: H1 and H2 accents
+    type: heading
+    level: 4
+    collapsed: false
+  -
+    id: red-graphite-h1-color
+    title: H1 color
+    description: Overrides the adaptive deep-red H1 color.
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#9f4845'
+  -
+    id: red-graphite-h2-rule-color
+    title: H2 rule color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-h2-rule-width
+    title: H2 rule thickness
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: red-graphite-h2-rule-gap
+    title: H2 text-to-rule spacing
+    type: variable-number-slider
+    default: 0.25
+    min: 0
+    max: 1
+    step: 0.05
+    format: em
+
+  -
+    id: red-graphite-layout
+    title: Layout and spacing
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: red-graphite-document-layout
+    title: Desktop document
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-content-width
+    title: Maximum content width
+    type: variable-number-slider
+    default: 700
+    min: 400
+    max: 1400
+    step: 10
+    format: px
+  -
+    id: red-graphite-document-margin-x
+    title: Horizontal document margin
+    type: variable-number-slider
+    default: 48
+    min: 8
+    max: 160
+    step: 4
+    format: px
+  -
+    id: red-graphite-document-margin-y
+    title: Vertical document margin
+    type: variable-number-slider
+    default: 36
+    min: 0
+    max: 120
+    step: 4
+    format: px
+  -
+    id: red-graphite-mobile-layout
+    title: Mobile document
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-mobile-margin-x
+    title: Horizontal mobile margin
+    type: variable-number-slider
+    default: 24
+    min: 4
+    max: 64
+    step: 2
+    format: px
+  -
+    id: red-graphite-mobile-margin-y
+    title: Vertical mobile margin
+    type: variable-number-slider
+    default: 8
+    min: 0
+    max: 48
+    step: 2
+    format: px
+  -
+    id: red-graphite-list-layout
+    title: Lists
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-list-indent
+    title: Reading-view indent
+    type: variable-number-slider
+    default: 1.8
+    min: 0.8
+    max: 4
+    step: 0.1
+    format: em
+  -
+    id: red-graphite-list-indent-editing
+    title: Editor indent
+    type: variable-number-slider
+    default: 1.4
+    min: 0.8
+    max: 4
+    step: 0.1
+    format: em
+  -
+    id: red-graphite-list-spacing
+    title: Item spacing
+    type: variable-number-slider
+    default: 0.15
+    min: 0
+    max: 1.5
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-list-number-weight
+    title: Number weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-list-marker-color
+    title: Top-level marker color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-nested-list-marker-color
+    title: Nested marker color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#616161'
+  -
+    id: red-graphite-divider-layout
+    title: Horizontal rules
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-horizontal-rule-width
+    title: Thickness
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: red-graphite-horizontal-rule-margin
+    title: Vertical margin
+    type: variable-number-slider
+    default: 2.5
+    min: 0
+    max: 6
+    step: 0.1
+    format: em
+
+  -
+    id: red-graphite-chrome
+    title: Workspace chrome
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: red-graphite-tabs
+    title: Tabs
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-tab-indicator-color
+    title: Active indicator color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-tab-indicator-width
+    title: Active indicator thickness
+    type: variable-number-slider
+    default: 2
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: red-graphite-tab-radius
+    title: Active tab corner radius
+    type: variable-number-slider
+    default: 6
+    min: 0
+    max: 16
+    step: 1
+    format: px
+  -
+    id: red-graphite-navigation
+    title: Sidebar navigation
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-nav-item-radius
+    title: Item corner radius
+    type: variable-number-slider
+    default: 5
+    min: 0
+    max: 16
+    step: 1
+    format: px
+  -
+    id: red-graphite-nav-indicator-color
+    title: Active indicator color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-nav-indicator-width
+    title: Active indicator width
+    type: variable-number-slider
+    default: 3
+    min: 0
+    max: 8
+    step: 1
+    format: px
+  -
+    id: red-graphite-vault-name-color
+    title: Vault name color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-vault-name-size
+    title: Vault name size
+    type: variable-number-slider
+    default: 15
+    min: 10
+    max: 28
+    step: 1
+    format: px
+  -
+    id: red-graphite-vault-name-weight
+    title: Vault name weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-status-and-scrollbars
+    title: Status bar and scrollbars
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-status-bar-radius
+    title: Status bar corner radius
+    type: variable-number-slider
+    default: 4
+    min: 0
+    max: 16
+    step: 1
+    format: px
+  -
+    id: red-graphite-scrollbar-size
+    title: Scrollbar size
+    type: variable-number-slider
+    default: 10
+    min: 4
+    max: 24
+    step: 1
+    format: px
+  -
+    id: red-graphite-scrollbar-border-width
+    title: Scrollbar inset
+    type: variable-number-slider
+    default: 2
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: red-graphite-scrollbar-radius
+    title: Scrollbar corner radius
+    type: variable-number-slider
+    default: 12
+    min: 0
+    max: 24
+    step: 1
+    format: px
+
+  -
+    id: red-graphite-content-components
+    title: Markdown and content
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: red-graphite-blockquotes
+    title: Blockquotes
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-blockquote-border-color
+    title: Border color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-blockquote-border-width
+    title: Border width
+    type: variable-number-slider
+    default: 3
+    min: 0
+    max: 10
+    step: 1
+    format: px
+  -
+    id: red-graphite-blockquote-radius
+    title: Corner radius
+    type: variable-number-slider
+    default: 4
+    min: 0
+    max: 20
+    step: 1
+    format: px
+  -
+    id: red-graphite-blockquote-padding-y
+    title: Vertical padding
+    type: variable-number-slider
+    default: 0.65
+    min: 0
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-blockquote-padding-end
+    title: End padding
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 3
+    step: 0.1
+    format: em
+  -
+    id: red-graphite-callouts
+    title: Callouts
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-callout-background-opacity
+    title: Background opacity
+    type: variable-number-slider
+    default: 0.07
+    min: 0
+    max: 0.5
+    step: 0.01
+  -
+    id: red-graphite-callout-border-opacity
+    title: Border opacity
+    type: variable-number-slider
+    default: 0.22
+    min: 0
+    max: 1
+    step: 0.01
+  -
+    id: red-graphite-callout-border-width
+    title: Accent border width
+    type: variable-number-slider
+    default: 3
+    min: 0
+    max: 10
+    step: 1
+    format: px
+  -
+    id: red-graphite-callout-radius
+    title: Corner radius
+    type: variable-number-slider
+    default: 6
+    min: 0
+    max: 24
+    step: 1
+    format: px
+  -
+    id: red-graphite-callout-title-weight
+    title: Title weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-callout-title-color-mix
+    title: Callout-color strength
+    description: Percentage of the callout color mixed into the title and icon.
+    type: variable-number-slider
+    default: 72
+    min: 0
+    max: 100
+    step: 1
+    format: '%'
+  -
+    id: red-graphite-callout-padding-y
+    title: Vertical padding
+    type: variable-number-slider
+    default: 12
+    min: 0
+    max: 40
+    step: 1
+    format: px
+  -
+    id: red-graphite-callout-padding-x
+    title: Horizontal padding
+    type: variable-number-slider
+    default: 16
+    min: 0
+    max: 48
+    step: 1
+    format: px
+  -
+    id: red-graphite-code-blocks
+    title: Code blocks
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-code-border-width
+    title: Border width
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: red-graphite-code-radius
+    title: Corner radius
+    type: variable-number-slider
+    default: 6
+    min: 0
+    max: 24
+    step: 1
+    format: px
+  -
+    id: red-graphite-tables
+    title: Tables
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-table-cell-padding-y
+    title: Reading vertical padding
+    type: variable-number-slider
+    default: 0.6
+    min: 0.1
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-table-cell-padding-x
+    title: Reading horizontal padding
+    type: variable-number-slider
+    default: 0.75
+    min: 0.1
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-table-editor-padding-y
+    title: Editor vertical padding
+    type: variable-number-slider
+    default: 0.5
+    min: 0.1
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-table-editor-padding-x
+    title: Editor horizontal padding
+    type: variable-number-slider
+    default: 0.7
+    min: 0.1
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-table-header-weight
+    title: Header weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-table-line-height
+    title: Line height
+    type: variable-number-slider
+    default: 1.45
+    min: 1
+    max: 2.5
+    step: 0.05
+  -
+    id: red-graphite-tags-and-embeds
+    title: Tags and embeds
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-tag-background-opacity-light
+    title: Light tag opacity
+    type: variable-number-slider
+    default: 0.1
+    min: 0
+    max: 0.6
+    step: 0.01
+  -
+    id: red-graphite-tag-background-hover-opacity-light
+    title: Light tag hover opacity
+    type: variable-number-slider
+    default: 0.18
+    min: 0
+    max: 0.8
+    step: 0.01
+  -
+    id: red-graphite-tag-background-opacity-dark
+    title: Dark tag opacity
+    type: variable-number-slider
+    default: 0.16
+    min: 0
+    max: 0.6
+    step: 0.01
+  -
+    id: red-graphite-tag-background-hover-opacity-dark
+    title: Dark tag hover opacity
+    type: variable-number-slider
+    default: 0.24
+    min: 0
+    max: 0.8
+    step: 0.01
+  -
+    id: red-graphite-embed-border-width
+    title: Embed border width
+    type: variable-number-slider
+    default: 2
+    min: 0
+    max: 8
+    step: 1
+    format: px
+
+  -
+    id: red-graphite-code-syntax
+    title: Code syntax colors
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: red-graphite-code-syntax-light
+    title: Light workspace
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-code-light-function
+    title: Functions and values
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#2457a7'
+  -
+    id: red-graphite-code-light-important
+    title: Important
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#a92727'
+  -
+    id: red-graphite-code-light-keyword
+    title: Keywords
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#713da6'
+  -
+    id: red-graphite-code-light-property
+    title: Properties
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#2c6c3f'
+  -
+    id: red-graphite-code-light-string
+    title: Strings
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#8a5a00'
+  -
+    id: red-graphite-code-light-tag
+    title: Tags
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#a92727'
+  -
+    id: red-graphite-code-light-value
+    title: Values
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#2457a7'
+  -
+    id: red-graphite-code-syntax-dark
+    title: Dark workspace
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-code-dark-function
+    title: Functions and values
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#8ab4f8'
+  -
+    id: red-graphite-code-dark-important
+    title: Important
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#f28b82'
+  -
+    id: red-graphite-code-dark-keyword
+    title: Keywords
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#c58af9'
+  -
+    id: red-graphite-code-dark-property
+    title: Properties
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#81c995'
+  -
+    id: red-graphite-code-dark-string
+    title: Strings
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#fdd663'
+  -
+    id: red-graphite-code-dark-tag
+    title: Tags
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#f28b82'
+  -
+    id: red-graphite-code-dark-value
+    title: Values
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#8ab4f8'
+
+  -
+    id: red-graphite-settings-help
+    title: About these controls
+    description: "Resetting a control restores Red Graphite's shipped default. Base palette controls generate the semantic colors used by Obsidian and plugins; component controls override individual visual decisions."
+    type: info-text
+    markdown: true
 */

@@ -1,68 +1,55 @@
 body {
-  --font-interface-theme: var(
-    --red-graphite-interface-font,
-    "Avenir Next",
-    "Avenir",
-    "Segoe UI",
-    sans-serif
+  --font-interface-theme: var(--red-graphite-interface-font);
+  --font-text-theme: var(--red-graphite-text-font);
+  --font-monospace-theme: var(--red-graphite-monospace-font);
+  --font-ui-smaller: var(--red-graphite-ui-font-smaller);
+  --font-ui-small: var(--red-graphite-ui-font-small);
+  --font-ui-medium: var(--red-graphite-ui-font-medium);
+  --font-ui-large: var(--red-graphite-ui-font-large);
+  --line-height-normal: var(--red-graphite-body-line-height);
+  --p-spacing: var(--red-graphite-paragraph-spacing);
+  --bold-weight: var(--red-graphite-bold-weight);
+  --inline-title-size: var(--red-graphite-inline-title-size);
+  --inline-title-weight: var(--red-graphite-inline-title-weight);
+  --inline-title-line-height: var(--red-graphite-inline-title-line-height);
+  --inline-title-margin-bottom: var(
+    --red-graphite-inline-title-margin-bottom
   );
-  --font-text-theme: var(
-    --red-graphite-text-font,
-    "Avenir Next",
-    "Avenir",
-    "Segoe UI",
-    sans-serif
+  --h1-size: var(--red-graphite-h1-size);
+  --h2-size: var(--red-graphite-h2-size);
+  --h3-size: var(--red-graphite-h3-size);
+  --h4-size: var(--red-graphite-h4-size);
+  --h5-size: var(--red-graphite-h5-size);
+  --h6-size: var(--red-graphite-h6-size);
+  --h1-weight: var(--red-graphite-h1-weight);
+  --h2-weight: var(--red-graphite-h2-weight);
+  --h3-weight: var(--red-graphite-h3-weight);
+  --h4-weight: var(--red-graphite-h4-weight);
+  --h5-weight: var(--red-graphite-h5-weight);
+  --h6-weight: var(--red-graphite-h6-weight);
+  --h1-line-height: var(--red-graphite-h1-line-height);
+  --h2-line-height: var(--red-graphite-h2-line-height);
+  --h3-line-height: var(--red-graphite-h3-line-height);
+  --h4-line-height: var(--red-graphite-h4-line-height);
+  --h5-line-height: var(--red-graphite-h5-line-height);
+  --h6-line-height: var(--red-graphite-h6-line-height);
+  --h1-letter-spacing: var(--red-graphite-h1-letter-spacing);
+  --h2-letter-spacing: var(--red-graphite-h2-letter-spacing);
+  --h3-letter-spacing: var(--red-graphite-h3-letter-spacing);
+  --heading-spacing: calc(
+    var(--p-spacing) * var(--red-graphite-heading-spacing-multiplier)
   );
-  --font-monospace-theme: var(
-    --red-graphite-monospace-font,
-    "SFMono-Regular",
-    Consolas,
-    monospace
-  );
-  --font-ui-smaller: 12px;
-  --font-ui-small: 13px;
-  --font-ui-medium: 15px;
-  --font-ui-large: 20px;
-  --line-height-normal: 1.6;
-  --p-spacing: 0.9rem;
-  --bold-weight: 600;
-  --inline-title-size: 1.95em;
-  --inline-title-weight: 650;
-  --inline-title-line-height: 1.18;
-  --inline-title-margin-bottom: 0.7em;
-  --h1-size: 1.55em;
-  --h2-size: 1.32em;
-  --h3-size: 1.16em;
-  --h4-size: 1.05em;
-  --h5-size: 0.95em;
-  --h6-size: 0.9em;
-  --h1-weight: 650;
-  --h2-weight: 650;
-  --h3-weight: 600;
-  --h4-weight: 600;
-  --h5-weight: 650;
-  --h6-weight: 650;
-  --h1-line-height: 1.18;
-  --h2-line-height: 1.25;
-  --h3-line-height: 1.3;
-  --h4-line-height: 1.35;
-  --h5-line-height: 1.4;
-  --h6-line-height: 1.4;
-  --h1-letter-spacing: -0.025em;
-  --h2-letter-spacing: -0.018em;
-  --h3-letter-spacing: -0.012em;
-  --heading-spacing: calc(var(--p-spacing) * 1.75);
-  --hr-thickness: 1px;
-  --list-indent: 1.8em;
-  --list-indent-editing: 1.4em;
-  --list-spacing: 0.15em;
-  --file-line-width: 700px;
-  --file-margins-x: 48px;
-  --file-margins-y: 36px;
-  --nav-item-radius: 5px;
-  --vault-name-color: var(--interactive-accent);
-  --vault-name-font-size: var(--font-ui-medium);
-  --vault-name-font-weight: var(--font-semibold);
+  --hr-thickness: var(--red-graphite-horizontal-rule-width);
+  --list-indent: var(--red-graphite-list-indent);
+  --list-indent-editing: var(--red-graphite-list-indent-editing);
+  --list-spacing: var(--red-graphite-list-spacing);
+  --file-line-width: var(--red-graphite-content-width);
+  --file-margins-x: var(--red-graphite-document-margin-x);
+  --file-margins-y: var(--red-graphite-document-margin-y);
+  --nav-item-radius: var(--red-graphite-nav-item-radius);
+  --vault-name-color: var(--red-graphite-vault-name-color);
+  --vault-name-font-size: var(--red-graphite-vault-name-size);
+  --vault-name-font-weight: var(--red-graphite-vault-name-weight);
 }
 
 .workspace-split.mod-root .workspace-leaf-content,
@@ -87,23 +74,29 @@ body {
 
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
-  box-shadow: inset 3px 0 0 var(--interactive-accent);
+  box-shadow:
+    inset var(--red-graphite-nav-indicator-width) 0 0
+      var(--red-graphite-nav-indicator-color);
 }
 
 .markdown-rendered h1,
 .markdown-source-view.mod-cm6 .cm-header-1 {
-  color: color-mix(
-    in srgb,
-    var(--interactive-accent) 68%,
-    var(--text-normal)
+  color: var(
+    --red-graphite-h1-color,
+    color-mix(
+      in srgb,
+      var(--interactive-accent) 68%,
+      var(--text-normal)
+    )
   );
 }
 
 .markdown-rendered h2,
 .markdown-source-view.mod-cm6
   .HyperMD-header-2 {
-  border-block-end: 1px solid var(--interactive-accent);
-  padding-block-end: 0.25em;
+  border-block-end: var(--red-graphite-h2-rule-width) solid
+    var(--red-graphite-h2-rule-color);
+  padding-block-end: var(--red-graphite-h2-rule-gap);
 }
 
 .markdown-rendered h6,
@@ -112,13 +105,16 @@ body {
 }
 
 .markdown-rendered hr {
-  margin-block: 2.5em;
+  margin-block: var(--red-graphite-horizontal-rule-margin);
 }
 
 .workspace-split.mod-root .workspace-tab-header.is-active {
   background-color: var(--tab-background-active);
-  box-shadow: inset 0 -2px 0 var(--interactive-accent);
-  border-radius: var(--tab-radius) var(--tab-radius) 0 0;
+  box-shadow:
+    inset 0 calc(-1 * var(--red-graphite-tab-indicator-width)) 0
+      var(--red-graphite-tab-indicator-color);
+  border-radius:
+    var(--red-graphite-tab-radius) var(--red-graphite-tab-radius) 0 0;
 }
 
 .workspace-split.mod-root .workspace-tab-header.is-active::before,
@@ -133,9 +129,9 @@ body {
 }
 
 .markdown-rendered blockquote {
-  border-radius: var(--radius-s);
-  padding-block: 0.65em;
-  padding-inline-end: 1em;
+  border-radius: var(--red-graphite-blockquote-radius);
+  padding-block: var(--red-graphite-blockquote-padding-y);
+  padding-inline-end: var(--red-graphite-blockquote-padding-end);
 }
 
 .markdown-rendered blockquote blockquote {
@@ -148,21 +144,27 @@ body {
 
 .markdown-rendered ol > li::marker {
   font-variant-numeric: tabular-nums;
-  font-weight: 600;
+  font-weight: var(--red-graphite-list-number-weight);
 }
 
 .markdown-rendered
   :is(ul, ol)
   :is(ul, ol)
   > li::marker {
-  color: var(--text-muted);
+  color: var(
+    --red-graphite-nested-list-marker-color,
+    var(--text-muted)
+  );
 }
 
 .markdown-rendered
   :is(ul, ol)
   :is(ul, ol)
   .list-bullet::after {
-  background-color: var(--text-muted);
+  background-color: var(
+    --red-graphite-nested-list-marker-color,
+    var(--text-muted)
+  );
 }
 
 .markdown-source-view.mod-cm6
@@ -173,15 +175,21 @@ body {
     .HyperMD-list-line-5,
     .HyperMD-list-line-6
   ) {
-  --list-marker-color: var(--text-muted);
+  --list-marker-color: var(
+    --red-graphite-nested-list-marker-color,
+    var(--text-muted)
+  );
 }
 
 .markdown-source-view.mod-cm6 .cm-formatting-list-ol {
-  font-weight: 600;
+  font-weight: var(--red-graphite-list-number-weight);
 }
 
 .callout {
-  background-color: rgba(var(--callout-color), 0.07);
+  background-color: rgba(
+    var(--callout-color),
+    var(--red-graphite-callout-background-opacity)
+  );
   box-shadow: none;
 }
 
@@ -189,20 +197,25 @@ body {
 .callout-icon .svg-icon {
   color: color-mix(
     in srgb,
-    rgb(var(--callout-color)) 72%,
+    rgb(var(--callout-color))
+      var(--red-graphite-callout-title-color-mix),
     var(--text-normal)
   );
 }
 
 .markdown-rendered th,
 .markdown-rendered td {
-  padding: 0.6em 0.75em;
+  padding:
+    var(--red-graphite-table-cell-padding-y)
+    var(--red-graphite-table-cell-padding-x);
 }
 
 .markdown-source-view.mod-cm6
   .cm-table-widget
   .table-cell-wrapper {
-  padding: 0.5em 0.7em;
+  padding:
+    var(--red-graphite-table-editor-padding-y)
+    var(--red-graphite-table-editor-padding-x);
 }
 
 .markdown-rendered table,
@@ -307,8 +320,8 @@ body.theme-dark
 }
 
 ::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
+  height: var(--red-graphite-scrollbar-size);
+  width: var(--red-graphite-scrollbar-size);
 }
 
 ::-webkit-scrollbar-track {
@@ -317,8 +330,9 @@ body.theme-dark
 
 ::-webkit-scrollbar-thumb {
   background: var(--background-modifier-border-hover);
-  border: 2px solid var(--background-secondary);
-  border-radius: var(--radius-l);
+  border: var(--red-graphite-scrollbar-border-width) solid
+    var(--background-secondary);
+  border-radius: var(--red-graphite-scrollbar-radius);
 }
 
 ::-webkit-scrollbar-thumb:hover {

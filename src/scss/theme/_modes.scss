@@ -1,20 +1,5 @@
 @use "palettes";
 
-body {
-  --red-graphite-base-color-h: 204;
-  --red-graphite-base-color-s: 6%;
-  --red-graphite-base-color-l: 17%;
-  --red-graphite-document-light-color-h: 0;
-  --red-graphite-document-light-color-s: 0%;
-  --red-graphite-document-light-color-l: 100%;
-  --red-graphite-document-dark-color-h: 204;
-  --red-graphite-document-dark-color-s: 6%;
-  --red-graphite-document-dark-color-l: 17%;
-  --red-graphite-accent-color-h: 2;
-  --red-graphite-accent-color-s: 56%;
-  --red-graphite-accent-color-l: 54%;
-}
-
 body.theme-dark {
   @include palettes.dark(
     "--red-graphite-base-color-h",
@@ -39,7 +24,7 @@ body.theme-dark {
   --status-bar-background: var(--background-primary);
   --status-bar-border-color: transparent;
   --status-bar-border-width: 0;
-  --status-bar-radius: var(--radius-s) 0 0 0;
+  --status-bar-radius: var(--red-graphite-status-bar-radius) 0 0 0;
   --mobile-sidebar-background: var(--background-primary);
   --file-header-border: 0;
   --modal-background: var(--background-primary);

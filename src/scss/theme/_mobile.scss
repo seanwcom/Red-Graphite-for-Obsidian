@@ -1,7 +1,7 @@
 @media (max-width: 750px) {
   body {
-    --file-margins-x: var(--size-4-6);
-    --file-margins-y: var(--size-4-2);
+    --file-margins-x: var(--red-graphite-mobile-margin-x);
+    --file-margins-y: var(--red-graphite-mobile-margin-y);
   }
 
   body.theme-dark {

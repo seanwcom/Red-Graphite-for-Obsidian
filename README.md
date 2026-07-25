@@ -23,10 +23,32 @@ without a growing collection of theme-specific overrides.
 | Dark + **Use a dark central workspace** | Fully dark application |
 | Light | Conventional fully light fallback |
 
-The dark-workspace toggle and color/font controls require the
-[Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+The dark-workspace toggle and theme controls require the
+[Style Settings plugin](https://github.com/obsidian-community/obsidian-style-settings).
 Red Graphite uses its signature red accent in every mode. A custom accent set
 in Obsidian's Appearance settings takes precedence over the theme setting.
+
+## Style Settings
+
+Red Graphite exposes its design system through a grouped **Red Graphite**
+section in Style Settings. The theme's standard appearance is the default for
+every control, so installing Style Settings does not change the theme by
+itself.
+
+| Group | Controls |
+| --- | --- |
+| Appearance | Display mode, light and dark palettes, accent, selection, and state colors |
+| Typography | Font families, interface scale, body text, note titles, and all six heading levels |
+| Layout and spacing | Document width and margins, mobile spacing, lists, and horizontal rules |
+| Workspace chrome | Tabs, sidebar navigation, status bar, vault name, and scrollbars |
+| Markdown and content | Blockquotes, callouts, code blocks, tables, tags, and embeds |
+| Code syntax colors | Complete light-document and dark-document syntax palettes |
+
+Component colors can follow the semantic theme palette or be overridden
+individually. This keeps global palette changes coherent while still allowing,
+for example, an H1 color or active-tab indicator to diverge from the main
+accent. Style Settings provides reset controls at each level to return a value,
+subgroup, or the entire Red Graphite section to the shipped defaults.
 
 ## Live development on Windows
 

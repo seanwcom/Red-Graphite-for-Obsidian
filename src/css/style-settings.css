@@ -11,21 +11,29 @@ settings:
     level: 2
     collapsed: false
   -
+    id: red-graphite-display-mode
+    title: Display mode
+    type: heading
+    level: 3
+    collapsed: false
+  -
     id: red-graphite-dark-document
     title: Use a dark central workspace
     description: In Obsidian Dark mode, replace the flagship light center with a fully dark workspace.
     type: class-toggle
     default: false
+    addCommand: true
   -
-    id: red-graphite-colors
-    title: Colors
+    id: red-graphite-base-palettes
+    title: Base palettes
+    description: These four colors generate the semantic frame, document, text, border, and interaction palettes.
     type: heading
-    level: 2
+    level: 3
     collapsed: false
   -
     id: red-graphite-base-color
-    title: Frame base color
-    description: Base color for the title bar, tabs, ribbons, and sidebars in Obsidian Dark mode.
+    title: Frame base
+    description: Base color for the dark title bar, ribbons, sidebars, menus, and global interface.
     type: variable-themed-color
     format: hsl-split
     opacity: false
@@ -34,7 +42,7 @@ settings:
   -
     id: red-graphite-document-light-color
     title: Light document base
-    description: Background base for the central workspace in flagship and Obsidian Light modes.
+    description: Base color for the flagship center and conventional Obsidian Light mode.
     type: variable-themed-color
     format: hsl-split
     opacity: false
@@ -43,7 +51,7 @@ settings:
   -
     id: red-graphite-document-dark-color
     title: Dark document base
-    description: Background base used when the dark central workspace toggle is enabled.
+    description: Base color used by the full-dark central workspace.
     type: variable-themed-color
     format: hsl-split
     opacity: false
@@ -51,35 +59,1102 @@ settings:
     default-dark: '#292c2e'
   -
     id: red-graphite-accent-color
-    title: Accent color
-    description: Red Graphite's highlight color. Obsidian's Appearance accent setting overrides this value.
+    title: Accent
+    description: Signature Red Graphite accent. Obsidian's Appearance accent setting has higher precedence.
     type: variable-themed-color
     format: hsl-split
     opacity: false
     default-light: '#cb4c48'
     default-dark: '#cb4c48'
   -
-    id: red-graphite-fonts
-    title: Fonts
+    id: red-graphite-state-colors
+    title: Selection and state colors
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-selection-opacity
+    title: Selection opacity
+    description: Opacity of the accent-colored text selection.
+    type: variable-number-slider
+    default: 0.22
+    min: 0.05
+    max: 0.6
+    step: 0.01
+  -
+    id: red-graphite-error-color
+    title: Error
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#c94444'
+  -
+    id: red-graphite-success-color
+    title: Success
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#3f8f64'
+
+  -
+    id: red-graphite-typography
+    title: Typography
     type: heading
     level: 2
     collapsed: false
   -
+    id: red-graphite-font-families
+    title: Font families
+    type: heading
+    level: 3
+    collapsed: false
+  -
     id: red-graphite-interface-font
     title: Interface font
-    description: Font used for the user interface.
+    description: Font stack for tabs, navigation, settings, menus, and controls.
     type: variable-text
     default: "'Avenir Next', 'Avenir', 'Segoe UI', sans-serif"
   -
     id: red-graphite-text-font
-    title: Text font
-    description: Font used for note content.
+    title: Note font
+    description: Font stack for Markdown and other central workspace content.
     type: variable-text
     default: "'Avenir Next', 'Avenir', 'Segoe UI', sans-serif"
   -
     id: red-graphite-monospace-font
     title: Monospace font
-    description: Font used for code.
+    description: Font stack for code and preformatted content.
     type: variable-text
     default: "'SFMono-Regular', Consolas, monospace"
+  -
+    id: red-graphite-interface-scale
+    title: Interface scale
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-ui-font-smaller
+    title: Extra-small interface text
+    type: variable-number-slider
+    default: 12
+    min: 9
+    max: 18
+    step: 1
+    format: px
+  -
+    id: red-graphite-ui-font-small
+    title: Small interface text
+    type: variable-number-slider
+    default: 13
+    min: 9
+    max: 20
+    step: 1
+    format: px
+  -
+    id: red-graphite-ui-font-medium
+    title: Medium interface text
+    type: variable-number-slider
+    default: 15
+    min: 11
+    max: 24
+    step: 1
+    format: px
+  -
+    id: red-graphite-ui-font-large
+    title: Large interface text
+    type: variable-number-slider
+    default: 20
+    min: 14
+    max: 32
+    step: 1
+    format: px
+  -
+    id: red-graphite-body-type
+    title: Body text
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-body-line-height
+    title: Line height
+    type: variable-number-slider
+    default: 1.6
+    min: 1.2
+    max: 2.2
+    step: 0.05
+  -
+    id: red-graphite-paragraph-spacing
+    title: Paragraph spacing
+    type: variable-number-slider
+    default: 0.9
+    min: 0
+    max: 2
+    step: 0.05
+    format: rem
+  -
+    id: red-graphite-bold-weight
+    title: Bold weight
+    type: variable-number-slider
+    default: 600
+    min: 400
+    max: 900
+    step: 50
+  -
+    id: red-graphite-inline-title
+    title: Inline note title
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-inline-title-size
+    title: Size
+    type: variable-number-slider
+    default: 1.95
+    min: 1
+    max: 3
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-inline-title-weight
+    title: Weight
+    type: variable-number-slider
+    default: 650
+    min: 400
+    max: 900
+    step: 50
+  -
+    id: red-graphite-inline-title-line-height
+    title: Line height
+    type: variable-number-slider
+    default: 1.18
+    min: 1
+    max: 1.8
+    step: 0.02
+  -
+    id: red-graphite-inline-title-margin-bottom
+    title: Bottom spacing
+    type: variable-number-slider
+    default: 0.7
+    min: 0
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-headings
+    title: Headings
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-heading-sizes
+    title: Sizes
+    type: heading
+    level: 4
+    collapsed: false
+  -
+    id: red-graphite-h1-size
+    title: H1 size
+    type: variable-number-slider
+    default: 1.55
+    min: 1
+    max: 3
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-h2-size
+    title: H2 size
+    type: variable-number-slider
+    default: 1.32
+    min: 1
+    max: 2.5
+    step: 0.01
+    format: em
+  -
+    id: red-graphite-h3-size
+    title: H3 size
+    type: variable-number-slider
+    default: 1.16
+    min: 0.8
+    max: 2
+    step: 0.01
+    format: em
+  -
+    id: red-graphite-h4-size
+    title: H4 size
+    type: variable-number-slider
+    default: 1.05
+    min: 0.8
+    max: 1.8
+    step: 0.01
+    format: em
+  -
+    id: red-graphite-h5-size
+    title: H5 size
+    type: variable-number-slider
+    default: 0.95
+    min: 0.7
+    max: 1.6
+    step: 0.01
+    format: em
+  -
+    id: red-graphite-h6-size
+    title: H6 size
+    type: variable-number-slider
+    default: 0.9
+    min: 0.7
+    max: 1.5
+    step: 0.01
+    format: em
+  -
+    id: red-graphite-heading-weights
+    title: Weights
+    type: heading
+    level: 4
+    collapsed: true
+  -
+    id: red-graphite-h1-weight
+    title: H1 weight
+    type: variable-number-slider
+    default: 650
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-h2-weight
+    title: H2 weight
+    type: variable-number-slider
+    default: 650
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-h3-weight
+    title: H3 weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-h4-weight
+    title: H4 weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-h5-weight
+    title: H5 weight
+    type: variable-number-slider
+    default: 650
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-h6-weight
+    title: H6 weight
+    type: variable-number-slider
+    default: 650
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-heading-line-heights
+    title: Line heights
+    type: heading
+    level: 4
+    collapsed: true
+  -
+    id: red-graphite-h1-line-height
+    title: H1 line height
+    type: variable-number-slider
+    default: 1.18
+    min: 1
+    max: 2
+    step: 0.02
+  -
+    id: red-graphite-h2-line-height
+    title: H2 line height
+    type: variable-number-slider
+    default: 1.25
+    min: 1
+    max: 2
+    step: 0.05
+  -
+    id: red-graphite-h3-line-height
+    title: H3 line height
+    type: variable-number-slider
+    default: 1.3
+    min: 1
+    max: 2
+    step: 0.05
+  -
+    id: red-graphite-h4-line-height
+    title: H4 line height
+    type: variable-number-slider
+    default: 1.35
+    min: 1
+    max: 2
+    step: 0.05
+  -
+    id: red-graphite-h5-line-height
+    title: H5 line height
+    type: variable-number-slider
+    default: 1.4
+    min: 1
+    max: 2
+    step: 0.05
+  -
+    id: red-graphite-h6-line-height
+    title: H6 line height
+    type: variable-number-slider
+    default: 1.4
+    min: 1
+    max: 2
+    step: 0.05
+  -
+    id: red-graphite-heading-tracking
+    title: Tracking and rhythm
+    type: heading
+    level: 4
+    collapsed: true
+  -
+    id: red-graphite-h1-letter-spacing
+    title: H1 letter spacing
+    type: variable-number-slider
+    default: -0.025
+    min: -0.1
+    max: 0.1
+    step: 0.005
+    format: em
+  -
+    id: red-graphite-h2-letter-spacing
+    title: H2 letter spacing
+    type: variable-number-slider
+    default: -0.018
+    min: -0.1
+    max: 0.1
+    step: 0.002
+    format: em
+  -
+    id: red-graphite-h3-letter-spacing
+    title: H3 letter spacing
+    type: variable-number-slider
+    default: -0.012
+    min: -0.1
+    max: 0.1
+    step: 0.002
+    format: em
+  -
+    id: red-graphite-heading-spacing-multiplier
+    title: Heading spacing multiplier
+    description: Multiplies the paragraph spacing value to create vertical space before headings.
+    type: variable-number-slider
+    default: 1.75
+    min: 0.5
+    max: 4
+    step: 0.05
+  -
+    id: red-graphite-heading-accents
+    title: H1 and H2 accents
+    type: heading
+    level: 4
+    collapsed: false
+  -
+    id: red-graphite-h1-color
+    title: H1 color
+    description: Overrides the adaptive deep-red H1 color.
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#9f4845'
+  -
+    id: red-graphite-h2-rule-color
+    title: H2 rule color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-h2-rule-width
+    title: H2 rule thickness
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: red-graphite-h2-rule-gap
+    title: H2 text-to-rule spacing
+    type: variable-number-slider
+    default: 0.25
+    min: 0
+    max: 1
+    step: 0.05
+    format: em
+
+  -
+    id: red-graphite-layout
+    title: Layout and spacing
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: red-graphite-document-layout
+    title: Desktop document
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-content-width
+    title: Maximum content width
+    type: variable-number-slider
+    default: 700
+    min: 400
+    max: 1400
+    step: 10
+    format: px
+  -
+    id: red-graphite-document-margin-x
+    title: Horizontal document margin
+    type: variable-number-slider
+    default: 48
+    min: 8
+    max: 160
+    step: 4
+    format: px
+  -
+    id: red-graphite-document-margin-y
+    title: Vertical document margin
+    type: variable-number-slider
+    default: 36
+    min: 0
+    max: 120
+    step: 4
+    format: px
+  -
+    id: red-graphite-mobile-layout
+    title: Mobile document
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-mobile-margin-x
+    title: Horizontal mobile margin
+    type: variable-number-slider
+    default: 24
+    min: 4
+    max: 64
+    step: 2
+    format: px
+  -
+    id: red-graphite-mobile-margin-y
+    title: Vertical mobile margin
+    type: variable-number-slider
+    default: 8
+    min: 0
+    max: 48
+    step: 2
+    format: px
+  -
+    id: red-graphite-list-layout
+    title: Lists
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-list-indent
+    title: Reading-view indent
+    type: variable-number-slider
+    default: 1.8
+    min: 0.8
+    max: 4
+    step: 0.1
+    format: em
+  -
+    id: red-graphite-list-indent-editing
+    title: Editor indent
+    type: variable-number-slider
+    default: 1.4
+    min: 0.8
+    max: 4
+    step: 0.1
+    format: em
+  -
+    id: red-graphite-list-spacing
+    title: Item spacing
+    type: variable-number-slider
+    default: 0.15
+    min: 0
+    max: 1.5
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-list-number-weight
+    title: Number weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-list-marker-color
+    title: Top-level marker color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-nested-list-marker-color
+    title: Nested marker color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#616161'
+  -
+    id: red-graphite-divider-layout
+    title: Horizontal rules
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-horizontal-rule-width
+    title: Thickness
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: red-graphite-horizontal-rule-margin
+    title: Vertical margin
+    type: variable-number-slider
+    default: 2.5
+    min: 0
+    max: 6
+    step: 0.1
+    format: em
+
+  -
+    id: red-graphite-chrome
+    title: Workspace chrome
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: red-graphite-tabs
+    title: Tabs
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-tab-indicator-color
+    title: Active indicator color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-tab-indicator-width
+    title: Active indicator thickness
+    type: variable-number-slider
+    default: 2
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: red-graphite-tab-radius
+    title: Active tab corner radius
+    type: variable-number-slider
+    default: 6
+    min: 0
+    max: 16
+    step: 1
+    format: px
+  -
+    id: red-graphite-navigation
+    title: Sidebar navigation
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-nav-item-radius
+    title: Item corner radius
+    type: variable-number-slider
+    default: 5
+    min: 0
+    max: 16
+    step: 1
+    format: px
+  -
+    id: red-graphite-nav-indicator-color
+    title: Active indicator color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-nav-indicator-width
+    title: Active indicator width
+    type: variable-number-slider
+    default: 3
+    min: 0
+    max: 8
+    step: 1
+    format: px
+  -
+    id: red-graphite-vault-name-color
+    title: Vault name color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-vault-name-size
+    title: Vault name size
+    type: variable-number-slider
+    default: 15
+    min: 10
+    max: 28
+    step: 1
+    format: px
+  -
+    id: red-graphite-vault-name-weight
+    title: Vault name weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-status-and-scrollbars
+    title: Status bar and scrollbars
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-status-bar-radius
+    title: Status bar corner radius
+    type: variable-number-slider
+    default: 4
+    min: 0
+    max: 16
+    step: 1
+    format: px
+  -
+    id: red-graphite-scrollbar-size
+    title: Scrollbar size
+    type: variable-number-slider
+    default: 10
+    min: 4
+    max: 24
+    step: 1
+    format: px
+  -
+    id: red-graphite-scrollbar-border-width
+    title: Scrollbar inset
+    type: variable-number-slider
+    default: 2
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: red-graphite-scrollbar-radius
+    title: Scrollbar corner radius
+    type: variable-number-slider
+    default: 12
+    min: 0
+    max: 24
+    step: 1
+    format: px
+
+  -
+    id: red-graphite-content-components
+    title: Markdown and content
+    type: heading
+    level: 2
+    collapsed: false
+  -
+    id: red-graphite-blockquotes
+    title: Blockquotes
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-blockquote-border-color
+    title: Border color
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#cb4c48'
+  -
+    id: red-graphite-blockquote-border-width
+    title: Border width
+    type: variable-number-slider
+    default: 3
+    min: 0
+    max: 10
+    step: 1
+    format: px
+  -
+    id: red-graphite-blockquote-radius
+    title: Corner radius
+    type: variable-number-slider
+    default: 4
+    min: 0
+    max: 20
+    step: 1
+    format: px
+  -
+    id: red-graphite-blockquote-padding-y
+    title: Vertical padding
+    type: variable-number-slider
+    default: 0.65
+    min: 0
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-blockquote-padding-end
+    title: End padding
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 3
+    step: 0.1
+    format: em
+  -
+    id: red-graphite-callouts
+    title: Callouts
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-callout-background-opacity
+    title: Background opacity
+    type: variable-number-slider
+    default: 0.07
+    min: 0
+    max: 0.5
+    step: 0.01
+  -
+    id: red-graphite-callout-border-opacity
+    title: Border opacity
+    type: variable-number-slider
+    default: 0.22
+    min: 0
+    max: 1
+    step: 0.01
+  -
+    id: red-graphite-callout-border-width
+    title: Accent border width
+    type: variable-number-slider
+    default: 3
+    min: 0
+    max: 10
+    step: 1
+    format: px
+  -
+    id: red-graphite-callout-radius
+    title: Corner radius
+    type: variable-number-slider
+    default: 6
+    min: 0
+    max: 24
+    step: 1
+    format: px
+  -
+    id: red-graphite-callout-title-weight
+    title: Title weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-callout-title-color-mix
+    title: Callout-color strength
+    description: Percentage of the callout color mixed into the title and icon.
+    type: variable-number-slider
+    default: 72
+    min: 0
+    max: 100
+    step: 1
+    format: '%'
+  -
+    id: red-graphite-callout-padding-y
+    title: Vertical padding
+    type: variable-number-slider
+    default: 12
+    min: 0
+    max: 40
+    step: 1
+    format: px
+  -
+    id: red-graphite-callout-padding-x
+    title: Horizontal padding
+    type: variable-number-slider
+    default: 16
+    min: 0
+    max: 48
+    step: 1
+    format: px
+  -
+    id: red-graphite-code-blocks
+    title: Code blocks
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-code-border-width
+    title: Border width
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: red-graphite-code-radius
+    title: Corner radius
+    type: variable-number-slider
+    default: 6
+    min: 0
+    max: 24
+    step: 1
+    format: px
+  -
+    id: red-graphite-tables
+    title: Tables
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-table-cell-padding-y
+    title: Reading vertical padding
+    type: variable-number-slider
+    default: 0.6
+    min: 0.1
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-table-cell-padding-x
+    title: Reading horizontal padding
+    type: variable-number-slider
+    default: 0.75
+    min: 0.1
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-table-editor-padding-y
+    title: Editor vertical padding
+    type: variable-number-slider
+    default: 0.5
+    min: 0.1
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-table-editor-padding-x
+    title: Editor horizontal padding
+    type: variable-number-slider
+    default: 0.7
+    min: 0.1
+    max: 2
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-table-header-weight
+    title: Header weight
+    type: variable-number-slider
+    default: 600
+    min: 300
+    max: 900
+    step: 50
+  -
+    id: red-graphite-table-line-height
+    title: Line height
+    type: variable-number-slider
+    default: 1.45
+    min: 1
+    max: 2.5
+    step: 0.05
+  -
+    id: red-graphite-tags-and-embeds
+    title: Tags and embeds
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: red-graphite-tag-background-opacity-light
+    title: Light tag opacity
+    type: variable-number-slider
+    default: 0.1
+    min: 0
+    max: 0.6
+    step: 0.01
+  -
+    id: red-graphite-tag-background-hover-opacity-light
+    title: Light tag hover opacity
+    type: variable-number-slider
+    default: 0.18
+    min: 0
+    max: 0.8
+    step: 0.01
+  -
+    id: red-graphite-tag-background-opacity-dark
+    title: Dark tag opacity
+    type: variable-number-slider
+    default: 0.16
+    min: 0
+    max: 0.6
+    step: 0.01
+  -
+    id: red-graphite-tag-background-hover-opacity-dark
+    title: Dark tag hover opacity
+    type: variable-number-slider
+    default: 0.24
+    min: 0
+    max: 0.8
+    step: 0.01
+  -
+    id: red-graphite-embed-border-width
+    title: Embed border width
+    type: variable-number-slider
+    default: 2
+    min: 0
+    max: 8
+    step: 1
+    format: px
+
+  -
+    id: red-graphite-code-syntax
+    title: Code syntax colors
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: red-graphite-code-syntax-light
+    title: Light workspace
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-code-light-function
+    title: Functions and values
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#2457a7'
+  -
+    id: red-graphite-code-light-important
+    title: Important
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#a92727'
+  -
+    id: red-graphite-code-light-keyword
+    title: Keywords
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#713da6'
+  -
+    id: red-graphite-code-light-property
+    title: Properties
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#2c6c3f'
+  -
+    id: red-graphite-code-light-string
+    title: Strings
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#8a5a00'
+  -
+    id: red-graphite-code-light-tag
+    title: Tags
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#a92727'
+  -
+    id: red-graphite-code-light-value
+    title: Values
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#2457a7'
+  -
+    id: red-graphite-code-syntax-dark
+    title: Dark workspace
+    type: heading
+    level: 3
+    collapsed: false
+  -
+    id: red-graphite-code-dark-function
+    title: Functions and values
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#8ab4f8'
+  -
+    id: red-graphite-code-dark-important
+    title: Important
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#f28b82'
+  -
+    id: red-graphite-code-dark-keyword
+    title: Keywords
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#c58af9'
+  -
+    id: red-graphite-code-dark-property
+    title: Properties
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#81c995'
+  -
+    id: red-graphite-code-dark-string
+    title: Strings
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#fdd663'
+  -
+    id: red-graphite-code-dark-tag
+    title: Tags
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#f28b82'
+  -
+    id: red-graphite-code-dark-value
+    title: Values
+    type: variable-color
+    format: hex
+    opacity: false
+    default: '#8ab4f8'
+
+  -
+    id: red-graphite-settings-help
+    title: About these controls
+    description: "Resetting a control restores Red Graphite's shipped default. Base palette controls generate the semantic colors used by Obsidian and plugins; component controls override individual visual decisions."
+    type: info-text
+    markdown: true
 */

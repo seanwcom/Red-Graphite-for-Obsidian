@@ -1,11 +1,12 @@
 import assert from "node:assert/strict";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
 import {
   compileTheme,
   createDebouncedTask,
+  styleSettingsPath,
   validateDeployPath,
   validateMetadata,
   validateReleaseTag,
@@ -30,9 +31,47 @@ test("compiled theme contains all three appearance states", async () => {
   );
   assert.match(css, /:has\(\.workspace\.is-right-sidedock-open\)/);
   assert.match(css, /--caret-color: var\(--text-normal\)/);
-  assert.match(css, /box-shadow: inset 0 -2px 0 var\(--interactive-accent\)/);
+  assert.match(
+    css,
+    /box-shadow: inset 0 calc\(-1 \* var\(--red-graphite-tab-indicator-width\)\) 0 var\(--red-graphite-tab-indicator-color\)/,
+  );
   assert.match(css, /color-scheme: light/);
   assert.match(css, /color-scheme: dark/);
+});
+
+test("Style Settings exposes a unique, comprehensive token schema", async () => {
+  const [css, settings] = await Promise.all([
+    compileTheme(),
+    readFile(styleSettingsPath, "utf8"),
+  ]);
+  const blocks = settings.split(/\r?\n {2}-\r?\n/).slice(1);
+  const definitions = blocks.map((block) => ({
+    id: block.match(/^\s+id:\s+(.+)$/m)?.[1].trim(),
+    type: block.match(/^\s+type:\s+(.+)$/m)?.[1].trim(),
+  }));
+  const ids = definitions.map(({ id }) => id);
+
+  assert.ok(definitions.length >= 100, "expected a comprehensive settings panel");
+  assert.equal(new Set(ids).size, ids.length, "setting ids must be unique");
+  assert.ok(
+    definitions.some(
+      ({ id, type }) =>
+        id === "red-graphite-dark-document" && type === "class-toggle",
+    ),
+    "dark document toggle",
+  );
+
+  for (const { id, type } of definitions) {
+    if (!type?.startsWith("variable-")) {
+      continue;
+    }
+    const escapedId = id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    assert.match(
+      css,
+      new RegExp(`--${escapedId}(?:-|\\b)`),
+      `CSS must consume ${id}`,
+    );
+  }
 });
 
 test("default text and accent colors meet their contrast gates", () => {
