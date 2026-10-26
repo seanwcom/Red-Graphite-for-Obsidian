@@ -35,6 +35,13 @@ This branch is a development snapshot for manual use in another vault. It is not
 - Native Mac confirmation remains pending for the traffic-light area, callouts (including nested/folded cases), list nesting/numbering, and the standalone verification table in Live Preview and Reading view. The browser check validates CSS against representative DOM, not Obsidian's Markdown parser.
 - Validation: build, tracked-artifact check, all 12 Node tests, high-level npm audit (0 vulnerabilities), and `git diff --check` pass. The browser check also confirms the backdrop rule leaves Windows, fullscreen, popout, and mobile ribbon widths at their native values. Deployed only `theme.css` and `manifest.json` through the guarded deployer to the configured local test vault; deployed bytes match both repository artifacts.
 
+## Collapsed Mac sidebar corner revision — 2026-10-26
+
+- The next native Mac screenshot showed that extending the graphite backdrop removed the split behind the buttons but created an awkward cap protruding into the light rail. That treatment is superseded: in flagship mode, closing the left sidebar now makes the ribbon's top corner match the adjacent light tab rail. The ribbon below stays graphite, and opening the sidebar restores its graphite corner. The native corner width is preserved.
+- Updated the browser regression check to reject a protruding corner, assert the adjacent background match when collapsed, and verify the ribbon and open-sidebar corner keep their host palette. The fixture now toggles the ribbon's actual `is-collapsed` class as well as the workspace dock classes. These checks failed against the prior treatment before the source fix.
+- Native macOS confirmation remains pending. The isolated fixture tests CSS paint and state inheritance; it does not render Apple's native traffic-light controls.
+- Validation: 24 browser scenarios pass against each of the older and 1.14.5 stylesheet references (48 total), including both window-focus states and both sidebar states. The build, tracked-artifact check, all 12 Node tests, high-level npm audit (0 vulnerabilities), and `git diff --check` pass. Deployed only `theme.css` and `manifest.json` to the configured local test vault through the guarded deployer; deployed bytes match the repository artifacts.
+
 ## Test environment record
 
 | Item | Version or result |

@@ -58,16 +58,22 @@ body.theme-light {
   --mobile-sidebar-background: var(--background-secondary);
 }
 
-// Native macOS traffic lights occupy 80px, wider than the ribbon. Extend its
-// corner paint across the complete reserved area so closing the left sidebar
-// does not leave the buttons straddling graphite and the light tab rail.
-body.mod-macos.show-ribbon.is-hidden-frameless:not(
-    .is-fullscreen, .is-popout-window, .is-mobile
+// When the left sidebar closes, the native traffic lights sit across the
+// ribbon corner and the light tab rail. Match their backgrounds instead of
+// widening the graphite corner into a protruding cap. The ribbon stays dark.
+body.theme-dark.mod-macos.show-ribbon.is-hidden-frameless:not(
+    .red-graphite-dark-document, .is-fullscreen, .is-popout-window, .is-mobile
+  ):not(
+    :has(.workspace.is-left-sidedock-open)
   )
-  .workspace-ribbon:is(.mod-primary, .mod-left)::before {
-  width: calc(
-    var(--ribbon-width) + var(--frame-left-space) + var(--frame-right-space)
+  .workspace-ribbon.mod-left {
+  --titlebar-background: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 4%)
   );
+  --titlebar-background-focused: var(--titlebar-background);
+  --tab-outline-color: var(--titlebar-background);
 }
 
 body.theme-dark:not(.red-graphite-dark-document)

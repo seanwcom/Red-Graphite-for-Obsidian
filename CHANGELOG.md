@@ -23,7 +23,7 @@ Red Graphite's primary appearance has moved from Obsidian Light to Obsidian Dark
 - Documented manual installation from the development branch for use in another vault.
 - Updated the build dependency `source-map-js` to 1.2.2 to resolve a high-severity audit finding.
 - Fixed dark inactive-tab hover in Obsidian 1.14.5 and the macOS right-sidebar toggle's dark corner and hover when the flagship light center reaches the window edge.
-- Extended the macOS traffic-light backdrop across the full reserved control area so collapsing the left sidebar does not split the buttons between dark and light backgrounds.
+- Matched the macOS traffic-light corner to the light tab rail when the left sidebar is collapsed, keeping the vertical ribbon graphite and restoring the graphite corner when the sidebar opens.
 - Restored native callout hues and configurable tints across older and current Obsidian color formats, with a more readable default title-color strength.
 - Kept completed tasks and unresolved links on the local palette; unresolved links now use a dashed underline instead of faded text.
 - Distinguished H5 with a configurable italic style, normalized specimen list indentation, and moved its verification table outside the list for Live Preview.

@@ -70,6 +70,7 @@ try {
             const workspace = document.querySelector(".workspace");
             workspace.classList.toggle("is-left-sidedock-open", left);
             workspace.classList.toggle("is-right-sidedock-open", right);
+            document.querySelector(".workspace-ribbon").classList.toggle("is-collapsed", !left);
           }, { mode, focused, left, right });
           await page.mouse.move(1390, 990);
           await page.evaluate(() => {
@@ -95,7 +96,17 @@ try {
             check(callout.background !== "rgba(0, 0, 0, 0)" || (tint.content !== "none" && tint.background !== "rgba(0, 0, 0, 0)" && tint.opacity > 0), `Missing callout tint: ${type}; ${label}`);
           }
           const ribbon = await style(".workspace-ribbon", "::before");
-          check(ribbon.width >= 80, `Traffic-light backdrop covers only ${ribbon.width}px; ${label}`);
+          check(ribbon.width === ribbon.nativeRibbonWidth, `Traffic-light backdrop protrudes beyond the ribbon; ${label}`);
+          if (!left) {
+            const rail = await style(".workspace-tab-header-container");
+            check(ribbon.background === rail.background, `Traffic-light corner differs from the adjacent tab rail; ${label}`);
+          }
+          const ribbonBody = await style(".workspace-ribbon");
+          const lightFrame = mode === "theme-light";
+          check(channels(ribbonBody.background).every((v) => lightFrame ? v > 200 : v < 100), `Vertical ribbon lost its host palette; ${label}`);
+          if (left) {
+            check(channels(ribbon.background).every((v) => lightFrame ? v > 200 : v < 100), `Open-sidebar traffic-light corner lost its host palette; ${label}`);
+          }
           check((await style("h5")).fontStyle !== (await style("h4")).fontStyle, `H4/H5 need distinct styles; ${label}`);
           await page.locator("#inactive").hover();
           const tab = await style("#inactive .workspace-tab-header-inner");

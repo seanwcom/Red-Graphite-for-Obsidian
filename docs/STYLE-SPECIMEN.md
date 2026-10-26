@@ -281,7 +281,7 @@ Use this standalone table to check the result. Tables inside list items are not 
 - [ ] The active tab is immediately identifiable.
 - [ ] Hovering an inactive tab keeps its title readable and uses the local workspace palette.
 - [ ] With the right sidebar closed on macOS, its corner toggle matches the tab rail at rest and has a readable hover state; opening the sidebar restores the host palette.
-- [ ] With the left sidebar closed on macOS, all three traffic lights share a continuous backdrop with no color boundary through the buttons.
+- [ ] With the left sidebar closed on macOS, the traffic-light corner blends into the tab rail while the vertical ribbon below stays graphite; opening the sidebar restores its graphite corner.
 - [ ] Moving a plugin view between the center and sidebar preserves usability.
 
 %% This comment should be hidden in reading view and visible in source mode. %%
