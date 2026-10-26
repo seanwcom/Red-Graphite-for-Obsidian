@@ -2,5 +2,7 @@
 @use "theme/modes";
 @use "theme/components";
 @use "theme/mobile";
+@use "plugins/calendar";
 @use "plugins/claudian";
+@use "plugins/copilot";
 @use "plugins/style-settings";

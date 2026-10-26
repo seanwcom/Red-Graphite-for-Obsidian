@@ -1,0 +1,41 @@
+/*
+ * Copilot 3.3.3
+ *
+ * Its settings tabs are custom role=tab elements rather than Obsidian tabs.
+ * The component emits a standalone border with no color, causing it to inherit
+ * bright text color. Use the semantic divider token and reduce inactive tab
+ * contrast; Copilot's selected tab continues to own the accent treatment. Its
+ * chat editor adds an accent focus frame inside its already-bordered composer,
+ * which is too strong beside the graphite host.
+ *
+ * Source: github.com/logancyang/obsidian-copilot
+ */
+
+body:has(#tab-basic)
+  [role="tab"][id^="tab-"]:not([aria-selected="true"]) {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+  color: var(--text-muted);
+}
+
+body:has(#tab-basic)
+  [role="tab"][id^="tab-"]:not([aria-selected="true"]):hover {
+  background-color: var(--background-modifier-hover);
+  border-color: var(--background-modifier-border-hover);
+  color: var(--text-normal);
+}
+
+body:has(#tab-basic)
+  div:has(> [role="tab"])
+  + .tw-w-full.tw-border.tw-border-solid {
+  border-color: var(--background-modifier-border);
+}
+
+// Copilot's Lexical editor adds its own focused frame inside the composer.
+// Keep that inner editor visually flush with its already-bordered container.
+body .workspace-leaf-content [aria-label="Chat input"],
+body .workspace-leaf-content div.tw-relative:has(> [aria-label="Chat input"]) {
+  border-color: transparent;
+  box-shadow: none;
+  outline: none;
+}

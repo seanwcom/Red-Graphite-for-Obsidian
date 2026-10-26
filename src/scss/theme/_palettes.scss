@@ -219,9 +219,10 @@
     var(--red-graphite-tag-background-hover-opacity-dark)
   );
   --checkbox-border-color: var(--text-faint);
-  --checkbox-border-color-hover: var(--interactive-accent);
-  --checkbox-color: var(--color-accent);
-  --checkbox-color-hover: var(--color-accent-1);
+  --checkbox-border-color-hover: var(--background-modifier-border-hover);
+  --checkbox-color: var(--background-modifier-border-hover);
+  --checkbox-color-hover: var(--background-modifier-active-hover);
+  --checkbox-marker-color: var(--text-normal);
   --tag-color: var(--color-accent-readable);
   --tag-color-hover: var(--color-accent-2);
   --blockquote-background-color: var(--background-secondary);
@@ -307,9 +308,10 @@
     var(--red-graphite-tag-background-hover-opacity-light)
   );
   --checkbox-border-color: var(--text-faint);
-  --checkbox-border-color-hover: var(--interactive-accent);
-  --checkbox-color: var(--color-accent);
-  --checkbox-color-hover: var(--color-accent-1);
+  --checkbox-border-color-hover: var(--background-modifier-border-hover);
+  --checkbox-color: var(--background-modifier-border-hover);
+  --checkbox-color-hover: var(--background-modifier-active-hover);
+  --checkbox-marker-color: var(--text-normal);
   --tag-color: var(--color-accent);
   --tag-color-hover: var(--color-accent-1);
   --blockquote-background-color: var(--background-secondary);

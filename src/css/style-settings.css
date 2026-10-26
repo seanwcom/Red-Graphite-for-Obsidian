@@ -2,6 +2,7 @@
 
 name: Red Graphite
 id: red-graphite
+collapsed: true
 settings:
 
   -
@@ -9,13 +10,13 @@ settings:
     title: Appearance
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-display-mode
     title: Display mode
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-dark-document
     title: Use a dark central workspace
@@ -29,7 +30,7 @@ settings:
     description: These three colors generate the semantic frame, document, text, border, and interaction palettes. Set the global accent in Obsidian's Appearance settings.
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-base-color
     title: Frame base
@@ -92,13 +93,13 @@ settings:
     title: Typography
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-font-families
     title: Font families
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-interface-font
     title: Interface font
@@ -164,7 +165,7 @@ settings:
     title: Body text
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-body-line-height
     title: Line height
@@ -235,13 +236,13 @@ settings:
     title: Headings
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-heading-sizes
     title: Sizes
     type: heading
     level: 4
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-h1-size
     title: H1 size
@@ -451,7 +452,7 @@ settings:
     title: H1 and H2 accents
     type: heading
     level: 4
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-h1-color
     title: H1 color
@@ -491,13 +492,13 @@ settings:
     title: Layout and spacing
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-document-layout
     title: Desktop document
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-content-width
     title: Maximum content width
@@ -634,13 +635,13 @@ settings:
     title: Workspace chrome
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-tabs
     title: Tabs
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-tab-indicator-color
     title: Active indicator color
@@ -671,7 +672,7 @@ settings:
     title: Sidebar navigation
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-nav-item-radius
     title: Item corner radius
@@ -769,13 +770,13 @@ settings:
     title: Markdown and content
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-blockquotes
     title: Blockquotes
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-blockquote-border-color
     title: Border color
@@ -824,7 +825,7 @@ settings:
     title: Callouts
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-callout-background-opacity
     title: Background opacity
@@ -1036,7 +1037,7 @@ settings:
     title: Light workspace
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-code-light-function
     title: Functions and values
@@ -1091,7 +1092,7 @@ settings:
     title: Dark workspace
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-code-dark-function
     title: Functions and values
@@ -1148,14 +1149,14 @@ settings:
     description: Narrowly scoped controls for plugins that need additional visual integration.
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-style-settings-plugin
     title: Style Settings
     description: Controls the indentation and grouping used to distinguish Red Graphite's expanded settings sections.
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-style-settings-guide-color
     title: Expanded-group guide color

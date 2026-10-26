@@ -37,7 +37,7 @@ Copy-Item .env.example .env
 Set `OBSIDIAN_PATH` to a folder ending in `.obsidian/themes/Red Graphite`. Relative paths resolve from the repository root. The current development default is:
 
 ```dotenv
-OBSIDIAN_PATH='../obsidian-personal/.obsidian/themes/Red Graphite'
+OBSIDIAN_PATH='../obsidian-notebooks/red-graphite-test-vault/.obsidian/themes/Red Graphite'
 ```
 
 Then run:

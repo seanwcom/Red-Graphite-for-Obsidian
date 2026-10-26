@@ -18,6 +18,10 @@ Red Graphite's primary appearance has moved from Obsidian Light to Obsidian Dark
 - Updated tabs, typography, headings, lists, tables, content blocks, mobile surfaces, and current Obsidian views.
 - Adopted semantic-first plugin compatibility with isolated exceptions.
 - Added modern CI, dependency updates, version synchronization, and draft release automation.
+- Collapsed Style Settings groups by default and refined checkboxes, selected community-browser cards, sidebar search highlights, graph colors, and Mermaid rendering in the light workspace.
+- Added Calendar and Copilot adjustments plus a pinned plugin QA installer for the dedicated test vault; full plugin acceptance remains pending.
+- Documented manual installation from the development branch for use in another vault.
+- Updated the build dependency `source-map-js` to 1.2.2 to resolve a high-severity audit finding.
 
 ### Compatibility
 

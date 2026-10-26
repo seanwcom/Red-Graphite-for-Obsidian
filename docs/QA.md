@@ -4,6 +4,17 @@ This is the living release-acceptance record, not a substitute for the stable de
 
 Do not create the `2.0.0` tag until every required row is complete and the final desktop and iOS appearance has been approved.
 
+## Development branch checkpoint — 2026-10-26
+
+This branch is a development snapshot for manual use in another vault. It is not release acceptance. Previously checked manual results below are historical; no new Obsidian visual pass was performed for this checkpoint.
+
+- Current local validation: `npm ci`, `npm run build`, `npm run check`, all 11 tests, and `npm audit --audit-level=high` pass after updating `source-map-js` to 1.2.2.
+- The tracked `theme.css` matches the existing deployed copy in the dedicated test vault by SHA-256. This checkpoint did not write to a vault.
+- The plugin QA installer and catalog are included for reproducibility; the installer was not run during this checkpoint and plugin behavior remains pending.
+- Review the Calendar and Copilot exceptions against the unreadable-or-unusable policy before release: their current source comments describe visual refinements, and Copilot's settings selectors need scope verification.
+- Desktop appearance, plugin placement in all three states, the release screenshot, and physical iOS approval remain open. No tag or release is authorized by this checkpoint.
+- Use the README's development-branch installation steps to copy only `theme.css` and `manifest.json` into another vault.
+
 ## Test environment record
 
 | Item | Version or result |
@@ -51,16 +62,19 @@ Only add compatibility CSS when a failure prevents reading or operating the plug
 | Style Settings | 1.0.9 | N/A | N/A | Control schema, group hierarchy, and section-reset palette previews verified |
 | BRAT | 2.0.4 | Pending | Pending | Uses semantic variables |
 | Claudian | 2.0.24 | Pending | Pending | Light-center logo exception included |
-| Dataview | 0.5.70 | Pending | Pending | Verify issue #39 inline fields |
+| Dataview | 0.5.68 (release tag 0.5.70) | Pending | Pending | Verify issue #39 inline fields |
 | Various Complements | 11.4.0 | Pending | N/A | Verify issue #38 suggestion details |
-| Calendar | Record | Pending | Pending | |
-| Kanban | Record | Pending | Pending | |
-| Checklist | Record | Pending | Pending | |
-| Make.md | Record | Pending | Pending | |
-| Copilot | Record | Pending | Pending | |
-| Daily Stats | Record | Pending | Pending | |
+| Calendar | 2.0.0 (`calendar-beta`) | Pending | Pending | Legacy compatibility fixture; its upstream release is an old beta. Sources hover stays neutral and its active state uses the accent. |
+| Kanban | 2.0.51 | Pending | Pending | |
+| Checklist | 2.2.14 | Pending | Pending | Issue #15 historical sidebar task view. |
+| Copilot | 3.3.3 | Pending | Pending | Issue #33 historical UI-only test; never add provider credentials. Custom settings tabs use a muted divider and inactive state. |
+| Daily Stats | 1.0.4 | Pending | Pending | Issue #35 historical status-bar and right-sidebar view. |
+| Templater | 2.24.3 | Pending | N/A | QA template fixture and command-picker pass pending. |
+| Tasks | 8.3.0 | Pending | N/A | QA query, task-state, and error pass pending. |
 
-Temporarily installed QA plugins must be disabled and removed afterward. Do not alter existing plugin data or settings.
+Keep the pinned QA plugins installed in the dedicated test vault between theme changes. Do not update, add, disable, or remove a plugin during an ordinary theme pass; make any plugin-baseline change deliberately, record it here, and rerun the relevant fixture set. Do not alter plugin data or settings outside this vault.
+
+The reproducible first batch lives in the disposable test vault's `QA/Plugins/` folder. [`PLUGIN-QA.md`](./PLUGIN-QA.md) defines the guarded installer, version lockfile, and manual test procedure.
 
 ## Reported regressions
 

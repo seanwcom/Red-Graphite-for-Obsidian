@@ -1,0 +1,74 @@
+{
+  "plugins": [
+    {
+      "id": "obsidian-style-settings",
+      "name": "Style Settings",
+      "repository": "mgmeyers/obsidian-style-settings",
+      "tag": "1.0.9",
+      "purpose": "Theme settings controls and palette previews"
+    },
+    {
+      "id": "dataview",
+      "name": "Dataview",
+      "repository": "blacksmithgu/obsidian-dataview",
+      "tag": "0.5.70",
+      "purpose": "Generated lists, tables, inline fields, and query errors"
+    },
+    {
+      "id": "calendar-beta",
+      "name": "Calendar",
+      "repository": "liamcain/obsidian-calendar-plugin",
+      "tag": "2.0.0-beta.2",
+      "purpose": "Legacy sidebar calendar compatibility"
+    },
+    {
+      "id": "obsidian-kanban",
+      "name": "Kanban",
+      "repository": "mgmeyers/obsidian-kanban",
+      "tag": "2.0.51",
+      "purpose": "Board view, cards, menus, and editor widgets"
+    },
+    {
+      "id": "templater-obsidian",
+      "name": "Templater",
+      "repository": "SilentVoid13/Templater",
+      "tag": "2.24.3",
+      "purpose": "Template insertion, prompts, and generated note content"
+    },
+    {
+      "id": "obsidian-tasks-plugin",
+      "name": "Tasks",
+      "repository": "obsidian-tasks-group/obsidian-tasks",
+      "tag": "8.3.0",
+      "purpose": "Task query blocks, task states, and filters"
+    },
+    {
+      "id": "obsidian-checklist-plugin",
+      "name": "Checklist",
+      "repository": "delashum/obsidian-checklist-plugin",
+      "tag": "2.2.14",
+      "purpose": "Consolidated tagged task sidebar and source-note navigation"
+    },
+    {
+      "id": "various-complements",
+      "name": "Various Complements",
+      "repository": "tadashi-aikawa/obsidian-various-complements-plugin",
+      "tag": "11.4.0",
+      "purpose": "Editor completion suggestions, details, and icons"
+    },
+    {
+      "id": "obsidian-daily-stats",
+      "name": "Daily Stats",
+      "repository": "dhruvik7/obsidian-daily-stats",
+      "tag": "1.0.4",
+      "purpose": "Status-bar word count and historical sidebar heatmap"
+    },
+    {
+      "id": "copilot",
+      "name": "Copilot",
+      "repository": "logancyang/obsidian-copilot",
+      "tag": "3.3.3",
+      "purpose": "Assistant panel and settings shells without provider credentials"
+    }
+  ]
+}

@@ -97,6 +97,8 @@ Longer paragraphs need a comfortable line height and a restrained line width. Th
   - [x] Nested completed task
 - [ ] Task containing an [external link](https://help.obsidian.md)
 
+Completed checkboxes use a neutral fill and a readable checkmark in all three appearance states. Check hover and keyboard focus as well as the static task states.
+
 ---
 
 ## Quotes and blockquotes
@@ -189,6 +191,16 @@ body.theme-dark {
 ```text
 Plain text blocks should remain legible without syntax highlighting.
 Long lines should scroll or wrap according to Obsidian's normal behavior.
+```
+
+## Mermaid diagrams
+
+The diagram should stay readable on the light central workspace in flagship Dark mode and in the conventional Light appearance. Check it again with the dark central workspace enabled.
+
+```mermaid
+flowchart LR
+  A[Graphite frame] --> B[Central workspace]
+  B --> C[Readable labels]
 ```
 
 ## Mathematics

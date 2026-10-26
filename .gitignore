@@ -6,3 +6,6 @@
 *.map
 dist
 node_modules
+
+# Local reference copy of Obsidian's generated application stylesheet.
+/app.css

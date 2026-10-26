@@ -1,0 +1,18 @@
+/*
+ * Calendar 2.0.0-beta.2
+ *
+ * Calendar's Sources component uses --text-faint as a hover border. In the
+ * graphite settings host that produces a bright, full-card outline instead of
+ * a quiet hover. Keep the neutral hover border unchanged and reserve the
+ * accent border for Calendar's active (source-settings modal) state.
+ *
+ * Source: github.com/liamcain/obsidian-calendar-plugin
+ */
+
+body .calendar-source.calendar-source:hover {
+  border-color: var(--background-modifier-border);
+}
+
+body .calendar-source.calendar-source.active {
+  border-color: var(--interactive-accent);
+}

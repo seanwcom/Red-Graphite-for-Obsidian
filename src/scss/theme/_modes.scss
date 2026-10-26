@@ -71,6 +71,27 @@ body.theme-dark:not(.red-graphite-dark-document)
   );
 }
 
+// The graph canvas reads these semantic colors from body, rather than its
+// light root leaf. Keep the canvas nodes and labels aligned with the flagship
+// light document palette.
+body.theme-dark:not(.red-graphite-dark-document) {
+  --graph-node: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 62%)
+  );
+  --graph-node-unresolved: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 55%)
+  );
+  --graph-text: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 75%)
+  );
+}
+
 body.theme-dark:not(.red-graphite-dark-document)
   .workspace-split.mod-root
   .workspace-tabs {
@@ -87,6 +108,16 @@ body.theme-dark:not(.red-graphite-dark-document)
   --file-header-background: var(--background-primary);
   --file-header-background-focused: var(--background-primary);
   --file-header-border: 0;
+}
+
+// Obsidian inverts Mermaid SVGs for every dark-mode body. The flagship
+// configuration has a light root document, so restore Mermaid's light SVG
+// rendering there while keeping inversion for an opted-in dark document.
+body.theme-dark:not(.red-graphite-dark-document)
+  .workspace-split.mod-root
+  .mermaid
+  > svg {
+  filter: none;
 }
 
 // These controls live outside .workspace, so mirror the right dock via :has().

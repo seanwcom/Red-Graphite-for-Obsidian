@@ -16,6 +16,17 @@ Red Graphite 2 requires Obsidian 1.12.7 or newer.
 3. Search for **Red Graphite**, select **Install**, then **Use this theme**.
 4. Set **Base color scheme** to **Dark**.
 
+### Try the 2.0 development branch
+
+The work-in-progress 2.0 theme is available on [`codex/red-graphite-2`](https://github.com/seanwcom/Red-Graphite-for-Obsidian/tree/codex/red-graphite-2). Desktop, plugin, and physical iOS acceptance is still incomplete; see [the QA record](./docs/QA.md).
+
+1. Download that branch using **Code → Download ZIP**, then extract it.
+2. In your work vault, create `.obsidian/themes/Red Graphite/`. If that folder already contains an installed theme, back up its `theme.css` and `manifest.json` first.
+3. Copy only the branch's root `theme.css` and `manifest.json` into that folder. No Node installation or build is needed.
+4. Reload Obsidian, select **Red Graphite** in **Settings → Appearance**, and set **Base color scheme** to **Dark**.
+
+Keep the branch download outside your vault. The plugin QA installer is for the dedicated test vault and is not needed to use the theme. Repeating the two-file copy updates your development snapshot; it does not update automatically from this branch.
+
 ## Choose an appearance
 
 | Obsidian setting | Result |

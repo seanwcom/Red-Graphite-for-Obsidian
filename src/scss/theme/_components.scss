@@ -79,6 +79,32 @@ body {
       var(--red-graphite-nav-indicator-color);
 }
 
+// Obsidian's community-plugin and community-theme browsers apply the accent
+// as a full selected-card background. Keep the selection neutral and reserve
+// the accent for its border.
+body:not(.is-phone) .community-item.is-selected,
+body:not(.is-phone) .community-item.is-selected:hover {
+  background-color: var(--background-modifier-hover);
+  border-color: var(--interactive-accent);
+  color: var(--text-normal);
+}
+
+body:not(.is-phone) .community-item.is-selected
+  :is(
+    .community-item-author,
+    .community-item-repo,
+    .community-item-downloads,
+    .community-item-updated
+  ) {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+body:not(.is-phone) .community-item.is-selected .flair {
+  --flair-color: var(--text-muted);
+  --flair-background: var(--background-secondary);
+}
+
 .markdown-rendered h1,
 .markdown-source-view.mod-cm6 .cm-header-1 {
   color: var(
@@ -264,15 +290,27 @@ button {
   outline-color: var(--interactive-accent);
 }
 
+// Calendar 2.0.0-beta.2 injects an unscoped `button:focus` ring. A pointer
+// click should not leave that keyboard-navigation indicator behind, but
+// :focus-visible remains available to every button for keyboard users.
+body button:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .pdf-container,
-.canvas-wrapper,
-.graph-view.color-fill,
-.graph-view.color-text {
+.canvas-wrapper {
   color: var(--text-normal);
 }
 
 body.theme-dark .workspace-split:not(.mod-root) {
   --nav-indentation-guide-color: transparent;
+  // Obsidian uses this token for matched text in sidebar search and backlinks.
+  // Keep it separate from the document's Markdown highlight treatment.
+  --text-highlight-bg: color-mix(
+    in srgb,
+    var(--interactive-accent) 45%,
+    transparent
+  );
 }
 
 body.theme-dark

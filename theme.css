@@ -201,9 +201,10 @@ body.theme-dark {
     var(--red-graphite-tag-background-hover-opacity-dark)
   );
   --checkbox-border-color: var(--text-faint);
-  --checkbox-border-color-hover: var(--interactive-accent);
-  --checkbox-color: var(--color-accent);
-  --checkbox-color-hover: var(--color-accent-1);
+  --checkbox-border-color-hover: var(--background-modifier-border-hover);
+  --checkbox-color: var(--background-modifier-border-hover);
+  --checkbox-color-hover: var(--background-modifier-active-hover);
+  --checkbox-marker-color: var(--text-normal);
   --tag-color: var(--color-accent-readable);
   --tag-color-hover: var(--color-accent-2);
   --blockquote-background-color: var(--background-secondary);
@@ -446,9 +447,10 @@ body.theme-light {
     var(--red-graphite-tag-background-hover-opacity-light)
   );
   --checkbox-border-color: var(--text-faint);
-  --checkbox-border-color-hover: var(--interactive-accent);
-  --checkbox-color: var(--color-accent);
-  --checkbox-color-hover: var(--color-accent-1);
+  --checkbox-border-color-hover: var(--background-modifier-border-hover);
+  --checkbox-color: var(--background-modifier-border-hover);
+  --checkbox-color-hover: var(--background-modifier-active-hover);
+  --checkbox-marker-color: var(--text-normal);
   --tag-color: var(--color-accent);
   --tag-color-hover: var(--color-accent-1);
   --blockquote-background-color: var(--background-secondary);
@@ -682,9 +684,10 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
     var(--red-graphite-tag-background-hover-opacity-light)
   );
   --checkbox-border-color: var(--text-faint);
-  --checkbox-border-color-hover: var(--interactive-accent);
-  --checkbox-color: var(--color-accent);
-  --checkbox-color-hover: var(--color-accent-1);
+  --checkbox-border-color-hover: var(--background-modifier-border-hover);
+  --checkbox-color: var(--background-modifier-border-hover);
+  --checkbox-color-hover: var(--background-modifier-active-hover);
+  --checkbox-marker-color: var(--text-normal);
   --tag-color: var(--color-accent);
   --tag-color-hover: var(--color-accent-1);
   --blockquote-background-color: var(--background-secondary);
@@ -803,6 +806,24 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --graph-text: var(--text-normal);
 }
 
+body.theme-dark:not(.red-graphite-dark-document) {
+  --graph-node: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 62%)
+  );
+  --graph-node-unresolved: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 55%)
+  );
+  --graph-text: hsl(
+    var(--red-graphite-document-light-color-h),
+    var(--red-graphite-document-light-color-s),
+    calc(var(--red-graphite-document-light-color-l) - 75%)
+  );
+}
+
 body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .workspace-tabs {
   --tab-container-background: var(--background-secondary-alt);
   --tab-background-active: var(--background-primary);
@@ -817,6 +838,10 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --file-header-background: var(--background-primary);
   --file-header-background-focused: var(--background-primary);
   --file-header-border: 0;
+}
+
+body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .mermaid > svg {
+  filter: none;
 }
 
 body.theme-dark:not(.red-graphite-dark-document):not(:has(.workspace.is-right-sidedock-open)) .titlebar-button-container.mod-right,
@@ -945,9 +970,10 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
     var(--red-graphite-tag-background-hover-opacity-dark)
   );
   --checkbox-border-color: var(--text-faint);
-  --checkbox-border-color-hover: var(--interactive-accent);
-  --checkbox-color: var(--color-accent);
-  --checkbox-color-hover: var(--color-accent-1);
+  --checkbox-border-color-hover: var(--background-modifier-border-hover);
+  --checkbox-color: var(--background-modifier-border-hover);
+  --checkbox-color-hover: var(--background-modifier-active-hover);
+  --checkbox-marker-color: var(--text-normal);
   --tag-color: var(--color-accent-readable);
   --tag-color-hover: var(--color-accent-2);
   --blockquote-background-color: var(--background-secondary);
@@ -1142,6 +1168,26 @@ body {
   box-shadow: inset var(--red-graphite-nav-indicator-width) 0 0 var(--red-graphite-nav-indicator-color);
 }
 
+body:not(.is-phone) .community-item.is-selected,
+body:not(.is-phone) .community-item.is-selected:hover {
+  background-color: var(--background-modifier-hover);
+  border-color: var(--interactive-accent);
+  color: var(--text-normal);
+}
+
+body:not(.is-phone) .community-item.is-selected :is(.community-item-author,
+.community-item-repo,
+.community-item-downloads,
+.community-item-updated) {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+body:not(.is-phone) .community-item.is-selected .flair {
+  --flair-color: var(--text-muted);
+  --flair-background: var(--background-secondary);
+}
+
 .markdown-rendered h1,
 .markdown-source-view.mod-cm6 .cm-header-1 {
   color: var(--red-graphite-h1-color, color-mix(in srgb, var(--interactive-accent) 68%, var(--text-normal)));
@@ -1284,15 +1330,22 @@ button {
   outline-color: var(--interactive-accent);
 }
 
+body button:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .pdf-container,
-.canvas-wrapper,
-.graph-view.color-fill,
-.graph-view.color-text {
+.canvas-wrapper {
   color: var(--text-normal);
 }
 
 body.theme-dark .workspace-split:not(.mod-root) {
   --nav-indentation-guide-color: transparent;
+  --text-highlight-bg: color-mix(
+    in srgb,
+    var(--interactive-accent) 45%,
+    transparent
+  );
 }
 
 body.theme-dark .workspace-split:not(.mod-root) .workspace-tabs .workspace-leaf,
@@ -1359,6 +1412,24 @@ body.theme-dark .workspace-split.mod-right-split > .workspace-leaf-resize-handle
   }
 }
 /*
+ * Calendar 2.0.0-beta.2
+ *
+ * Calendar's Sources component uses --text-faint as a hover border. In the
+ * graphite settings host that produces a bright, full-card outline instead of
+ * a quiet hover. Keep the neutral hover border unchanged and reserve the
+ * accent border for Calendar's active (source-settings modal) state.
+ *
+ * Source: github.com/liamcain/obsidian-calendar-plugin
+ */
+body .calendar-source.calendar-source:hover {
+  border-color: var(--background-modifier-border);
+}
+
+body .calendar-source.calendar-source.active {
+  border-color: var(--interactive-accent);
+}
+
+/*
  * Claudian 2.0.24
  *
  * Claudian selects logo colors and image variants from body.theme-dark
@@ -1382,6 +1453,41 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
 
 body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .workspace-leaf-content .claudian-provider-icon-variant--dark {
   display: none;
+}
+
+/*
+ * Copilot 3.3.3
+ *
+ * Its settings tabs are custom role=tab elements rather than Obsidian tabs.
+ * The component emits a standalone border with no color, causing it to inherit
+ * bright text color. Use the semantic divider token and reduce inactive tab
+ * contrast; Copilot's selected tab continues to own the accent treatment. Its
+ * chat editor adds an accent focus frame inside its already-bordered composer,
+ * which is too strong beside the graphite host.
+ *
+ * Source: github.com/logancyang/obsidian-copilot
+ */
+body:has(#tab-basic) [role=tab][id^=tab-]:not([aria-selected=true]) {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+  color: var(--text-muted);
+}
+
+body:has(#tab-basic) [role=tab][id^=tab-]:not([aria-selected=true]):hover {
+  background-color: var(--background-modifier-hover);
+  border-color: var(--background-modifier-border-hover);
+  color: var(--text-normal);
+}
+
+body:has(#tab-basic) div:has(> [role=tab]) + .tw-w-full.tw-border.tw-border-solid {
+  border-color: var(--background-modifier-border);
+}
+
+body .workspace-leaf-content [aria-label="Chat input"],
+body .workspace-leaf-content div.tw-relative:has(> [aria-label="Chat input"]) {
+  border-color: transparent;
+  box-shadow: none;
+  outline: none;
 }
 
 /*
@@ -1491,6 +1597,7 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
 
 name: Red Graphite
 id: red-graphite
+collapsed: true
 settings:
 
   -
@@ -1498,13 +1605,13 @@ settings:
     title: Appearance
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-display-mode
     title: Display mode
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-dark-document
     title: Use a dark central workspace
@@ -1518,7 +1625,7 @@ settings:
     description: These three colors generate the semantic frame, document, text, border, and interaction palettes. Set the global accent in Obsidian's Appearance settings.
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-base-color
     title: Frame base
@@ -1581,13 +1688,13 @@ settings:
     title: Typography
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-font-families
     title: Font families
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-interface-font
     title: Interface font
@@ -1653,7 +1760,7 @@ settings:
     title: Body text
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-body-line-height
     title: Line height
@@ -1724,13 +1831,13 @@ settings:
     title: Headings
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-heading-sizes
     title: Sizes
     type: heading
     level: 4
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-h1-size
     title: H1 size
@@ -1940,7 +2047,7 @@ settings:
     title: H1 and H2 accents
     type: heading
     level: 4
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-h1-color
     title: H1 color
@@ -1980,13 +2087,13 @@ settings:
     title: Layout and spacing
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-document-layout
     title: Desktop document
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-content-width
     title: Maximum content width
@@ -2123,13 +2230,13 @@ settings:
     title: Workspace chrome
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-tabs
     title: Tabs
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-tab-indicator-color
     title: Active indicator color
@@ -2160,7 +2267,7 @@ settings:
     title: Sidebar navigation
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-nav-item-radius
     title: Item corner radius
@@ -2258,13 +2365,13 @@ settings:
     title: Markdown and content
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-blockquotes
     title: Blockquotes
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-blockquote-border-color
     title: Border color
@@ -2313,7 +2420,7 @@ settings:
     title: Callouts
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-callout-background-opacity
     title: Background opacity
@@ -2525,7 +2632,7 @@ settings:
     title: Light workspace
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-code-light-function
     title: Functions and values
@@ -2580,7 +2687,7 @@ settings:
     title: Dark workspace
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-code-dark-function
     title: Functions and values
@@ -2637,14 +2744,14 @@ settings:
     description: Narrowly scoped controls for plugins that need additional visual integration.
     type: heading
     level: 2
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-style-settings-plugin
     title: Style Settings
     description: Controls the indentation and grouping used to distinguish Red Graphite's expanded settings sections.
     type: heading
     level: 3
-    collapsed: false
+    collapsed: true
   -
     id: red-graphite-style-settings-guide-color
     title: Expanded-group guide color
