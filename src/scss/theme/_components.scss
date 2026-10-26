@@ -126,6 +126,15 @@ body:not(.is-phone) .community-item.is-selected .flair {
   padding-block-end: var(--red-graphite-h2-rule-gap);
 }
 
+// Obsidian uses this semantic variable for the first editor line after a
+// heading. Add room below H2's rule without changing CodeMirror line margins
+// or adding more space when the note already contains an empty line.
+.markdown-source-view.mod-cm6.is-live-preview
+  .cm-line.HyperMD-header-2
+  + .cm-line:not(.HyperMD-header):not(:has(> br:only-child)) {
+  --p-spacing-empty: var(--red-graphite-h2-content-gap);
+}
+
 .markdown-rendered h6,
 .markdown-source-view.mod-cm6 .cm-header-6 {
   color: var(--text-muted);

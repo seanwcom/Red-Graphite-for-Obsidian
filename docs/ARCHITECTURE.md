@@ -57,6 +57,8 @@ Obsidian 1.14.5 uses `--tab-inner-background-hover` for inactive tab hover. Rebi
 
 The same rule applies to completed-task text and unresolved-link colors. Bind them to local muted text and the local accent respectively. Unresolved links retain full text opacity and use a dashed underline to communicate their state.
 
+H2 underlines have separate text-to-rule and rule-to-content spacing. Live Preview assigns the rule-to-content gap through Obsidian's `--p-spacing-empty` variable on the immediately following non-heading, non-empty editor line. This uses native line padding, preserves CodeMirror line margins, and avoids adding a second gap when a note already contains a blank line. Reading view retains its native paragraph spacing; source mode does not receive the Live Preview adjustment.
+
 The native macOS traffic lights reserve more horizontal space than the ribbon itself. In flagship mode with the left sidebar collapsed, match the ribbon's top corner to the adjacent light tab rail; the vertical ribbon below stays graphite. When the left sidebar opens, the corner returns to its host palette. Keep the native ribbon-corner width so no graphite cap protrudes into the tab rail. Keep Obsidian's existing fullscreen, popout, mobile, and hidden-ribbon geometry.
 
 Ribbon selectors must support current `.mod-primary` and legacy `.mod-left` classes independently. Obsidian 1.14.5's ribbon constructor adds only the logical side class; do not confuse it with sidebar toggles that receive both logical and physical side classes. Browser fixtures must reproduce the class set for their stylesheet version rather than adding both classes, and verify screenshot pixels across the corner/rail boundary as well as computed styles.

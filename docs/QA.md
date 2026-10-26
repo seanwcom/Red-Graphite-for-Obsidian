@@ -49,6 +49,14 @@ This branch is a development snapshot for manual use in another vault. It is not
 - The corner selector now matches either class independently. Both computed background checks and rendered-pixel checks pass across the 24 appearance/sidebar/focus scenarios for each reference stylesheet (48 cases). This corrects the selector and fixture; native Mac confirmation is still pending, and the fixture does not render Apple's native buttons.
 - Validation: build, tracked-artifact check, all 12 Node tests, high-level npm audit (0 vulnerabilities), and `git diff --check` pass. Guarded deployment copied only `theme.css` and `manifest.json` into the configured local test vault; deployed bytes match both repository artifacts.
 
+## H2 rule-to-content spacing — 2026-10-26
+
+- User screenshot: content immediately below the “Meetings” H2 underline is cramped; the next heading with an extra blank line is too spacious to use as the default.
+- Added `H2 rule-to-content spacing` under heading accents in Style Settings. The default is 0.45em (7.2px at a 16px editor font), applied through Obsidian's native first-line padding variable only in Live Preview. Existing blank lines, other heading levels, reading-view paragraph spacing, and source mode keep their previous treatment.
+- The browser check reproduced zero clearance before the change. It now verifies a positive gap smaller than half a body line for immediate list and paragraph content, no extra padding after an existing blank line or H3, and retained reading-view H2 spacing. All 24 appearance/sidebar/focus combinations pass against each of the current and older stylesheet references (48 cases). A focused visual fixture confirmed the immediate-content gap is smaller than an existing blank line.
+- Native Mac confirmation of the new H2 spacing remains pending. The refreshed specimen includes immediate list, immediate paragraph, and existing-blank-line fixtures.
+- Validation: build, tracked-artifact check, all 12 Node tests, high-level npm audit (0 vulnerabilities), and `git diff --check` pass. Guarded deployment copied only `theme.css` and `manifest.json` to the configured local test vault; deployed bytes match the repository artifacts.
+
 ## Test environment record
 
 | Item | Version or result |

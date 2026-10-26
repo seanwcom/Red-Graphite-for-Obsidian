@@ -50,7 +50,19 @@ try {
           <ul><li class="task-list-item" data-task="x">Completed task</li></ul>
           ${["note", "tip", "warning", "danger", "quote", "example", "abstract"].map((type) => `<div class="callout" data-callout="${type}"><div class="callout-title"><div class="callout-icon"><svg class="svg-icon"></svg></div><div class="callout-title-inner">${type}</div></div><div class="callout-content">Callout content</div></div>`).join("")}
           <h4>Heading four</h4><h5>Heading five</h5><h6>Heading six</h6>
-        </div><div class="markdown-source-view mod-cm6 cm-s-obsidian"><span class="is-unresolved">Editor unresolved note</span><div class="HyperMD-task-line" data-task="x">Editor completed task</div></div></div>
+          <h2 id="reading-h2">Reading heading</h2><ul><li>Reading content</li></ul>
+        </div><div class="markdown-source-view mod-cm6 cm-s-obsidian is-live-preview">
+          <span class="is-unresolved">Editor unresolved note</span><div class="HyperMD-task-line" data-task="x">Editor completed task</div>
+          <div class="cm-line HyperMD-header HyperMD-header-2">Meetings</div>
+          <div class="cm-line HyperMD-list-line HyperMD-list-line-1" id="h2-list-content">Meeting details start immediately</div>
+          <div class="cm-line HyperMD-header HyperMD-header-2">Notes</div>
+          <div class="cm-line" id="h2-paragraph-content">Paragraph starts immediately</div>
+          <div class="cm-line HyperMD-header HyperMD-header-2">Existing blank line</div>
+          <div class="cm-line"><br></div>
+          <div class="cm-line" id="h2-after-blank">Content after an existing blank line</div>
+          <div class="cm-line HyperMD-header HyperMD-header-3">Other heading</div>
+          <div class="cm-line" id="h3-content">Other heading spacing stays native</div>
+        </div></div>
       </div></div>
       <div class="sidebar-toggle-button mod-right mod-secondary"><div class="clickable-icon">Toggle</div></div>
     </div></body>`);
@@ -107,6 +119,19 @@ try {
           });
           const label = `${mode}; focused=${focused}, left=${left}, right=${right}`;
           const background = (await style(".workspace-leaf-content")).background;
+          for (const selector of ["#h2-list-content", "#h2-paragraph-content"]) {
+            const gap = await page.locator(selector).evaluate((el) => {
+              const s = getComputedStyle(el);
+              return { padding: parseFloat(s.paddingTop), lineHeight: parseFloat(s.lineHeight) };
+            });
+            check(gap.padding > 0 && gap.padding < gap.lineHeight / 2, `H2 needs a modest gap below its rule: ${selector}; ${label}`);
+          }
+          for (const selector of ["#h2-after-blank", "#h3-content"]) {
+            const padding = await page.locator(selector).evaluate((el) => parseFloat(getComputedStyle(el).paddingTop));
+            check(padding === 0, `H2 spacing added an extra gap beyond its intended scope: ${selector}; ${label}`);
+          }
+          const readingGap = await page.locator("#reading-h2").evaluate((el) => parseFloat(getComputedStyle(el).marginBottom));
+          check(readingGap > 0, `Reading H2 lost its native content spacing; ${label}`);
           for (const selector of [".markdown-rendered .is-unresolved", ".task-list-item", ".markdown-source-view .is-unresolved", ".HyperMD-task-line"]) {
             const s = await style(selector);
             check(contrast(s.color, background, s.opacity) >= 4.5, `Faint text: ${selector}; ${label}; ${s.color} on ${background}, opacity=${s.opacity}`);

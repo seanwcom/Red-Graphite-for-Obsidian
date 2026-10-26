@@ -29,6 +29,7 @@ Red Graphite's primary appearance has moved from Obsidian Light to Obsidian Dark
 - Kept completed tasks and unresolved links on the local palette; unresolved links now use a dashed underline instead of faded text.
 - Distinguished H5 with a configurable italic style, normalized specimen list indentation, and moved its verification table outside the list for Live Preview.
 - Added an optional browser appearance regression check using a supplied Obsidian stylesheet.
+- Added a modest, configurable gap below H2 underlines before immediately following Live Preview content, while retaining existing blank lines and reading-view spacing.
 
 ### Compatibility
 

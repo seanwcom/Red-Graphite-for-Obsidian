@@ -42,6 +42,17 @@ The headings below are intentionally close together. Each level should remain re
 
 The wrapped heading should stay cohesive. Its second line should not collide with the paragraph below it or look like a separate heading.
 
+## H2 followed immediately by a list
+- This list has no blank line after its heading. Its first item should have a modest gap below the H2 underline in Live Preview.
+- The rest of the list should keep its normal spacing.
+
+## H2 followed immediately by a paragraph
+This paragraph has no blank line after the heading. It should receive the same modest clearance below the underline.
+
+## H2 with an existing blank line
+
+This paragraph already has a blank line before it. The theme should not add another gap on top of that line.
+
 ## Paragraph rhythm
 
 Typography is the interface between an idea and the person reading it. Good theme typography should largely disappear during sustained reading while still making structure obvious when the reader scans the page.
@@ -266,6 +277,7 @@ Use this standalone table to check the result. Tables inside list items are not 
 - [ ] Inline title and H1 are clearly different.
 - [ ] H1 through H6 form an obvious but restrained hierarchy.
 - [ ] H4 is upright, H5 is italic, and H6 is smaller and muted.
+- [ ] Content immediately after an H2 underline has modest breathing room without needing an empty line; existing empty lines keep their usual spacing.
 - [ ] Paragraph width and line height are comfortable.
 - [ ] Bold text is emphasized without becoming heavy.
 - [ ] Links and tags are recognizable but not distracting.

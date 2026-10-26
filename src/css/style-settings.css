@@ -501,6 +501,16 @@ settings:
     max: 1
     step: 0.05
     format: em
+  -
+    id: red-graphite-h2-content-gap
+    title: H2 rule-to-content spacing
+    description: Space below the H2 underline before immediately following content in Live Preview. Existing blank lines and reading-view spacing are retained.
+    type: variable-number-slider
+    default: 0.45
+    min: 0
+    max: 1
+    step: 0.05
+    format: em
 
   -
     id: red-graphite-layout

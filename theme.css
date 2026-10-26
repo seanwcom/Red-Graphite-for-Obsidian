@@ -53,6 +53,7 @@ body {
   --red-graphite-h2-rule-color: var(--interactive-accent);
   --red-graphite-h2-rule-width: 1px;
   --red-graphite-h2-rule-gap: 0.25em;
+  --red-graphite-h2-content-gap: 0.45em;
   --red-graphite-content-width: 700px;
   --red-graphite-document-margin-x: 48px;
   --red-graphite-document-margin-y: 36px;
@@ -1238,6 +1239,10 @@ body:not(.is-phone) .community-item.is-selected .flair {
   padding-block-end: var(--red-graphite-h2-rule-gap);
 }
 
+.markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-header-2 + .cm-line:not(.HyperMD-header):not(:has(> br:only-child)) {
+  --p-spacing-empty: var(--red-graphite-h2-content-gap);
+}
+
 .markdown-rendered h6,
 .markdown-source-view.mod-cm6 .cm-header-6 {
   color: var(--text-muted);
@@ -2144,6 +2149,16 @@ settings:
     title: H2 text-to-rule spacing
     type: variable-number-slider
     default: 0.25
+    min: 0
+    max: 1
+    step: 0.05
+    format: em
+  -
+    id: red-graphite-h2-content-gap
+    title: H2 rule-to-content spacing
+    description: Space below the H2 underline before immediately following content in Live Preview. Existing blank lines and reading-view spacing are retained.
+    type: variable-number-slider
+    default: 0.45
     min: 0
     max: 1
     step: 0.05
