@@ -10,6 +10,12 @@ const [appCssPath, playwrightPath, executablePath, screenshotDirectory] = proces
 if (!appCssPath) {
   throw new Error("Usage: node scripts/qa-appearance.mjs <app.css> [Playwright module] [Chromium executable] [screenshot directory]");
 }
+const appCss = await readFile(resolve(appCssPath), "utf8");
+// Obsidian 1.14.5 constructs the ribbon with only mod-primary; older builds
+// use only mod-left. Giving a fixture both classes hides incompatible selectors.
+const ribbonSideClass = appCss.includes(".workspace-ribbon.mod-primary")
+  ? "mod-primary"
+  : "mod-left";
 const { chromium } = await import(
   playwrightPath ? pathToFileURL(resolve(playwrightPath)).href : "playwright"
 );
@@ -33,7 +39,7 @@ try {
   const page = await browser.newPage({ viewport: { width: 1400, height: 1000 } });
   await page.setContent(`<body class="theme-dark mod-macos is-hidden-frameless is-focused">
     <div class="workspace">
-      <div class="workspace-ribbon mod-left mod-primary"></div>
+      <div class="workspace-ribbon side-dock-ribbon ${ribbonSideClass}"></div>
       <div class="workspace-split mod-root"><div class="workspace-tabs mod-top mod-top-left-space mod-top-right-space">
         <div class="workspace-tab-header-container"><div class="workspace-tab-header-container-inner">
           <div class="workspace-tab-header is-active"><div class="workspace-tab-header-inner">Active note</div></div>
@@ -48,7 +54,7 @@ try {
       </div></div>
       <div class="sidebar-toggle-button mod-right mod-secondary"><div class="clickable-icon">Toggle</div></div>
     </div></body>`);
-  await page.addStyleTag({ content: await readFile(resolve(appCssPath), "utf8") });
+  await page.addStyleTag({ content: appCss });
   await page.addStyleTag({ content: await compileTheme() });
   const style = (selector, pseudo = null) => page.locator(selector).first().evaluate((el, pseudo) => {
     const s = getComputedStyle(el, pseudo);
@@ -61,6 +67,28 @@ try {
     const rgb = context.getImageData(0, 0, 1, 1).data;
     return { color: `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`, background: s.backgroundColor, opacity: Number(s.opacity), width: parseFloat(s.width), nativeRibbonWidth: parseFloat(s.getPropertyValue("--ribbon-width")), content: s.content, fontStyle: s.fontStyle };
   }, pseudo);
+  const cornerPixels = async (ribbonWidth) => {
+    const header = await page.locator(".workspace-tab-header-container").boundingBox();
+    const height = Math.floor(header.height);
+    // Sample actual painted pixels on either side of the ribbon/rail boundary,
+    // within the reserved traffic-light area before the first tab starts.
+    const screenshot = await page.screenshot({
+      clip: { x: 0, y: Math.max(0, header.y), width: ribbonWidth + 16, height },
+    });
+    return page.evaluate(async ({ png, ribbonWidth, height }) => {
+      const blob = await (await fetch(`data:image/png;base64,${png}`)).blob();
+      const bitmap = await createImageBitmap(blob);
+      const canvas = document.createElement("canvas");
+      canvas.width = bitmap.width;
+      canvas.height = bitmap.height;
+      const context = canvas.getContext("2d");
+      context.drawImage(bitmap, 0, 0);
+      const sample = (x) => [...context.getImageData(x, Math.floor(height / 2), 1, 1).data];
+      const pixels = [sample(Math.floor(ribbonWidth / 2)), sample(ribbonWidth + 8)];
+      bitmap.close();
+      return pixels;
+    }, { png: screenshot.toString("base64"), ribbonWidth, height });
+  };
   for (const mode of ["theme-dark", "theme-dark red-graphite-dark-document", "theme-light"]) {
     for (const focused of [false, true]) {
       for (const left of [false, true]) {
@@ -100,6 +128,8 @@ try {
           if (!left) {
             const rail = await style(".workspace-tab-header-container");
             check(ribbon.background === rail.background, `Traffic-light corner differs from the adjacent tab rail; ${label}`);
+            const [cornerPixel, railPixel] = await cornerPixels(ribbon.nativeRibbonWidth);
+            check(cornerPixel.every((value, index) => Math.abs(value - railPixel[index]) <= 1), `Painted traffic-light background is split at the ribbon boundary; ${label}`);
           }
           const ribbonBody = await style(".workspace-ribbon");
           const lightFrame = mode === "theme-light";

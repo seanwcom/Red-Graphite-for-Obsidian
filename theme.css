@@ -622,7 +622,7 @@ body.theme-light {
   --mobile-sidebar-background: var(--background-secondary);
 }
 
-body.theme-dark.mod-macos.show-ribbon.is-hidden-frameless:not(.red-graphite-dark-document, .is-fullscreen, .is-popout-window, .is-mobile):not(:has(.workspace.is-left-sidedock-open)) .workspace-ribbon.mod-left {
+body.theme-dark.mod-macos.show-ribbon.is-hidden-frameless:not(.red-graphite-dark-document, .is-fullscreen, .is-popout-window, .is-mobile):not(:has(.workspace.is-left-sidedock-open)) .workspace-ribbon:is(.mod-primary, .mod-left) {
   --titlebar-background: hsl(
     var(--red-graphite-document-light-color-h),
     var(--red-graphite-document-light-color-s),

@@ -42,6 +42,13 @@ This branch is a development snapshot for manual use in another vault. It is not
 - Native macOS confirmation remains pending. The isolated fixture tests CSS paint and state inheritance; it does not render Apple's native traffic-light controls.
 - Validation: 24 browser scenarios pass against each of the older and 1.14.5 stylesheet references (48 total), including both window-focus states and both sidebar states. The build, tracked-artifact check, all 12 Node tests, high-level npm audit (0 vulnerabilities), and `git diff --check` pass. Deployed only `theme.css` and `manifest.json` to the configured local test vault through the guarded deployer; deployed bytes match the repository artifacts.
 
+## Modern ribbon selector correction — 2026-10-26
+
+- The next native Mac screenshot still showed the split traffic-light background. Read-only inspection of the installed Obsidian 1.14.5 `app.js` ribbon constructor confirmed that the ribbon receives only `mod-primary`; unlike sidebar toggles, it does not also receive `mod-left`. The previous selector therefore never matched that ribbon. The earlier fixture incorrectly supplied both classes and hid the defect.
+- The fixture now selects only the class used by its stylesheet version: current `mod-primary` or legacy `mod-left`. With the correct modern class, the previous source failed in all four collapsed flagship focus/right-sidebar combinations. A new screenshot-pixel assertion also failed across the actual ribbon/rail paint boundary in those four cases.
+- The corner selector now matches either class independently. Both computed background checks and rendered-pixel checks pass across the 24 appearance/sidebar/focus scenarios for each reference stylesheet (48 cases). This corrects the selector and fixture; native Mac confirmation is still pending, and the fixture does not render Apple's native buttons.
+- Validation: build, tracked-artifact check, all 12 Node tests, high-level npm audit (0 vulnerabilities), and `git diff --check` pass. Guarded deployment copied only `theme.css` and `manifest.json` into the configured local test vault; deployed bytes match both repository artifacts.
+
 ## Test environment record
 
 | Item | Version or result |

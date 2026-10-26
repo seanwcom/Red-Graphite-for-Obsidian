@@ -61,12 +61,13 @@ body.theme-light {
 // When the left sidebar closes, the native traffic lights sit across the
 // ribbon corner and the light tab rail. Match their backgrounds instead of
 // widening the graphite corner into a protruding cap. The ribbon stays dark.
+// Current Obsidian uses mod-primary here; older releases use mod-left.
 body.theme-dark.mod-macos.show-ribbon.is-hidden-frameless:not(
     .red-graphite-dark-document, .is-fullscreen, .is-popout-window, .is-mobile
   ):not(
     :has(.workspace.is-left-sidedock-open)
   )
-  .workspace-ribbon.mod-left {
+  .workspace-ribbon:is(.mod-primary, .mod-left) {
   --titlebar-background: hsl(
     var(--red-graphite-document-light-color-h),
     var(--red-graphite-document-light-color-s),

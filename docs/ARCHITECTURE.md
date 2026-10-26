@@ -59,6 +59,8 @@ The same rule applies to completed-task text and unresolved-link colors. Bind th
 
 The native macOS traffic lights reserve more horizontal space than the ribbon itself. In flagship mode with the left sidebar collapsed, match the ribbon's top corner to the adjacent light tab rail; the vertical ribbon below stays graphite. When the left sidebar opens, the corner returns to its host palette. Keep the native ribbon-corner width so no graphite cap protrudes into the tab rail. Keep Obsidian's existing fullscreen, popout, mobile, and hidden-ribbon geometry.
 
+Ribbon selectors must support current `.mod-primary` and legacy `.mod-left` classes independently. Obsidian 1.14.5's ribbon constructor adds only the logical side class; do not confuse it with sidebar toggles that receive both logical and physical side classes. Browser fixtures must reproduce the class set for their stylesheet version rather than adding both classes, and verify screenshot pixels across the corner/rail boundary as well as computed styles.
+
 Callout compatibility uses Obsidian's computed native title color rather than parsing `--callout-color`: older versions provide RGB channels, while 1.14.5 provides a complete CSS color. A non-interactive tint layer on the title fills the positioned callout container behind its content. Title text and icons mix their inherited native color with local document text. This preserves custom callout hues and the opacity/strength controls without assuming a token format or changing the minimum Obsidian version. H5 uses the native heading-style variable to distinguish it from upright H4 and the smaller muted H6.
 
 ## Plugin compatibility policy
