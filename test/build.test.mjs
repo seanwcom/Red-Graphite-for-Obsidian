@@ -132,17 +132,27 @@ test("default text and accent colors meet their contrast gates", () => {
 });
 
 test("deployment path accepts only the matching Obsidian theme folder", () => {
-  const root = join("C:", "work", "theme");
-  const valid = join("C:", "vault", ".obsidian", "themes", "Red Graphite");
+  const fixtureDirectory = join(tmpdir(), "red-graphite-path-test");
+  const root = join(fixtureDirectory, "work", "theme");
+  const vault = join(fixtureDirectory, "vault");
+  const valid = join(vault, ".obsidian", "themes", "Red Graphite");
   assert.equal(validateDeployPath(valid, "Red Graphite", root), valid);
+  assert.equal(
+    validateDeployPath(
+      join("..", "..", "vault", ".obsidian", "themes", "Red Graphite"),
+      "Red Graphite",
+      root,
+    ),
+    valid,
+  );
   assert.throws(
-    () => validateDeployPath(join("C:", "vault"), "Red Graphite", root),
+    () => validateDeployPath(vault, "Red Graphite", root),
     /Refusing to deploy/,
   );
   assert.throws(
     () =>
       validateDeployPath(
-        join("C:", "vault", ".obsidian", "themes", "Other"),
+        join(vault, ".obsidian", "themes", "Other"),
         "Red Graphite",
         root,
       ),

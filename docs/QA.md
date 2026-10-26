@@ -10,6 +10,7 @@ This branch is a development snapshot for manual use in another vault. It is not
 
 - Current local validation: `npm ci`, `npm run build`, `npm run check`, all 11 tests, and `npm audit --audit-level=high` pass after updating `source-map-js` to 1.2.2.
 - The tracked `theme.css` matches the existing deployed copy in the dedicated test vault by SHA-256. This checkpoint did not write to a vault.
+- The first branch CI run exposed a Windows-only absolute-path test fixture. The fixture now uses the host temporary directory and covers both absolute and relative deployment paths; remote CI validation must be checked on the updated commit.
 - The plugin QA installer and catalog are included for reproducibility; the installer was not run during this checkpoint and plugin behavior remains pending.
 - Review the Calendar and Copilot exceptions against the unreadable-or-unusable policy before release: their current source comments describe visual refinements, and Copilot's settings selectors need scope verification.
 - Desktop appearance, plugin placement in all three states, the release screenshot, and physical iOS approval remain open. No tag or release is authorized by this checkpoint.
