@@ -26,6 +26,15 @@ This branch is a development snapshot for manual use in another vault. It is not
 - Validation: build, tracked-artifact check, all 11 Node tests, high-level npm audit (0 vulnerabilities), and `git diff --check` pass. Deployed only `theme.css` and `manifest.json` through the guarded deployer to the configured local test vault; both deployed files match their repository copies by SHA-256.
 - Repeat on the Mac: open two notes, hover an inactive tab and the right corner control, then open and close the right sidebar. Check both focused and unfocused windows in each appearance state. The flagship light rail must have light hover surfaces and readable dark text; an open graphite sidebar must keep its graphite toggle.
 
+## Markdown specimen and traffic-light regressions — 2026-10-26
+
+- User screenshots from macOS Obsidian 1.14.5 show the previous right-corner fix at rest. They also expose missing callout tints/hues, faint unresolved links and completed tasks, weak small-heading distinction, flattened specimen nesting, and an unrendered table inside a list. A further screenshot with the left sidebar closed shows native traffic lights straddling the graphite ribbon and light tab rail.
+- The optional `npm run qa:appearance` browser check reproduced the color, contrast, and backdrop failures before the fixes. It now passes 24 combinations of all three appearances, focused/unfocused windows, and both sidebars open/closed against each of two real stylesheet references: the installed Obsidian 1.14.5 CSS and the older saved reference with RGB-channel callout tokens (48 cases total). Preview images for all three appearances were visually inspected. These are isolated Chromium fixtures with macOS classes, not native Mac acceptance.
+- Callout titles, icons, and configurable tints use the native computed title color, so both older RGB-channel and newer complete-color token formats work. The default title-color strength is now 35% to keep all tested default callout titles readable. Completed-task text and unresolved links resolve locally; unresolved links use a dashed underline at full opacity.
+- The traffic-light area now has a continuous native-width backdrop. H5 is italic by default with a Style Settings override. The specimen uses four-space nesting, a longer wrapping task, and a standalone verification table. Replace the Mac test note's specimen content to pick up the list/table corrections; theme CSS cannot correct indentation in an existing note.
+- Native Mac confirmation remains pending for the traffic-light area, callouts (including nested/folded cases), list nesting/numbering, and the standalone verification table in Live Preview and Reading view. The browser check validates CSS against representative DOM, not Obsidian's Markdown parser.
+- Validation: build, tracked-artifact check, all 12 Node tests, high-level npm audit (0 vulnerabilities), and `git diff --check` pass. The browser check also confirms the backdrop rule leaves Windows, fullscreen, popout, and mobile ribbon widths at their native values. Deployed only `theme.css` and `manifest.json` through the guarded deployer to the configured local test vault; deployed bytes match both repository artifacts.
+
 ## Test environment record
 
 | Item | Version or result |
@@ -57,6 +66,8 @@ Test each row in conventional Light, flagship Dark, and Dark with **Use a dark c
 - [ ] Command palette, suggestions, context menus, and popovers
 - [ ] Split panes and stacked tabs
 - [ ] macOS inactive-tab hover and right-sidebar corner at rest and on hover, with the right sidebar open/closed and window focused/unfocused (Obsidian 1.14.5)
+- [ ] macOS traffic-light backdrop with the left sidebar open/closed, including fullscreen, popout, and hidden-ribbon checks
+- [ ] Callout hues/tints, unresolved-link and completed-task contrast, H4–H6 distinction, and refreshed specimen list/table rendering (Obsidian 1.14.5)
 - [x] Flagship center is light while frame, tabs, ribbon, and sidebar are dark
 - [ ] Full-dark toggle changes only the central workspace
 - [x] Conventional Light produces an all-light application

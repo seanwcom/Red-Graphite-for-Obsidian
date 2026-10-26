@@ -33,6 +33,13 @@
   // Current Obsidian tabs use a separate hover token. Resolve it at each
   // palette boundary so a light workspace does not inherit the dark body value.
   --tab-inner-background-hover: var(--background-modifier-hover);
+  // Re-resolve host aliases at every document palette boundary. Keep missing
+  // links readable and distinguish them with an underline instead of opacity.
+  --checklist-done-color: var(--text-muted);
+  --link-unresolved-color: var(--text-accent);
+  --link-unresolved-opacity: 1;
+  --link-unresolved-decoration-style: dashed;
+  --link-unresolved-decoration-color: var(--text-accent);
   --background-modifier-error: var(--red-graphite-error-color);
   --background-modifier-error-hover: color-mix(
     in srgb,

@@ -23,6 +23,7 @@
     "build": "node scripts/build.mjs build",
     "dev": "node scripts/build.mjs dev",
     "qa:plugins": "node scripts/install-qa-plugins.mjs",
+    "qa:appearance": "node scripts/qa-appearance.mjs",
     "check": "node scripts/build.mjs check",
     "test": "node --test",
     "release:check": "node scripts/build.mjs release",

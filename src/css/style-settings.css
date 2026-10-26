@@ -298,6 +298,21 @@ settings:
     step: 0.01
     format: em
   -
+    id: red-graphite-heading-styles
+    title: Styles
+    type: heading
+    level: 4
+    collapsed: true
+  -
+    id: red-graphite-h5-style
+    title: H5 style
+    description: Italics distinguish H5 from upright H4 and the smaller muted H6.
+    type: variable-select
+    default: italic
+    options:
+      - normal
+      - italic
+  -
     id: red-graphite-heading-weights
     title: Weights
     type: heading
@@ -829,6 +844,7 @@ settings:
   -
     id: red-graphite-callout-background-opacity
     title: Background opacity
+    description: Opacity of the native callout-color tint behind the title and content.
     type: variable-number-slider
     default: 0.07
     min: 0
@@ -871,9 +887,9 @@ settings:
   -
     id: red-graphite-callout-title-color-mix
     title: Callout-color strength
-    description: Percentage of the callout color mixed into the title and icon.
+    description: Percentage of the native callout color mixed into the title and icon. The default preserves readable contrast on the light document.
     type: variable-number-slider
-    default: 72
+    default: 35
     min: 0
     max: 100
     step: 1

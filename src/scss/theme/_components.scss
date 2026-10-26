@@ -20,6 +20,7 @@ body {
   --h3-size: var(--red-graphite-h3-size);
   --h4-size: var(--red-graphite-h4-size);
   --h5-size: var(--red-graphite-h5-size);
+  --h5-style: var(--red-graphite-h5-style);
   --h6-size: var(--red-graphite-h6-size);
   --h1-weight: var(--red-graphite-h1-weight);
   --h2-weight: var(--red-graphite-h2-weight);
@@ -212,19 +213,31 @@ body:not(.is-phone) .community-item.is-selected .flair {
 }
 
 .callout {
-  background-color: rgba(
-    var(--callout-color),
-    var(--red-graphite-callout-background-opacity)
-  );
+  // Let Obsidian resolve the native title color: older app versions expose
+  // --callout-color as RGB channels, newer versions as a complete CSS color.
+  // The title's tint layer uses that computed color and covers this container.
+  position: relative;
+  isolation: isolate;
+  background-color: transparent;
   box-shadow: none;
 }
 
-.callout-title,
+.callout-title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background-color: currentColor;
+  opacity: var(--red-graphite-callout-background-opacity);
+}
+
+.callout-title-inner,
 .callout-icon .svg-icon {
   color: color-mix(
     in srgb,
-    rgb(var(--callout-color))
-      var(--red-graphite-callout-title-color-mix),
+    currentColor var(--red-graphite-callout-title-color-mix),
     var(--text-normal)
   );
 }

@@ -84,4 +84,12 @@ npm audit --audit-level=high
 
 For visual changes, test all three appearance states and record the relevant manual results in [`docs/QA.md`](./docs/QA.md). The source build, tracked `theme.css`, and deployed vault copy must match at acceptance.
 
+The optional browser regression check uses an actual Obsidian `app.css` reference plus an existing Playwright installation. It tests palette inheritance, callout colors, text contrast, tab hover, and the macOS traffic-light backdrop across appearance, focus, and sidebar states:
+
+```powershell
+npm run qa:appearance -- "path/to/app.css" "path/to/playwright/index.mjs" "path/to/chrome.exe"
+```
+
+Add a fourth argument for a directory of screenshots. The browser renders an isolated fixture with simulated platform classes; it does not replace live Obsidian or native macOS/iOS acceptance. Run against both current and older stylesheet references when changing compatibility behavior. The ordinary build and Node tests do not require Playwright.
+
 Do not tag or publish a release, or modify public issues, as part of an ordinary contribution. Follow [`docs/RELEASING.md`](./docs/RELEASING.md) only after explicit approval.

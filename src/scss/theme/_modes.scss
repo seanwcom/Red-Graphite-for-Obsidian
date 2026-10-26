@@ -58,6 +58,18 @@ body.theme-light {
   --mobile-sidebar-background: var(--background-secondary);
 }
 
+// Native macOS traffic lights occupy 80px, wider than the ribbon. Extend its
+// corner paint across the complete reserved area so closing the left sidebar
+// does not leave the buttons straddling graphite and the light tab rail.
+body.mod-macos.show-ribbon.is-hidden-frameless:not(
+    .is-fullscreen, .is-popout-window, .is-mobile
+  )
+  .workspace-ribbon:is(.mod-primary, .mod-left)::before {
+  width: calc(
+    var(--ribbon-width) + var(--frame-left-space) + var(--frame-right-space)
+  );
+}
+
 body.theme-dark:not(.red-graphite-dark-document)
   .workspace-split.mod-root
   .workspace-tabs,

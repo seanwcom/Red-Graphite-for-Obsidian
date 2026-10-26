@@ -54,12 +54,14 @@ Longer paragraphs need a comfortable line height and a restrained line width. Th
 
 ## Unordered lists
 
+Keep four spaces per nested level when copying these fixtures into Obsidian. Confirm that the numbered list below has three outer items, two second-level items under item two, and one third-level item under the second nested item.
+
 - First-level item
 - Another first-level item with enough text to wrap onto a second line so that hanging indentation and line spacing can be evaluated clearly
-  - Second-level item
-  - Second-level item with **bold text** and an [[Internal Link]]
-    - Third-level item
-    - Another third-level item
+    - Second-level item
+    - Second-level item with **bold text** and an [[Internal Link]]
+        - Third-level item
+        - Another third-level item
 - Final first-level item
 
 ### Compact unordered list
@@ -73,28 +75,28 @@ Longer paragraphs need a comfortable line height and a restrained line width. Th
 
 1. First numbered item
 2. Second numbered item with enough text to wrap onto another line so that the number gutter and continuation indentation can be evaluated
-   1. Nested numbered item
-   2. Another nested numbered item
-      1. Third-level numbered item
+    1. Nested numbered item
+    2. Another nested numbered item
+        1. Third-level numbered item
 3. Final numbered item
 
 ### Numbered list with nested bullets
 
 1. Research the problem.
-   - Record the current behavior.
-   - Capture a screenshot.
+    - Record the current behavior.
+    - Capture a screenshot.
 2. Make one focused change.
-   - Test light document mode.
-   - Test the full-dark toggle.
+    - Test light document mode.
+    - Test the full-dark toggle.
 3. Compare the result.
 
 ## Task lists
 
 - [ ] Unchecked task
 - [x] Completed task
-- [ ] Task with a longer description that wraps and reveals checkbox alignment across multiple lines
-  - [ ] Nested unchecked task
-  - [x] Nested completed task
+- [ ] Task with a longer description that wraps and reveals checkbox alignment across multiple lines, continuing far enough to exercise the hanging indent at the standard document width
+    - [ ] Nested unchecked task
+    - [x] Nested completed task
 - [ ] Task containing an [external link](https://help.obsidian.md)
 
 Completed checkboxes use a neutral fill and a readable checkmark in all three appearance states. Check hover and keyboard focus as well as the static task states.
@@ -243,36 +245,43 @@ Content inside a native details element should use the same document palette and
 ## Mixed-content stress test
 
 1. **Planning**
-   - Review the [[Theme Test Page]].
-   - Record visual issues in `docs/QA.md`.
-   - [ ] Check the desktop layout.
+    - Review the [[Theme Test Page]].
+    - Record visual issues in `docs/QA.md`.
+    - [ ] Check the desktop layout.
 2. **Implementation**
-   > [!tip] Keep changes semantic
-   > Prefer Obsidian variables over plugin-specific selectors.
+    > [!tip] Keep changes semantic
+    > Prefer Obsidian variables over plugin-specific selectors.
 3. **Verification**
 
-   | Check | Result |
-   | --- | --- |
-   | Build | `npm run build` |
-   | Tests | `npm test` |
-   | Consistency | `npm run check` |
+Use this standalone table to check the result. Tables inside list items are not a reliable Live Preview fixture.
+
+| Check | Result |
+| --- | --- |
+| Build | `npm run build` |
+| Tests | `npm test` |
+| Consistency | `npm run check` |
 
 ## Visual QA checklist
 
 - [ ] Inline title and H1 are clearly different.
 - [ ] H1 through H6 form an obvious but restrained hierarchy.
+- [ ] H4 is upright, H5 is italic, and H6 is smaller and muted.
 - [ ] Paragraph width and line height are comfortable.
 - [ ] Bold text is emphasized without becoming heavy.
 - [ ] Links and tags are recognizable but not distracting.
+- [ ] Unresolved links stay readable and use a dashed underline rather than faded text.
 - [ ] Bullet and number indentation remains aligned at every level.
 - [ ] Task checkboxes align with wrapped text.
+- [ ] Completed task text stays readable in the local document palette.
 - [ ] Quotes and callouts feel related but distinct.
+- [ ] Callout titles and icons retain their native hue, and the subtle tint fills the complete callout, including folded and nested cases.
 - [ ] Horizontal rules separate sections without becoming dominant.
 - [ ] Table headers, rows, borders, and alignment remain readable.
 - [ ] Inline and fenced code belong to the document palette.
 - [ ] The active tab is immediately identifiable.
 - [ ] Hovering an inactive tab keeps its title readable and uses the local workspace palette.
 - [ ] With the right sidebar closed on macOS, its corner toggle matches the tab rail at rest and has a readable hover state; opening the sidebar restores the host palette.
+- [ ] With the left sidebar closed on macOS, all three traffic lights share a continuous backdrop with no color boundary through the buttons.
 - [ ] Moving a plugin view between the center and sidebar preserves usability.
 
 %% This comment should be hidden in reading view and visible in source mode. %%

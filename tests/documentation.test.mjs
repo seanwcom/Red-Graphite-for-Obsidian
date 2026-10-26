@@ -63,6 +63,21 @@ test("local Markdown links resolve", async () => {
   assert.deepEqual(broken, []);
 });
 
+test("specimen uses editor-compatible nested lists and standalone tables", async () => {
+  const specimen = await readFile(join(projectRoot, "docs", "STYLE-SPECIMEN.md"), "utf8");
+  let inFence = false;
+  const invalid = [];
+  const content = specimen.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, "");
+  for (const [index, line] of content.split(/\r?\n/).entries()) {
+    if (/^\s*```/.test(line)) inFence = !inFence;
+    if (inFence) continue;
+    const list = line.match(/^( +)(?:[-+*]|\d+\.)\s/);
+    if (list && list[1].length % 4 !== 0) invalid.push(`line ${index + 1}: use four spaces per nested list level`);
+    if (/^ +\|/.test(line)) invalid.push(`line ${index + 1}: keep tables outside lists for Live Preview`);
+  }
+  assert.deepEqual(invalid, []);
+});
+
 test("Markdown prose relies on reader wrapping", async () => {
   const files = await markdownFiles(projectRoot);
   const wrapped = [];

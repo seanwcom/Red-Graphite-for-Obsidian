@@ -55,6 +55,12 @@ The window controls and status bar sit outside `.workspace`; the macOS right-sid
 
 Obsidian 1.14.5 uses `--tab-inner-background-hover` for inactive tab hover. Rebind this semantic token at each palette boundary: an alias inherited from `body` has already resolved against the host palette and will not follow the light center's `--background-modifier-hover` automatically.
 
+The same rule applies to completed-task text and unresolved-link colors. Bind them to local muted text and the local accent respectively. Unresolved links retain full text opacity and use a dashed underline to communicate their state.
+
+The native macOS traffic lights reserve more horizontal space than the ribbon itself. Extend the ribbon's corner paint over that reserved space in ordinary frameless windows, including when the left sidebar is collapsed. Keep Obsidian's existing fullscreen, popout, mobile, and hidden-ribbon geometry.
+
+Callout compatibility uses Obsidian's computed native title color rather than parsing `--callout-color`: older versions provide RGB channels, while 1.14.5 provides a complete CSS color. A non-interactive tint layer on the title fills the positioned callout container behind its content. Title text and icons mix their inherited native color with local document text. This preserves custom callout hues and the opacity/strength controls without assuming a token format or changing the minimum Obsidian version. H5 uses the native heading-style variable to distinguish it from upright H4 and the smaller muted H6.
+
 ## Plugin compatibility policy
 
 Add an integration only when all of these are true:

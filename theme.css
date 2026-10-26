@@ -32,6 +32,7 @@ body {
   --red-graphite-h3-size: 1.16em;
   --red-graphite-h4-size: 1.05em;
   --red-graphite-h5-size: 0.95em;
+  --red-graphite-h5-style: italic;
   --red-graphite-h6-size: 0.9em;
   --red-graphite-h1-weight: 650;
   --red-graphite-h2-weight: 650;
@@ -83,7 +84,7 @@ body {
   --red-graphite-callout-border-width: 3px;
   --red-graphite-callout-radius: 6px;
   --red-graphite-callout-title-weight: 600;
-  --red-graphite-callout-title-color-mix: 72%;
+  --red-graphite-callout-title-color-mix: 35%;
   --red-graphite-callout-padding-y: 12px;
   --red-graphite-callout-padding-x: 16px;
   --red-graphite-code-border-width: 1px;
@@ -211,6 +212,11 @@ body.theme-dark {
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
   --tab-inner-background-hover: var(--background-modifier-hover);
+  --checklist-done-color: var(--text-muted);
+  --link-unresolved-color: var(--text-accent);
+  --link-unresolved-opacity: 1;
+  --link-unresolved-decoration-style: dashed;
+  --link-unresolved-decoration-color: var(--text-accent);
   --background-modifier-error: var(--red-graphite-error-color);
   --background-modifier-error-hover: color-mix(
     in srgb,
@@ -458,6 +464,11 @@ body.theme-light {
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
   --tab-inner-background-hover: var(--background-modifier-hover);
+  --checklist-done-color: var(--text-muted);
+  --link-unresolved-color: var(--text-accent);
+  --link-unresolved-opacity: 1;
+  --link-unresolved-decoration-style: dashed;
+  --link-unresolved-decoration-color: var(--text-accent);
   --background-modifier-error: var(--red-graphite-error-color);
   --background-modifier-error-hover: color-mix(
     in srgb,
@@ -611,6 +622,10 @@ body.theme-light {
   --mobile-sidebar-background: var(--background-secondary);
 }
 
+body.mod-macos.show-ribbon.is-hidden-frameless:not(.is-fullscreen, .is-popout-window, .is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left)::before {
+  width: calc(var(--ribbon-width) + var(--frame-left-space) + var(--frame-right-space));
+}
+
 body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .workspace-tabs,
 body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .workspace-leaf-content {
   color-scheme: light;
@@ -696,6 +711,11 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
   --tab-inner-background-hover: var(--background-modifier-hover);
+  --checklist-done-color: var(--text-muted);
+  --link-unresolved-color: var(--text-accent);
+  --link-unresolved-opacity: 1;
+  --link-unresolved-decoration-style: dashed;
+  --link-unresolved-decoration-color: var(--text-accent);
   --background-modifier-error: var(--red-graphite-error-color);
   --background-modifier-error-hover: color-mix(
     in srgb,
@@ -986,6 +1006,11 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
   --tab-inner-background-hover: var(--background-modifier-hover);
+  --checklist-done-color: var(--text-muted);
+  --link-unresolved-color: var(--text-accent);
+  --link-unresolved-opacity: 1;
+  --link-unresolved-decoration-style: dashed;
+  --link-unresolved-decoration-color: var(--text-accent);
   --background-modifier-error: var(--red-graphite-error-color);
   --background-modifier-error-hover: color-mix(
     in srgb,
@@ -1121,6 +1146,7 @@ body {
   --h3-size: var(--red-graphite-h3-size);
   --h4-size: var(--red-graphite-h4-size);
   --h5-size: var(--red-graphite-h5-size);
+  --h5-style: var(--red-graphite-h5-style);
   --h6-size: var(--red-graphite-h6-size);
   --h1-weight: var(--red-graphite-h1-weight);
   --h2-weight: var(--red-graphite-h2-weight);
@@ -1273,13 +1299,26 @@ body:not(.is-phone) .community-item.is-selected .flair {
 }
 
 .callout {
-  background-color: rgba(var(--callout-color), var(--red-graphite-callout-background-opacity));
+  position: relative;
+  isolation: isolate;
+  background-color: transparent;
   box-shadow: none;
 }
 
-.callout-title,
+.callout-title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background-color: currentColor;
+  opacity: var(--red-graphite-callout-background-opacity);
+}
+
+.callout-title-inner,
 .callout-icon .svg-icon {
-  color: color-mix(in srgb, rgb(var(--callout-color)) var(--red-graphite-callout-title-color-mix), var(--text-normal));
+  color: color-mix(in srgb, currentColor var(--red-graphite-callout-title-color-mix), var(--text-normal));
 }
 
 .markdown-rendered th,
@@ -1900,6 +1939,21 @@ settings:
     step: 0.01
     format: em
   -
+    id: red-graphite-heading-styles
+    title: Styles
+    type: heading
+    level: 4
+    collapsed: true
+  -
+    id: red-graphite-h5-style
+    title: H5 style
+    description: Italics distinguish H5 from upright H4 and the smaller muted H6.
+    type: variable-select
+    default: italic
+    options:
+      - normal
+      - italic
+  -
     id: red-graphite-heading-weights
     title: Weights
     type: heading
@@ -2431,6 +2485,7 @@ settings:
   -
     id: red-graphite-callout-background-opacity
     title: Background opacity
+    description: Opacity of the native callout-color tint behind the title and content.
     type: variable-number-slider
     default: 0.07
     min: 0
@@ -2473,9 +2528,9 @@ settings:
   -
     id: red-graphite-callout-title-color-mix
     title: Callout-color strength
-    description: Percentage of the callout color mixed into the title and icon.
+    description: Percentage of the native callout color mixed into the title and icon. The default preserves readable contrast on the light document.
     type: variable-number-slider
-    default: 72
+    default: 35
     min: 0
     max: 100
     step: 1
