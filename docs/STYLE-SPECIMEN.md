@@ -271,6 +271,8 @@ Content inside a native details element should use the same document palette and
 - [ ] Table headers, rows, borders, and alignment remain readable.
 - [ ] Inline and fenced code belong to the document palette.
 - [ ] The active tab is immediately identifiable.
+- [ ] Hovering an inactive tab keeps its title readable and uses the local workspace palette.
+- [ ] With the right sidebar closed on macOS, its corner toggle matches the tab rail at rest and has a readable hover state; opening the sidebar restores the host palette.
 - [ ] Moving a plugin view between the center and sidebar preserves usability.
 
 %% This comment should be hidden in reading view and visible in source mode. %%

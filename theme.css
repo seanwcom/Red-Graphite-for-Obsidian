@@ -210,6 +210,7 @@ body.theme-dark {
   --blockquote-background-color: var(--background-secondary);
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
+  --tab-inner-background-hover: var(--background-modifier-hover);
   --background-modifier-error: var(--red-graphite-error-color);
   --background-modifier-error-hover: color-mix(
     in srgb,
@@ -456,6 +457,7 @@ body.theme-light {
   --blockquote-background-color: var(--background-secondary);
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
+  --tab-inner-background-hover: var(--background-modifier-hover);
   --background-modifier-error: var(--red-graphite-error-color);
   --background-modifier-error-hover: color-mix(
     in srgb,
@@ -693,6 +695,7 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .work
   --blockquote-background-color: var(--background-secondary);
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
+  --tab-inner-background-hover: var(--background-modifier-hover);
   --background-modifier-error: var(--red-graphite-error-color);
   --background-modifier-error-hover: color-mix(
     in srgb,
@@ -845,6 +848,7 @@ body.theme-dark:not(.red-graphite-dark-document) .workspace-split.mod-root .merm
 }
 
 body.theme-dark:not(.red-graphite-dark-document):not(:has(.workspace.is-right-sidedock-open)) .titlebar-button-container.mod-right,
+body.theme-dark:not(.red-graphite-dark-document):not(:has(.workspace.is-right-sidedock-open)) .sidebar-toggle-button.mod-right,
 body.theme-dark:not(.red-graphite-dark-document):not(:has(.workspace.is-right-sidedock-open)) .status-bar {
   color-scheme: light;
   --background-primary: hsl(
@@ -878,7 +882,9 @@ body.theme-dark:not(.red-graphite-dark-document):not(:has(.workspace.is-right-si
   color: var(--text-muted);
 }
 
-body.theme-dark:not(.red-graphite-dark-document):not(:has(.workspace.is-right-sidedock-open)) .titlebar-button-container.mod-right {
+body.theme-dark:not(.red-graphite-dark-document):not(:has(.workspace.is-right-sidedock-open)) .titlebar-button-container.mod-right,
+body.theme-dark:not(.red-graphite-dark-document):not(:has(.workspace.is-right-sidedock-open)) .sidebar-toggle-button.mod-right {
+  --tab-container-background: var(--background-primary);
   --background-primary: hsl(
     var(--red-graphite-document-light-color-h),
     var(--red-graphite-document-light-color-s),
@@ -979,6 +985,7 @@ body.theme-dark.red-graphite-dark-document .workspace-split.mod-root .workspace-
   --blockquote-background-color: var(--background-secondary);
   --blockquote-color: var(--text-muted);
   --table-header-color: var(--text-normal);
+  --tab-inner-background-hover: var(--background-modifier-hover);
   --background-modifier-error: var(--red-graphite-error-color);
   --background-modifier-error-hover: color-mix(
     in srgb,
@@ -1638,7 +1645,7 @@ settings:
   -
     id: red-graphite-document-light-color
     title: Light document base
-    description: Base color for the flagship center and conventional Obsidian Light mode.
+    description: Base color for the flagship center and its tab rail, including the right-sidebar toggle when that sidebar is closed, and for conventional Obsidian Light mode.
     type: variable-themed-color
     format: hsl-split
     opacity: false

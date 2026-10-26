@@ -120,11 +120,17 @@ body.theme-dark:not(.red-graphite-dark-document)
   filter: none;
 }
 
-// These controls live outside .workspace, so mirror the right dock via :has().
+// Window controls and the status bar live outside .workspace. The macOS
+// sidebar toggle is fixed over the tab rail and also inherits the host palette.
+// Mirror the right dock for all three controls via :has().
 body.theme-dark:not(.red-graphite-dark-document):not(
     :has(.workspace.is-right-sidedock-open)
   )
   .titlebar-button-container.mod-right,
+body.theme-dark:not(.red-graphite-dark-document):not(
+    :has(.workspace.is-right-sidedock-open)
+  )
+  .sidebar-toggle-button.mod-right,
 body.theme-dark:not(.red-graphite-dark-document):not(
     :has(.workspace.is-right-sidedock-open)
   )
@@ -165,7 +171,14 @@ body.theme-dark:not(.red-graphite-dark-document):not(
 body.theme-dark:not(.red-graphite-dark-document):not(
     :has(.workspace.is-right-sidedock-open)
   )
-  .titlebar-button-container.mod-right {
+  .titlebar-button-container.mod-right,
+body.theme-dark:not(.red-graphite-dark-document):not(
+    :has(.workspace.is-right-sidedock-open)
+  )
+  .sidebar-toggle-button.mod-right {
+  // Obsidian assigns this variable on the toggle itself, including when the
+  // window is focused. Rebind it here so macOS uses the adjacent light rail.
+  --tab-container-background: var(--background-primary);
   --background-primary: hsl(
     var(--red-graphite-document-light-color-h),
     var(--red-graphite-document-light-color-s),

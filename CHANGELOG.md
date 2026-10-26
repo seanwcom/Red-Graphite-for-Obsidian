@@ -22,6 +22,7 @@ Red Graphite's primary appearance has moved from Obsidian Light to Obsidian Dark
 - Added Calendar and Copilot adjustments plus a pinned plugin QA installer for the dedicated test vault; full plugin acceptance remains pending.
 - Documented manual installation from the development branch for use in another vault.
 - Updated the build dependency `source-map-js` to 1.2.2 to resolve a high-severity audit finding.
+- Fixed dark inactive-tab hover in Obsidian 1.14.5 and the macOS right-sidebar toggle's dark corner and hover when the flagship light center reaches the window edge.
 
 ### Compatibility
 

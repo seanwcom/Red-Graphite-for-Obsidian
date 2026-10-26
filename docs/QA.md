@@ -16,6 +16,16 @@ This branch is a development snapshot for manual use in another vault. It is not
 - Desktop appearance, plugin placement in all three states, the release screenshot, and physical iOS approval remain open. No tag or release is authorized by this checkpoint.
 - Use the README's development-branch installation steps to copy only `theme.css` and `manifest.json` into another vault.
 
+## Mac tab and corner regression — 2026-10-26
+
+- User report: macOS Obsidian 1.14.5, development branch, no CSS snippets. Inactive-tab hover becomes dark with dark text; the right-sidebar toggle leaves a dark corner beside the light tab rail.
+- Reproduced both symptoms in an isolated Chromium fixture using the actual `app.css` extracted read-only from the locally installed Obsidian 1.14.5 application bundle. The repository's older ignored `app.css` reference reproduced the corner only, so it is insufficient for current tab-hover acceptance.
+- Cause: the newer `--tab-inner-background-hover` alias resolved at the dark body and was inherited by the light center. The fixed macOS sidebar toggle also inherited the dark host palette and its own tab-container token. Both now resolve against the appropriate local palette.
+- Isolated browser checks pass in 24 combinations: all three appearance states, macOS and Windows body classes, focused and unfocused windows, and right sidebar open and closed. Assertions cover inactive-tab hover, macOS corner background, and toggle-icon hover. This fixture simulates platform classes; it is not native macOS or live Obsidian acceptance.
+- The existing Node tests cannot render Obsidian hover states; the browser reproduction provides the regression check for this change. Native Mac confirmation remains pending.
+- Validation: build, tracked-artifact check, all 11 Node tests, high-level npm audit (0 vulnerabilities), and `git diff --check` pass. Deployed only `theme.css` and `manifest.json` through the guarded deployer to the configured local test vault; both deployed files match their repository copies by SHA-256.
+- Repeat on the Mac: open two notes, hover an inactive tab and the right corner control, then open and close the right sidebar. Check both focused and unfocused windows in each appearance state. The flagship light rail must have light hover surfaces and readable dark text; an open graphite sidebar must keep its graphite toggle.
+
 ## Test environment record
 
 | Item | Version or result |
@@ -46,6 +56,7 @@ Test each row in conventional Light, flagship Dark, and Dark with **Use a dark c
 - [x] Settings and modal surfaces
 - [ ] Command palette, suggestions, context menus, and popovers
 - [ ] Split panes and stacked tabs
+- [ ] macOS inactive-tab hover and right-sidebar corner at rest and on hover, with the right sidebar open/closed and window focused/unfocused (Obsidian 1.14.5)
 - [x] Flagship center is light while frame, tabs, ribbon, and sidebar are dark
 - [ ] Full-dark toggle changes only the central workspace
 - [x] Conventional Light produces an all-light application

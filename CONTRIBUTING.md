@@ -28,6 +28,8 @@ Read [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) before changing palette sc
 
 ## Live development
 
+During the 2.0 redesign, `codex/red-graphite-2` is the shared integration branch and the source for Mac testing. Commit and push validated fixes there so they can be pulled onto the Mac. Separate branches may be used for experiments; bring accepted changes back to this branch for testing.
+
 Copy the local environment template:
 
 ```powershell

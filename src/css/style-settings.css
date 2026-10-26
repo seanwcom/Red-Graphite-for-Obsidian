@@ -43,7 +43,7 @@ settings:
   -
     id: red-graphite-document-light-color
     title: Light document base
-    description: Base color for the flagship center and conventional Obsidian Light mode.
+    description: Base color for the flagship center and its tab rail, including the right-sidebar toggle when that sidebar is closed, and for conventional Obsidian Light mode.
     type: variable-themed-color
     format: hsl-split
     opacity: false

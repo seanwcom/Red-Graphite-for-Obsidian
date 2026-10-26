@@ -30,6 +30,9 @@
 }
 
 @mixin common-semantics {
+  // Current Obsidian tabs use a separate hover token. Resolve it at each
+  // palette boundary so a light workspace does not inherit the dark body value.
+  --tab-inner-background-hover: var(--background-modifier-hover);
   --background-modifier-error: var(--red-graphite-error-color);
   --background-modifier-error-hover: color-mix(
     in srgb,

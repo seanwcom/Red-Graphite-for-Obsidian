@@ -51,7 +51,9 @@ Use documented Obsidian semantic variables wherever possible. When selectors are
 - avoid brittle DOM-depth and plugin-class assumptions; and
 - explain non-obvious selectors in source comments.
 
-The window controls and status bar sit outside `.workspace`. In the flagship state, their palette follows whether the right sidebar is open so no isolated dark rectangle remains beside a light center. This currently requires a narrowly scoped `:has()` state selector and must be tested after Obsidian UI changes.
+The window controls and status bar sit outside `.workspace`; the macOS right-sidebar toggle is fixed over the tab rail and can also inherit the host palette. In the flagship state, their palette follows whether the right sidebar is open so no isolated dark rectangle remains beside a light center. This currently requires a narrowly scoped `:has()` state selector and must be tested after Obsidian UI changes. Rebind the toggle's `--tab-container-background` locally because Obsidian assigns that token directly to the control.
+
+Obsidian 1.14.5 uses `--tab-inner-background-hover` for inactive tab hover. Rebind this semantic token at each palette boundary: an alias inherited from `body` has already resolved against the host palette and will not follow the light center's `--background-modifier-hover` automatically.
 
 ## Plugin compatibility policy
 
